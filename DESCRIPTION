@@ -1,7 +1,7 @@
 Package: xlum
 Type: Package
 Title: Read, Write, and Convert xlum Data
-Version: 0.1.0.9000-17
+Version: 0.1.0.9000-20
 Author: Sebastian Kreutzer [aut, cre] (<https://orcid.org/0000-0002-0734-2199>)
 Authors@R: c(
     person("Sebastian", "Kreutzer", role = c("aut", "cre"), email = "sebastian.kreutzer@aber.ac.uk", comment = c(ORCID = "0000-0002-0734-2199")))

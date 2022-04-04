@@ -1,7 +1,7 @@
 Package: xlum
 Type: Package
 Title: Read, Write, and Convert xlum Data
-Version: 0.1.0.9000-13
+Version: 0.1.0.9000-17
 Author: Sebastian Kreutzer [aut, cre] (<https://orcid.org/0000-0002-0734-2199>)
 Authors@R: c(
     person("Sebastian", "Kreutzer", role = c("aut", "cre"), email = "sebastian.kreutzer@aber.ac.uk", comment = c(ORCID = "0000-0002-0734-2199")))
@@ -15,6 +15,9 @@ Depends:
 Imports: 
   methods,
   xml2 (>= 1.3.3)
+Suggests: 
+  spelling (>= 2.2),
+  testthat (>= 3.1.3)
 Encoding: UTF-8
 Language: en-GB
 LazyData: true

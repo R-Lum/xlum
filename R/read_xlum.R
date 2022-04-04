@@ -1,7 +1,8 @@
 #'@title Import xlum files
 #'
-#'@description Imports xlum files using [xlm2::read_xml]. Comes with a few
-#'convenience features
+#'@description Imports xlum files using [xml2::read_xml]. Comes with a few
+#'convenience features, such as the transformation of string lists to numeric
+#'vectors where meaningful.
 #'
 #'@details
 #'
@@ -27,7 +28,8 @@
 #'@author Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University
 #'
 #'@examples
-#' ##TODO
+#'file <- system.file("extdata/xlum_example.xlum", package="xlum")
+#'read_xlum(file)
 #'
 #'@md
 #'@export

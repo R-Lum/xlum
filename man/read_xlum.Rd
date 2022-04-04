@@ -19,8 +19,9 @@ The output depends on the setting selected in \code{output}. It will
 be either an \link[xml2:oldclass]{xml2::xml_document}, \link{list}, or a \link{list} of class \code{xlum_list}.
 }
 \description{
-Imports xlum files using \link[xlm2:read_xml]{xlm2::read_xml}. Comes with a few
-convenience features
+Imports xlum files using \link[xml2:read_xml]{xml2::read_xml}. Comes with a few
+convenience features, such as the transformation of string lists to numeric
+vectors where meaningful.
 }
 \details{
 \strong{Supported output options}\cr
@@ -33,7 +34,8 @@ for level \verb{<curve>} are transposed into \link{numeric} vectors for better h
 \code{"xml_document"}: unprocessed output from \link[xml2:read_xml]{xml2::read_xml}
 }
 \examples{
-##TODO
+file <- system.file("extdata/xlum_example.xlum", package="xlum")
+read_xlum(file)
 
 }
 \author{
@@ -41,6 +43,6 @@ Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University
 } 
 
 \section{How to cite}{
-Kreutzer, S., 2022. read_xlum(): Import xlum files. In: Kreutzer, S., 2022. xlum: Read, Write, and Convert xlum Data. R package version 0.1.0.9000-13. 
+Kreutzer, S., 2022. read_xlum(): Import xlum files. In: Kreutzer, S., 2022. xlum: Read, Write, and Convert xlum Data. R package version 0.1.0.9000-17. 
 }
 

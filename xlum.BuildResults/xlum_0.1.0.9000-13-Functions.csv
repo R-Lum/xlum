@@ -1,5 +1,0 @@
-"Name","Title","Description","Version","m.Date","m.Time","Author","Citation"
-"read_xlum","Import xlum files","Imports xlum files using  xlm2::read_xml . Comes with a few convenience features",NA,NA,NA,"Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University<br />","Kreutzer, S., 2022. read_xlum(): Import xlum files. In: Kreutzer, S., 2022. xlum: Read, Write, and Convert xlum Data. R package version 0.1.0.9000-13. 
-"
-"validate_xlum","Validate xlum format against an XSD reference schema","A a convenience wrapper around  xml2::xml_validate  against the reference format description shipped with  xlum-package",NA,NA,NA,"Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University<br />","Kreutzer, S., 2022. validate_xlum(): Validate xlum format against an XSD reference schema. In: Kreutzer, S., 2022. xlum: Read, Write, and Convert xlum Data. R package version 0.1.0.9000-13. 
-"

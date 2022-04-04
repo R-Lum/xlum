@@ -69,7 +69,7 @@ read_xlum <- function(
       ## we hard-code this here; it suffices
       j <- 1
       for (i in .get_element_index(xlum)) {
-        xlum[[i[1]]][[i[2]]][[i[3]]][[i[4]]][[i[5]]] <- curve_values[[j]]
+        xlum[[i[1]]][[i[2]]][[i[3]]][[i[4]]][[i[5]]][[1]] <- curve_values[[j]]
         attr(xlum[[i[1]]][[i[2]]][[i[3]]][[i[4]]][[i[5]]], "tValues") <- tValues[[j]]
         attr(xlum[[i[1]]][[i[2]]][[i[3]]][[i[4]]][[i[5]]], "xValues") <- xValues[[j]]
         attr(xlum[[i[1]]][[i[2]]][[i[3]]][[i[4]]][[i[5]]], "yValues") <- yValues[[j]]
@@ -77,6 +77,7 @@ read_xlum <- function(
 
       }
     }
+
   }
 
 # Return ------------------------------------------------------------------
@@ -84,13 +85,3 @@ read_xlum <- function(
   return(xlum)
 
 }
-
-#xlum_data <- read_xlum("inst/extdata/xlum_example.xlum", output = "xlum_list")
-#attr(xlum_data, "class") <- "list"
-#xml2::write_xml(xml2::as_xml_document(xlum_data), "~/Desktop/test.xlum")
-
-#print(xlum_data)
-# doc <- xml2::read_xml("inst/extdata/xlum_prototype.xlum")
-# schema <- xml2::read_xml("inst/extdata/xlum_schema.xsd")
-# # #print(xml2::xml_ns(xlum_data))
-# print(xml2::xml_validate(doc, schema))

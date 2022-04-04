@@ -2,5 +2,6 @@
 
 export(read_xlum)
 export(validate_xlum)
+export(write_xlum)
 import(methods)
 import(utils)

@@ -63,9 +63,8 @@ version.
 This program is distributed in the hope that it will be useful, but
 WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the [GNU
-General Public
-License](https://github.com/R-Lum/xlum/blob/master/LICENSE) for more
-details.
+General Public License](https://github.com/R-Lum/xlum/blob/main/LICENSE)
+for more details.
 
 ## <span class="glyphicon glyphicon-euro"></span> Funding
 

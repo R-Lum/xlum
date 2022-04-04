@@ -1,6 +1,7 @@
 #'@title Import xlum files
 #'
-#'@description #TODO
+#'@description Imports xlum files using [xlm2::read_xml]. Comes with a few
+#'convenience features
 #'
 #'@details
 #'
@@ -20,9 +21,13 @@
 #'@param output [character] (*with default*): output object of the import,
 #'supported are `"xml_document"`, `"list"`, `"xlum_list"` (the default)
 #'
-#'@return ##TODO
+#'@return The output depends on the setting selected in `output`. It will
+#'be either an [xml2::xml_document-class], [list], or a [list] of class `xlum_list`.
 #'
 #'@author Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University
+#'
+#'@examples
+#' ##TODO
 #'
 #'@md
 #'@export
@@ -78,12 +83,12 @@ read_xlum <- function(
 
 }
 
-#xlum_data <- read_xlum("inst/extdata/xlum_prototype.xlum", output = "xlum_list")
+#xlum_data <- read_xlum("inst/extdata/xlum_example.xlum", output = "xlum_list")
 #attr(xlum_data, "class") <- "list"
 #xml2::write_xml(xml2::as_xml_document(xlum_data), "~/Desktop/test.xlum")
 
 #print(xlum_data)
 # doc <- xml2::read_xml("inst/extdata/xlum_prototype.xlum")
-# schema <- xml2::read_xml("inst/extdata/xlum_schema.xml")
-#print(xml2::xml_ns(xlum_data))
+# schema <- xml2::read_xml("inst/extdata/xlum_schema.xsd")
+# # #print(xml2::xml_ns(xlum_data))
 # print(xml2::xml_validate(doc, schema))

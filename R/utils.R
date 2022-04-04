@@ -11,19 +11,19 @@
 #'
 #'@examples
 #'
-#'l <- list(a <- c("12, 12, 13"), b = "NA")
+#'l <- list(a <- c("12 12 13"), b = "NA")
 #'.convert2numeric(l)
 #'
 #'@md
 #'@noRd
 .convert2numeric <- function(l){
   ## handle NA values
-  if (any(l == "NA")) l[which(l == "NA")] <- NA_character_
+  if (any(l == 0)) l[which(l == 0)] <- NA
 
   ##extract values
   lapply(
     unlist(
-      lapply(l, strsplit, split = ",", fixed = TRUE),
+      lapply(l, strsplit, split = " ", fixed = TRUE),
       recursive = FALSE),
     as.numeric)
 }

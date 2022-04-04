@@ -35,6 +35,6 @@ Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University
 } 
 
 \section{How to cite}{
-Kreutzer, S., 2022. read_xlum(): Import xlum files. In: Kreutzer, S., 2022. xlum: Read, Write, and Convert xlum Data. R package version 0.1.0.9000-7. 
+Kreutzer, S., 2022. read_xlum(): Import xlum files. In: Kreutzer, S., 2022. xlum: Read, Write, and Convert xlum Data. R package version 0.1.0.9000-8. 
 }
 

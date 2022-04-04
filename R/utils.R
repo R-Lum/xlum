@@ -11,14 +11,14 @@
 #'
 #'@examples
 #'
-#'l <- list(a <- c("12 12 13"), b = "NA")
+#'l = list(a <- c("12 12 13"), b = "0")
 #'.convert2numeric(l)
 #'
 #'@md
 #'@noRd
 .convert2numeric <- function(l){
   ## handle NA values
-  if (any(l == 0)) l[which(l == 0)] <- NA
+  if (any(l == "0")) l[which(l == "0")] <- NA_character_
 
   ##extract values
   lapply(

@@ -51,7 +51,11 @@
   if (any(is.na(l))) l[which(is.na(l))] <- "0"
 
   ##extract values
-  lapply(l, function(x) paste(as.character(x), collapse = " "))
+  tmp <- lapply(l, function(x) paste(as.character(x), collapse = " "))
+
+  ## return
+  if(length(tmp) == 1) return(unlist(tmp)) else tmp
+
 }
 
 #'@title Get Names-based Element Index from Nested list

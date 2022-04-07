@@ -13,7 +13,11 @@
 #'
 #'@seealso [xml2::write_xml], [read_xlum]
 #'
-#'@author Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University
+#'@section Function version: 0.1.0
+#'
+#'@author Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University (united Kingdom)
+#'
+#'@keywords datagen
 #'
 #'@examples
 #'file <- system.file("extdata/xlum_prototype.xlum", package="xlum")

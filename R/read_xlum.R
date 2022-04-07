@@ -25,7 +25,13 @@
 #'@return The output depends on the setting selected in `output`. It will
 #'be either an [xml2::xml_document-class], [list], or a [list] of class `xlum_list`.
 #'
-#'@author Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University
+#'@author Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University (United Kingdom)
+#'
+#'@section Function version: 0.1.0
+#'
+#'@seealso [xml2::read_xml], [validate_xlum], [write_xlum]
+#'
+#'@keywords datagen
 #'
 #'@examples
 #'file <- system.file("extdata/xlum_example.xlum", package="xlum")

@@ -17,10 +17,16 @@
 #'@param file [character] (*optional*): file name for the export, if `NULL` (the default),
 #'an [xml2::xml_document-class] object is returned
 #'
-#'@author Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University
+#'@author Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University (United Kingdom)
+#'
+#'@section Function version: 0.1.0
 #'
 #'@return Depending on the setting. If `file == NULL` an [xml2::xml_document-class] object is returned,
 #' if file is set the function attempts to write an `*.xlum` file`.
+#'
+#'@keywords datagen
+#'
+#'@seealso [Luminescence::RLum.Data-class], [write_xlum]
 #'
 #'@examples
 #'data(ExampleData.RLum.Analysis, envir = environment(), package = "Luminescence")

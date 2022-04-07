@@ -20,11 +20,11 @@
 #'@author Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University
 #'
 #'@return Depending on the setting. If `file == NULL` an [xml2::xml_document-class] object is returned,
-#' if file is set the function attemps to write an `xlum-file`.
+#' if file is set the function attempts to write an `*.xlum` file`.
 #'
 #'@examples
 #'data(ExampleData.RLum.Analysis, envir = environment(), package = "Luminescence")
-#'convert_rlum2xlum(RLum.Data.Curve)
+#'convert_rlum2xlum(IRSAR.RF.Data)
 #'
 #'@md
 #'@export

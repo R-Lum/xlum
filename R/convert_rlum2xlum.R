@@ -23,7 +23,8 @@
 #' if file is set the function attemps to write an `xlum-file`.
 #'
 #'@examples
-#'## TODO
+#'data(ExampleData.RLum.Analysis, envir = environment(), package = "Luminescence")
+#'convert_rlum2xlum(RLum.Data.Curve)
 #'
 #'@md
 #'@export
@@ -34,13 +35,15 @@ convert_rlum2xlum <- function(
 
 # Sanitize input ---------------------------------------------------------
 ## always convert to a list
-if(!inherits(rlum, "list"))
+if(!inherits(rlum, "list")) {
+  tmp_class <- class(rlum)[1]
   rlum <- list(rlum)
+}
 
 ## now check whether input is allowed
 if(!all(vapply(rlum, class, "character") %in%
    c("RLum.Analysis", "RLum.Data.Curve", "RLum.Data.Image", "RLum.Data.Spectrum")))
-  stop(paste0("[convert_rlum2xlum()] class '", class(rlum)[1],"' not supported as input"), call. = FALSE)
+  stop(paste0("[convert_rlum2xlum()] class '", tmp_class,"' not supported as input"), call. = FALSE)
 
 ## we can assume that we have correct objects, so always coerce to RLum.Analysis
 if(all(grepl("RLum\\.Data", vapply(rlum, class, "character"))))
@@ -70,10 +73,10 @@ if(all(grepl("RLum\\.Data", vapply(rlum, class, "character"))))
      ## obtain tValues
        switch(class(x)[1],
          "RLum.Data.Curve" = attrs[["tValues"]] <- .convert2character(x@data[,1]),
-         "RLum.Data.Image" = attrs[["tValues"]]  <- .convert2character(seq_len(dim(x@data))),
+         "RLum.Data.Image" = attrs[["tValues"]]  <- .convert2character(seq_len(dim(x@data)[3])),
          "RLum.Data.Spectrum" = attrs[["tValues"]]<- .convert2character(rownames(x@data)))
 
-      if(x@originator == "read_XSYG2R") {
+      if(is.na(x@originator) || x@originator == "read_XSYG2R") {
         ## ##TODO ADD more for BINX
          lookup <- c(
           detector = "component",
@@ -91,11 +94,13 @@ if(all(grepl("RLum\\.Data", vapply(rlum, class, "character"))))
         attrs <- modifyList(as.list(attrs), attrs_curve)
 
         ## further manual modifications
-        labels <- strsplit(x@info[["curveDescripter"]], ";", fixed = TRUE)[[1]]
-        attrs[["tLabel"]] <- .regmatches(labels[1], ".+(?=\\[)")
-        attrs[["tUnit"]] <- .regmatches(labels[1], "(?<=\\[).+(?=\\])")
-        attrs[["vLabel"]] <- .regmatches(labels[2], ".+(?=\\[)")
-        attrs[["vUnit"]] <- .regmatches(labels[2], "(?<=\\[).+(?=\\])")
+        if(!is.null(x@info[["curveDescripter"]])) {
+          labels <- strsplit(x@info[["curveDescripter"]], ";", fixed = TRUE)[[1]]
+          attrs[["tLabel"]] <- .regmatches(labels[1], ".+(?=\\[)")
+          attrs[["tUnit"]] <- .regmatches(labels[1], "(?<=\\[).+(?=\\])")
+          attrs[["vLabel"]] <- .regmatches(labels[2], ".+(?=\\[)")
+          attrs[["vUnit"]] <- .regmatches(labels[2], "(?<=\\[).+(?=\\])")
+        }
 
         if(inherits(x, "RLum.Data.Image")) {
           attrs[["xValues"]] <- .convert2character(seq_len(dim(x@data)[2]))
@@ -103,8 +108,8 @@ if(all(grepl("RLum\\.Data", vapply(rlum, class, "character"))))
 
         }
 
-        if(inherits(x, "RLum.Data.Spectrometer"))
-           attrs_default[["xValues"]] <- .convert2character(seq_len(dim(x@data)[2]))
+        if(inherits(x, "RLum.Data.Spectrum"))
+           attrs[["xValues"]] <- .convert2character(seq_len(dim(x@data)[2]))
 
         ## data
         attrs[["startDate"]] <- .toISODate(attrs[["startDate"]])
@@ -143,7 +148,8 @@ if(all(grepl("RLum\\.Data", vapply(rlum, class, "character"))))
 
     ## get curve ID; including unique IDs and recordType
     id_curves <- vapply(rlum[[s]]@records, function(x) {
-      c(strsplit(x@recordType," ", TRUE)[[1]][1], x@info[["parentID"]])
+      parentID <- if(is.null(x@info[["parentID"]])) "A" else x@info[["parentID"]]
+      c(strsplit(x@recordType," ", TRUE)[[1]][1], parentID)
      }, character(2))
 
     ## get unique records

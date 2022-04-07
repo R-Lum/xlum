@@ -20,6 +20,10 @@ Creates an XML-file with ending \verb{*.xlum}
 \description{
 Create xlum files using \link[xml2:read_xml]{xml2::read_xml}
 }
+\section{Function version}{
+ 0.1.0
+}
+
 \examples{
 file <- system.file("extdata/xlum_prototype.xlum", package="xlum")
 out_file <- tempfile()
@@ -32,10 +36,11 @@ write_xlum(xlum_data, out_file)
 \link[xml2:write_xml]{xml2::write_xml}, \link{read_xlum}
 }
 \author{
-Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University
+Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University (united Kingdom)
 } 
 
 \section{How to cite}{
-Kreutzer, S., 2022. write_xlum(): Write xlum files. In: Kreutzer, S., 2022. xlum: Read, Write, and Convert xlum Data. R package version 0.1.0.9000-28. 
+Kreutzer, S., 2022. write_xlum(): Write xlum files. Function version 0.1.0. In: Kreutzer, S., 2022. xlum: Read, Write, and Convert xlum Data. R package version 0.1.0.9000-40. 
 }
 
+\keyword{datagen}

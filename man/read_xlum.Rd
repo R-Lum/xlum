@@ -33,16 +33,24 @@ for level \verb{<curve>} are transposed into \link{numeric} vectors for better h
 
 \code{"xml_document"}: unprocessed output from \link[xml2:read_xml]{xml2::read_xml}
 }
+\section{Function version}{
+ 0.1.0
+}
+
 \examples{
 file <- system.file("extdata/xlum_example.xlum", package="xlum")
 read_xlum(file)
 
 }
+\seealso{
+\link[xml2:read_xml]{xml2::read_xml}, \link{validate_xlum}, \link{write_xlum}
+}
 \author{
-Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University
+Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University (United Kingdom)
 } 
 
 \section{How to cite}{
-Kreutzer, S., 2022. read_xlum(): Import xlum files. In: Kreutzer, S., 2022. xlum: Read, Write, and Convert xlum Data. R package version 0.1.0.9000-28. 
+Kreutzer, S., 2022. read_xlum(): Import xlum files. Function version 0.1.0. In: Kreutzer, S., 2022. xlum: Read, Write, and Convert xlum Data. R package version 0.1.0.9000-40. 
 }
 
+\keyword{datagen}

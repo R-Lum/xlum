@@ -1,3 +1,36 @@
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#
+# NON-EXPORTED INTERNAL PACKAGE UTILTY FUNCTIONS
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#
+#'@title Fast Conversion of Numeric Values into White Space Separated Strings
+#'
+#'@description Converts numeric vector to a character with numbers separated by white space. `NA`
+#'values are transformed to `"0"`.
+#'
+#'@param l [numeric] [list] (**required**): list of numeric vectors (see example)
+#'
+#'@author Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University (United Kingdom)
+#'
+#'@return [list] of [numeric] vectors
+#'
+#'@examples
+#'
+#'l  <- list(a = c(12, 12, 13), b = NA)
+#'.convert2character(l)
+#'
+#'@md
+#'@noRd
+.convert2character <- function(l){
+  ## handle NA values
+  if (anyNA(l)) l[which(is.na(l))] <- "0"
+
+  ##extract values
+  tmp <- lapply(l, function(x) paste(as.character(x), collapse = " "))
+
+  ## return
+  if(class(l)[1] != "list") return(unlist(tmp)) else return(tmp)
+
+}
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#
 #'@title Fast Conversion of White Space Separated Strings to Numeric
 #'
 #'@description Converts strings with white space separated numbers to a numeric vector. `"0"`
@@ -27,37 +60,7 @@
       recursive = FALSE),
     as.numeric)
 }
-
-#'@title Fast Conversion of Numeric Values into White Space Separated Strings
-#'
-#'@description Converts numeric vector to a character with numbers separated by white space. `NA`
-#'values are transformed to `"0"`.
-#'
-#'@param l [numeric] [list] (**required**): list of numeric vectors (see example)
-#'
-#'@author Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University (United Kingdom)
-#'
-#'@return [list] of [numeric] vectors
-#'
-#'@examples
-#'
-#'l = list(a <- c(12, 12, 13), b = NA)
-#'.convert2character(l)
-#'
-#'@md
-#'@noRd
-.convert2character <- function(l){
-  ## handle NA values
-  if (any(is.na(l))) l[which(is.na(l))] <- "0"
-
-  ##extract values
-  tmp <- lapply(l, function(x) paste(as.character(x), collapse = " "))
-
-  ## return
-  if(length(tmp) == 1) return(unlist(tmp)) else tmp
-
-}
-
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#
 #'@title Get Names-based Element Index from Nested list
 #'
 #'@description Obtain numeric index vectors for a specific named list element from nested list
@@ -102,4 +105,66 @@
   .crawler(l, match)
 
   return(id)
+}
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#
+#'@title Regular expression match wrapper to extract found values conveniently
+#'
+#'@description Combination of [regmatches], [regexpr] and [trimws]. The regular
+#'expressions use `perl = TRUE` by default
+#'
+#'@param x [character] vector (**required**): input
+#'
+#'@param match [character] (**required**): regular expression
+#'
+#'@param ignore.case [logical] (*with default*): enable/disable case sensitivity
+#'
+#'@param invert [logical] (*with default*): enable/disable inversion
+#'
+#'@return Matched expression
+#'
+#'@author Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University (United Kingdom)
+#'
+#'@examples
+#'t <- c("Text to (extract )")
+#'.regmatches(t, "(?<=\\()[a-z]+")
+#'
+#'@md
+#'@noRd
+.regmatches <- function(x, match, ignore.case = FALSE, invert = FALSE){
+  trimws(
+    regmatches(
+      x = x,
+      m = regexpr(
+        pattern = match[1],
+        text = x,
+        ignore.case = ignore.case[1],
+        perl = TRUE),
+      invert = invert[1]))
+}
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#
+#'@title Character strings to ISO 8601-1:2019 date format
+#'
+#'@description Fast conversion of characters of certain pattern to ISO conform
+#'dates
+#'
+#'@param x [character] (**required**): input character
+#'
+#'@param format [character] (*with default*): fixed formats
+#'
+#'@author Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University (United Kingdom)
+#'
+#'@return Returns a correctly formatted character
+#'
+#'@examples
+#'.toISODate("20221005110501")
+#'
+#'@md
+#'@noRd
+.toISODate <- function(x, format = "MMMMYYDDHHMMSS"){
+  if (format[1] == "MMMMYYDDHHMMSS")
+    return(format(strptime(x, "%Y%m%d%H%M%S", tz = "UTC"), "%Y-%m-%dT%X%Z"))
+
+  if (format[1] == "YYMMDD")
+    return(as.character(strptime(x, "%y%m%d", tz = "UTC"), "%Y-%m-%dT%X%Z"))
+
 }

@@ -23,11 +23,12 @@
   ## handle NA values
   if (anyNA(l)) l[which(is.na(l))] <- "0"
 
-  ##extract values
-  tmp <- lapply(l, function(x) paste(as.character(x), collapse = " "))
+  ##list
+  if(class(l)[1] == "list")
+    return(lapply(l, function(x) paste(as.character(x), collapse = " ")))
 
-  ## return
-  if(class(l)[1] != "list") return(unlist(tmp)) else return(tmp)
+  ##non-list
+  return(paste(as.character(l), collapse = " "))
 
 }
 # +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#

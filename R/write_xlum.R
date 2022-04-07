@@ -40,46 +40,9 @@ write_xlum <- function(
   if(!grepl("(.)+\\.xlum", file, perl = TRUE))
     file <- normalizePath(paste0(file, ".xlum"), mustWork = FALSE)
 
-
 # Export depending on the input -------------------------------------------
-  if(inherits(x, "xlum_list")) {
-    ## convert values back to character otherwise it does not work
-    ## properly
-    curve_index <- .get_element_index(x)
-    curve_values <- tValues <- xValues <- yValues <- list()
-
-    ## extract values
-    j <- 1
-    for (i in curve_index) {
-      curve_values[[j]] <- x[[i[1]]][[i[2]]][[i[3]]][[i[4]]][[i[5]]][[1]]
-      tValues[[j]] <- attr(x[[i[1]]][[i[2]]][[i[3]]][[i[4]]][[i[5]]], "tValues")
-      xValues[[j]] <- attr(x[[i[1]]][[i[2]]][[i[3]]][[i[4]]][[i[5]]], "xValues")
-      yValues[[j]] <- attr(x[[i[1]]][[i[2]]][[i[3]]][[i[4]]][[i[5]]], "yValues")
-      j <- j + 1
-    }
-
-    ## convert values
-    #print(curve_values)
-    curve_values <- .convert2character(curve_values)
-    tValues <- .convert2character(tValues)
-    xValues <- .convert2character(xValues)
-    yValues <- .convert2character(yValues)
-
-    ## write back
-    j <- 1
-    for (i in curve_index) {
-      x[[i[1]]][[i[2]]][[i[3]]][[i[4]]][[i[5]]][[1]] <- curve_values[[j]]
-      attr(x[[i[1]]][[i[2]]][[i[3]]][[i[4]]][[i[5]]], "tValues") <- tValues[[j]]
-      attr(x[[i[1]]][[i[2]]][[i[3]]][[i[4]]][[i[5]]], "xValues") <- xValues[[j]]
-      attr(x[[i[1]]][[i[2]]][[i[3]]][[i[4]]][[i[5]]], "yValues") <- yValues[[j]]
-      j <- j + 1
-
-    }
-
-    ## replace class attribute
-    attr(x, "class") <- "list"
-
-  }
+  if(inherits(x, "xlum_list"))
+    x <- as.list(x)
 
 # Return ------------------------------------------------------------------
   return(xml2::write_xml(xml2::as_xml_document(x), file, ...))

@@ -76,14 +76,29 @@ if(all(grepl("RLum\\.Data", vapply(rlum, class, "character"))))
   }
 
   .create_node_attrs <- function(x, attrs){
-     ## obtain tValues
+      ## obtain tValues (this should be consistent)
        switch(class(x)[1],
          "RLum.Data.Curve" = attrs[["tValues"]] <- .convert2character(x@data[,1]),
          "RLum.Data.Image" = attrs[["tValues"]]  <- .convert2character(seq_len(dim(x@data)[3])),
          "RLum.Data.Spectrum" = attrs[["tValues"]]<- .convert2character(rownames(x@data)))
 
+       ## tackle x and y values
+        if(inherits(x, "RLum.Data.Image")) {
+          attrs[["xValues"]] <- .convert2character(seq_len(dim(x@data)[2]))
+          attrs[["yValues"]] <- .convert2character(seq_len(dim(x@data)[1]))
+
+        }
+
+       if(inherits(x, "RLum.Data.Spectrum"))
+          attrs[["xValues"]] <- .convert2character(seq_len(dim(x@data)[2]))
+
+      ## common attributes
+      ## curve type
+      attrs[["curveType"]] <- x@curveType
+
+      ##XSYG and default
       if(is.na(x@originator) || x@originator == "read_XSYG2R") {
-        ## ##TODO ADD more for BINX
+        ## create parameter translation
          lookup <- c(
           detector = "component",
           startDate = "startDate",
@@ -108,20 +123,47 @@ if(all(grepl("RLum\\.Data", vapply(rlum, class, "character"))))
           attrs[["vUnit"]] <- .regmatches(labels[2], "(?<=\\[).+(?=\\])")
         }
 
-        if(inherits(x, "RLum.Data.Image")) {
-          attrs[["xValues"]] <- .convert2character(seq_len(dim(x@data)[2]))
-          attrs[["yValues"]] <- .convert2character(seq_len(dim(x@data)[1]))
-
-        }
-
-        if(inherits(x, "RLum.Data.Spectrum"))
-           attrs[["xValues"]] <- .convert2character(seq_len(dim(x@data)[2]))
-
-        ## data
+        ## date
         attrs[["startDate"]] <- .toISODate(attrs[["startDate"]])
 
-        ## curve type
-        attrs[["curveType"]] <- x@curveType
+      }
+
+      ## Risø BIN/BINX
+      if(any(grepl("BIN", x@originator))) {
+        ## create parameter translation
+        lookup <- c(
+          DETECTOR_ID = "component",
+          COMMENT = "comment",
+          state = "state")
+
+        ## replace names
+        attrs_curve <- x@info
+        names(attrs_curve) <- lookup[names(attrs_curve)]
+
+        ## replace known components
+        attrs <- modifyList(as.list(attrs), attrs_curve)
+
+        ## date
+        attrs[["startDate"]] <- .toISODate(
+          paste(c(x@info[c("DATE", "TIME")]), collapse = ""), "YYMMDDHH:MM:SS")
+
+      }
+
+      ## DAYBREAK
+      if(x@originator == "read_Daybreak2R") {
+        ## date
+        attrs[["startDate"]] <- .toISODate(x@info[["Started"]], format = "Daybreak")
+
+      }
+
+      ## SUERC PORTABLE reader
+      if(x@originator == "read_PSL2R") {
+        str <-  paste(
+          c(as.character(x@info[["settings"]][["Date"]]),
+            x@info[["settings"]][["Time"]]),
+          collapse = "")
+        attrs[["startDate"]] <- .toISODate(str, format = "psl")
+
       }
 
       return(unlist(attrs))
@@ -142,6 +184,9 @@ if(all(grepl("RLum\\.Data", vapply(rlum, class, "character"))))
   node_sample <- xml2::xml_add_child(node_xlum, "sample")
   xml2::xml_attrs(node_sample) <- prototype_attrs[["sample"]]
 
+    ##set a few attributes if applicable
+    xml2::xml_attr(node_sample, "name") <- unlist(rlum[[1]]@records[[1]]@info[c("SAMPLE")])[1]
+
   ## add <sequence/>
   for (s in seq_along(rlum)) {
     node_sequence <- xml2::xml_add_child(node_sample, "sequence")
@@ -149,12 +194,14 @@ if(all(grepl("RLum\\.Data", vapply(rlum, class, "character"))))
 
       ## set sequence attributes
         ## the name and position should be similar for all curves
-        xml2::xml_attr(node_sequence, "name") <- unlist(rlum[[s]]@records[[1]]@info[c("name")])[1]
-        xml2::xml_attr(node_sequence, "position") <- unlist(rlum[[s]]@records[[1]]@info[c("position", "POSITION")])[1]
+        xml2::xml_attr(node_sequence, "name") <- unlist(
+          rlum[[s]]@records[[1]]@info[c("name", "FNAME")])[1]
+        xml2::xml_attr(node_sequence, "position") <- unlist(
+          rlum[[s]]@records[[1]]@info[c("position", "POSITION")])[1]
 
     ## get curve ID; including unique IDs and recordType
     id_curves <- vapply(rlum[[s]]@records, function(x) {
-      parentID <- if(is.null(x@info[["parentID"]])) "A" else x@info[["parentID"]]
+      parentID <- if(is.null(x@info[["parentID"]])) x@.uid else x@info[["parentID"]]
       c(strsplit(x@recordType," ", TRUE)[[1]][1], parentID)
      }, character(2))
 

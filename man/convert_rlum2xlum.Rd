@@ -33,7 +33,9 @@ different samples.
 }
 
 \examples{
-data(ExampleData.RLum.Analysis, envir = environment(), package = "Luminescence")
+data(ExampleData.RLum.Analysis,
+envir = environment(),
+package = "Luminescence")
 convert_rlum2xlum(IRSAR.RF.Data)
 
 }
@@ -45,7 +47,7 @@ Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University (United K
 } 
 
 \section{How to cite}{
-Kreutzer, S., 2022. convert_rlum2xlum(): Convert RLum-class objects to the XLUM format. Function version 0.1.0. In: Kreutzer, S., 2022. xlum: Read, Write, and Convert xlum Data. R package version 0.1.0.9000-40. 
+Kreutzer, S., 2022. convert_rlum2xlum(): Convert RLum-class objects to the XLUM format. Function version 0.1.0. In: Kreutzer, S., 2022. xlum: Read, Write, and Convert xlum Data. R package version 0.1.0.9000-45. 
 }
 
 \keyword{datagen}

@@ -29,7 +29,9 @@
 #'@seealso [Luminescence::RLum.Data-class], [write_xlum]
 #'
 #'@examples
-#'data(ExampleData.RLum.Analysis, envir = environment(), package = "Luminescence")
+#'data(ExampleData.RLum.Analysis,
+#' envir = environment(),
+#' package = "Luminescence")
 #'convert_rlum2xlum(IRSAR.RF.Data)
 #'
 #'@md
@@ -126,10 +128,7 @@ if(all(grepl("RLum\\.Data", vapply(rlum, class, "character"))))
         ## date
         attrs[["startDate"]] <- .toISODate(attrs[["startDate"]])
 
-      }
-
-      ## Risø BIN/BINX
-      if(any(grepl("BIN", x@originator))) {
+      } else if (any(grepl("BIN", x@originator))) {
         ## create parameter translation
         lookup <- c(
           DETECTOR_ID = "component",
@@ -147,17 +146,11 @@ if(all(grepl("RLum\\.Data", vapply(rlum, class, "character"))))
         attrs[["startDate"]] <- .toISODate(
           paste(c(x@info[c("DATE", "TIME")]), collapse = ""), "YYMMDDHH:MM:SS")
 
-      }
-
-      ## DAYBREAK
-      if(x@originator == "read_Daybreak2R") {
+      } else if(x@originator[1] == "read_Daybreak2R") {
         ## date
         attrs[["startDate"]] <- .toISODate(x@info[["Started"]], format = "Daybreak")
 
-      }
-
-      ## SUERC PORTABLE reader
-      if(x@originator == "read_PSL2R") {
+      } else if(x@originator[1] == "read_PSL2R") {
         str <-  paste(
           c(as.character(x@info[["settings"]][["Date"]]),
             x@info[["settings"]][["Time"]]),

@@ -5,13 +5,13 @@
   "description": "Support for the xlum-file format for exchange and long-term preservation of luminescence data.",
   "name": "xlum: Read, Write, and Convert xlum Data",
   "license": "https://spdx.org/licenses/GPL-3.0",
-  "version": "0.1.0.9000.40",
+  "version": "0.1.0.9000.45",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R Under development (unstable) (2022-03-29 r82022)",
+  "runtimePlatform": "R version 4.1.3 (2022-03-10)",
   "author": [
     {
       "@type": "Person",
@@ -103,7 +103,7 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "67.892KB",
+  "fileSize": "70.58KB",
   "codeRepository": "https://github.com/R-Lum/xlum",
   "releaseNotes": "https://github.com/R-Lum/xlum/blob/master/NEWS.md",
   "developmentStatus": "https://www.repostatus.org/#Concept"

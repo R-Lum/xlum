@@ -36,6 +36,6 @@ Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University (United K
 } 
 
 \section{How to cite}{
-Kreutzer, S., 2022. convert_Daybreak2xlum(): Convert Daybreak TXT and DAT files to XLUM. Function version 0.1.0. In: Kreutzer, S., 2022. xlum: Read, Write, and Convert xlum Data. R package version 0.1.0.9000-56. 
+Kreutzer, S., 2022. convert_Daybreak2xlum(): Convert Daybreak TXT and DAT files to XLUM. Function version 0.1.0. In: Kreutzer, S., 2022. xlum: Read, Write, and Convert XLUM Data. R package version 0.1.0.9000-61. 
 }
 

@@ -1,13 +1,15 @@
 Package: xlum
 Type: Package
-Title: Read, Write, and Convert xlum Data
-Version: 0.1.0.9000-56
+Title: Read, Write, and Convert XLUM Data
+Version: 0.1.0.9000-61
 Author: Sebastian Kreutzer [aut, cre] (<https://orcid.org/0000-0002-0734-2199>)
 Authors@R: c(
     person("Sebastian", "Kreutzer", role = c("aut", "cre"), email = "sebastian.kreutzer@aber.ac.uk", comment = c(ORCID = "0000-0002-0734-2199")))
 Maintainer: Sebastian Kreutzer <sebastian.kreutzer@aber.ac.uk>
-Description: Support for the xlum-file format for exchange and long-term
-    preservation of luminescence data.
+Description: Support for the XLUM-file format for exchange and long-term
+    preservation of luminescence data. Facilitated are the import and export 
+    of XLUM-files and the conversion from other ASCII and binary formats commonly 
+    used to store luminescence (dating) data.
 License: GPL-3
 Depends: 
   R (>= 4.1),

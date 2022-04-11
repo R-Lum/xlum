@@ -4,8 +4,10 @@
 #' \figure{xlum_logo.png}{options: width="75"}
 #' }
 #'
-#' @description Support for the xlum-file format for exchange and long-term
-#' preservation of luminescence data.
+#' @description Support for the XLUM-file format for exchange and long-term
+#' preservation of luminescence data. Facilitated are the import and export
+#' of XLUM-files and the conversion from other ASCII and binary formats commonly
+#' used to store luminescence (dating) data.
 #'
 #' @name xlum-package
 #'
@@ -38,8 +40,6 @@
 #' Between 2020--2022, the work of Sebastian Kreutzer as maintainer of the package has received funding
 #' from the European Union’s Horizon 2020 research and innovation programme under
 #' the Marie Skłodowska-Curie grant agreement No 844457 (CREDit).
-#'
-#' @references
 #'
 #' @keywords package
 #'

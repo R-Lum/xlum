@@ -1,6 +1,6 @@
-#'@title Write xlum files
+#'@title Write XLUM-files
 #'
-#'@description Create xlum files using [xml2::read_xml]
+#'@description Create XLUM-files using [xml2::read_xml]
 #'
 #'@param x `xlum_list`, [list], [xml2::xml_document-class] (**required**) : input object
 #'

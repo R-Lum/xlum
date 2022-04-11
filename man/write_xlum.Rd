@@ -2,7 +2,7 @@
 % Please edit documentation in R/write_xlum.R
 \name{write_xlum}
 \alias{write_xlum}
-\title{Write xlum files}
+\title{Write XLUM-files}
 \usage{
 write_xlum(x, file, ...)
 }
@@ -18,7 +18,7 @@ write_xlum(x, file, ...)
 Creates an XML-file with ending \verb{*.xlum}
 }
 \description{
-Create xlum files using \link[xml2:read_xml]{xml2::read_xml}
+Create XLUM-files using \link[xml2:read_xml]{xml2::read_xml}
 }
 \section{Function version}{
  0.1.0
@@ -40,7 +40,7 @@ Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University (united K
 } 
 
 \section{How to cite}{
-Kreutzer, S., 2022. write_xlum(): Write xlum files. Function version 0.1.0. In: Kreutzer, S., 2022. xlum: Read, Write, and Convert xlum Data. R package version 0.1.0.9000-45. 
+Kreutzer, S., 2022. write_xlum(): Write XLUM-files. Function version 0.1.0. In: Kreutzer, S., 2022. xlum: Read, Write, and Convert xlum Data. R package version 0.1.0.9000-56. 
 }
 
-\keyword{datagen}
+\keyword{IO}

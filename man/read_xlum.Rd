@@ -2,7 +2,7 @@
 % Please edit documentation in R/read_xlum.R
 \name{read_xlum}
 \alias{read_xlum}
-\title{Import xlum files}
+\title{Import XLUM files}
 \usage{
 read_xlum(file, verify = TRUE, output = "xlum_list")
 }
@@ -19,7 +19,7 @@ The output depends on the setting selected in \code{output}. It will
 be either an \link[xml2:oldclass]{xml2::xml_document}, \link{list}, or a \link{list} of class \code{xlum_list}.
 }
 \description{
-Imports xlum files using \link[xml2:read_xml]{xml2::read_xml}. Comes with a few
+Imports XLUM-files using \link[xml2:read_xml]{xml2::read_xml}. Comes with a few
 convenience features, such as the transformation of string lists to numeric
 vectors where meaningful.
 }
@@ -50,7 +50,7 @@ Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University (United K
 } 
 
 \section{How to cite}{
-Kreutzer, S., 2022. read_xlum(): Import xlum files. Function version 0.1.0. In: Kreutzer, S., 2022. xlum: Read, Write, and Convert xlum Data. R package version 0.1.0.9000-45. 
+Kreutzer, S., 2022. read_xlum(): Import XLUM files. Function version 0.1.0. In: Kreutzer, S., 2022. xlum: Read, Write, and Convert xlum Data. R package version 0.1.0.9000-56. 
 }
 
-\keyword{datagen}
+\keyword{IO}

@@ -1,4 +1,4 @@
-#'@title Convert Daybreak TXT and DAT files to xlum
+#'@title Convert Daybreak TXT and DAT files to XLUM
 #'
 #'@decription Wrapped function to quickly convert Daybreak files
 #'to `xlum` (files)

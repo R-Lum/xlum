@@ -1,4 +1,4 @@
-#'@title Convert Risø BIN/BINX to xlum
+#'@title Convert Risø BIN/BINX to XLUM
 #'
 #'@decription Wrapped function to quickly convert BIN/BINX files
 #'to `xlum` (files)

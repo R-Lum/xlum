@@ -1,6 +1,6 @@
-#'@title Import xlum files
+#'@title Import XLUM files
 #'
-#'@description Imports xlum files using [xml2::read_xml]. Comes with a few
+#'@description Imports XLUM-files using [xml2::read_xml]. Comes with a few
 #'convenience features, such as the transformation of string lists to numeric
 #'vectors where meaningful.
 #'

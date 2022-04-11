@@ -31,7 +31,7 @@
 #'
 #'@seealso [xml2::read_xml], [validate_xlum], [write_xlum]
 #'
-#'@keywords datagen
+#'@keywords IO
 #'
 #'@examples
 #'file <- system.file("extdata/xlum_example.xlum", package="xlum")

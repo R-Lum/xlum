@@ -17,7 +17,7 @@
 #'
 #'@author Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University (united Kingdom)
 #'
-#'@keywords datagen
+#'@keywords IO
 #'
 #'@examples
 #'file <- system.file("extdata/xlum_prototype.xlum", package="xlum")

@@ -20,8 +20,10 @@
 #'
 #'@examples
 #'
+#'\dontrun{
 #'file <- system.file("extdata/BINfile_V8.binx", package = "Luminescence")
 #'convert_binx2xlum(file)
+#'}
 #'
 #'@md
 #'@export

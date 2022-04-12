@@ -36,6 +36,6 @@ Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University (United K
 } 
 
 \section{How to cite}{
-Kreutzer, S., 2022. convert_xsyg2xlum(): Convert Freiberg Instruments XSYG files to XLUM. Function version 0.1.0. In: Kreutzer, S., 2022. xlum: Read, Write, and Convert XLUM Data. R package version 0.1.0.9000-63. 
+Kreutzer, S., 2022. convert_xsyg2xlum(): Convert Freiberg Instruments XSYG files to XLUM. Function version 0.1.0. In: Kreutzer, S., 2022. xlum: Read, Write, and Convert XLUM Data. R package version 0.1.0.9000-64. 
 }
 

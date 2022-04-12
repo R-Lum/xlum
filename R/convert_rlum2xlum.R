@@ -72,8 +72,8 @@ if(all(grepl("RLum\\.Data", vapply(rlum, class, "character"))))
   .create_node_values <- function(x){
     switch(class(x)[1],
       "RLum.Data.Curve" = node_text <- .convert2character(x@data[,2]),
-       "RLum.Data.Image" = node_text <- .convert2character(as.numeric(x@data)),
-       "RLum.Data.Spectrum" = node_text <- .convert2character(as.numeric(x@data)))
+      "RLum.Data.Image" = node_text <- .convert2character(as.numeric(x@data)),
+      "RLum.Data.Spectrum" = node_text <- .convert2character(as.numeric(x@data)))
 
   }
 
@@ -126,7 +126,7 @@ if(all(grepl("RLum\\.Data", vapply(rlum, class, "character"))))
         }
 
         ## date
-        attrs[["startDate"]] <- .toISODate(attrs[["startDate"]])
+        attrs[["startDate"]] <- .toISODate(attrs[["startDate"]], format = "lexsyg")
 
       } else if (any(grepl("BIN", x@originator))) {
         ## create parameter translation
@@ -144,7 +144,7 @@ if(all(grepl("RLum\\.Data", vapply(rlum, class, "character"))))
 
         ## date
         attrs[["startDate"]] <- .toISODate(
-          paste(c(x@info[c("DATE", "TIME")]), collapse = ""), "YYMMDDHH:MM:SS")
+          paste(c(x@info[c("DATE", "TIME")]), collapse = ""), "Risoe")
 
       } else if(x@originator[1] == "read_Daybreak2R") {
         ## date

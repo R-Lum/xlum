@@ -42,8 +42,16 @@ test_that(".get_element_index", {
 test_that(".toISODate", {
   testthat::skip_on_cran()
 
-  expect_type(.toISODate("20221111150310"), "character")
-  expect_type(.toISODate("201020", format = "YYMMDD"), "character")
+  t <- expect_type(.toISODate("20221111150310", format = "lexsyg"), "character")
+  expect_true(!is.na(t))
+  t <- expect_type(.toISODate("20102012:12:12", format = "Risoe"), "character")
+  expect_true(!is.na(t))
+  t <- expect_type(.toISODate("06/12/2021 12:12:12", format = "Daybreak"), "character")
+  expect_true(!is.na(t))
+  t <- expect_type(.toISODate("2021-01-0112:12:12", format = "psl"), "character")
+  expect_true(!is.na(t))
+  expect_error(.toISODate("2021-01-0112:12:12", format = "error"),
+               regexp = "\\[\\.toISODate\\(\\)\\] unknown date format")
 
 })
 # +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#

@@ -161,18 +161,15 @@
 #'
 #'@md
 #'@noRd
-.toISODate <- function(x, format = "MMMMYYDDHHMMSS"){
-  if (format[1] == "MMMMYYDDHHMMSS")
-    return(format(strptime(x, "%Y%m%d%H%M%S", tz = "UTC"), "%Y-%m-%dT%X%Z"))
+.toISODate <- function(x, format = "default"){
+  switch(format,
+    "lexsyg"  = return(format(strptime(x, "%Y%m%d%H%M%S", tz = "UTC"), "%Y-%m-%dT%X%Z")),
+    "Risoe"  = return(format(strptime(x, "%y%m%d%H:%M:%S", tz = "UTC"), "%Y-%m-%dT%X%Z")),
+    "Daybreak" = return(format(strptime(x, "%d/%m/%Y %H:%M:%S", tz = "UTC"), "%Y-%m-%dT%X%Z")),
+    "psl"  =  return(format(strptime(x, "%Y-%m-%d%H:%M:%S", tz = "UTC"), "%Y-%m-%dT%X%Z")),
+    stop("[.toISODate()] unknown date format", call. = FALSE)
 
-  if (format[1] == "YYMMDDHH:MM:SS")
-    return(format(strptime(x, "%y%m%d%H:%M:%S", tz = "UTC"), "%Y-%m-%dT%X%Z"))
-
-  if (format[1] == "Daybreak")
-    return(format(strptime(x, "%d/%m/%Y %H:%M:%S", tz = "UTC"), "%Y-%m-%dT%X%Z"))
-
-  if (format[1] == "psl")
-    return(format(strptime(x, "%Y-%m-%d%H:%M:%S", tz = "UTC"), "%Y-%m-%dT%X%Z"))
+  )
 
 }
 

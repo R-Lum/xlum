@@ -5,19 +5,19 @@
   "description": "Support for the XLUM-file format for exchange and long-term preservation of luminescence data. Facilitated are the import and export of XLUM-files and the conversion from other ASCII and binary formats commonly used to store luminescence (dating) data.",
   "name": "xlum: Read, Write, and Convert XLUM Data",
   "license": "https://spdx.org/licenses/GPL-3.0",
-  "version": "0.1.0.9000.64",
+  "version": "0.1.0.9000.65",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R version 4.1.3 (2022-03-10)",
+  "runtimePlatform": "R Under development (unstable) (2022-05-18 r82376)",
   "author": [
     {
       "@type": "Person",
       "givenName": "Sebastian",
       "familyName": "Kreutzer",
-      "email": "sebastian.kreutzer@aber.ac.uk",
+      "email": "sebastian.kreutzer@uni-heidelberg.de",
       "@id": "https://orcid.org/0000-0002-0734-2199"
     }
   ],
@@ -26,7 +26,7 @@
       "@type": "Person",
       "givenName": "Sebastian",
       "familyName": "Kreutzer",
-      "email": "sebastian.kreutzer@aber.ac.uk",
+      "email": "sebastian.kreutzer@uni-heidelberg.de",
       "@id": "https://orcid.org/0000-0002-0734-2199"
     }
   ],
@@ -103,7 +103,7 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "82.097KB",
+  "fileSize": "81.899KB",
   "codeRepository": "https://github.com/R-Lum/xlum",
   "releaseNotes": "https://github.com/R-Lum/xlum/blob/master/NEWS.md",
   "developmentStatus": "https://www.repostatus.org/#Concept"

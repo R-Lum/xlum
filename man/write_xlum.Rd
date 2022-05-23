@@ -40,7 +40,7 @@ Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University (united K
 } 
 
 \section{How to cite}{
-Kreutzer, S., 2022. write_xlum(): Write XLUM-files. Function version 0.1.0. In: Kreutzer, S., 2022. xlum: Read, Write, and Convert XLUM Data. R package version 0.1.0.9000-64. 
+Kreutzer, S., 2022. write_xlum(): Write XLUM-files. Function version 0.1.0. In: Kreutzer, S., 2022. xlum: Read, Write, and Convert XLUM Data. R package version 0.1.0.9000-65. 
 }
 
 \keyword{IO}

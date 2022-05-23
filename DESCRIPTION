@@ -1,7 +1,7 @@
 Package: xlum
 Type: Package
 Title: Read, Write, and Convert XLUM Data
-Version: 0.1.0.9000-64
+Version: 0.1.0.9000-65
 Author: Sebastian Kreutzer [aut, cre] (<https://orcid.org/0000-0002-0734-2199>)
 Authors@R: c(
     person("Sebastian", "Kreutzer", role = c("aut", "cre"), email = "sebastian.kreutzer@uni-heidelberg.de", comment = c(ORCID = "0000-0002-0734-2199")))
@@ -24,7 +24,7 @@ Suggests:
 Encoding: UTF-8
 Language: en-GB
 LazyData: true
-RoxygenNote: 7.1.2
+RoxygenNote: 7.2.0
 Collate: 
     'convert_Daybreak2xlum.R'
     'convert_binx2xlum.R'

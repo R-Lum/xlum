@@ -18,7 +18,7 @@
               </xs:restriction>
             </xs:simpleType>
           </xs:attribute>
-          <xs:attribute type="xs:double" name="duaration" use="required"/>
+          <xs:attribute type="xs:double" name="duration" use="required"/>
           <xs:attribute type="xs:double" name="offset" use="required"/>
           <xs:attribute name="xValues" use="required">
             <xs:simpleType>
@@ -61,7 +61,7 @@
           <xs:attribute type="xs:string" name="yUnit" use="required"/>
           <xs:attribute type="xs:string" name="vUnit" use="required"/>
           <xs:attribute type="xs:string" name="tUnit" use="required"/>
-          <xs:attribute type="xs:short" name="detectionWindow" use="optional"/>
+          <xs:attribute type="xs:string" name="detectionWindow" use="optional"/>
           <xs:attribute type="xs:string" name="filter" use="optional"/>
           <xs:attribute type="xs:string" name="comment" use="optional"/>
           <xs:attribute type="xs:string" name="state" use="required"/>

@@ -32,14 +32,15 @@
 #'
 #' **Package maintainer**
 #'
-#' Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University (United Kingdom),\cr
-#' \email{sebastian.kreutzer@@aber.ac.uk}
+#' Sebastian Kreutzer, Institute of Geography, Heidelberg University (Germany),\cr
+#' \email{sebastian.kreutzer@@uni-heidelberg.de}
 #'
 #' **Funding**
 #'
 #' Between 2020--2022, the work of Sebastian Kreutzer as maintainer of the package has received funding
 #' from the European Union’s Horizon 2020 research and innovation programme under
-#' the Marie Skłodowska-Curie grant agreement No 844457 (CREDit).
+#' the Marie Skłodowska-Curie grant agreement No 844457 (CREDit), and the
+#' work was carried out at the Geography & Earth Sciences, Aberystwyth University (United Kingdom)
 #'
 #' @keywords package
 #'

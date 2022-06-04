@@ -42,6 +42,6 @@ Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University (United K
 } 
 
 \section{How to cite}{
-Kreutzer, S., 2022. convert_binx2xlum(): Convert Risø BIN/BINX to XLUM. Function version 0.1.0. In: Kreutzer, S., 2022. xlum: Read, Write, and Convert XLUM Data. R package version 0.1.0.9000-65. 
+Kreutzer, S., 2022. convert_binx2xlum(): Convert Risø BIN/BINX to XLUM. Function version 0.1.0. In: Kreutzer, S., 2022. xlum: Read, Write, and Convert XLUM Data. R package version 0.1.0.9000-73. 
 }
 

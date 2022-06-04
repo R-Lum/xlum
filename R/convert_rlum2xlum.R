@@ -178,7 +178,8 @@ if(all(grepl("RLum\\.Data", vapply(rlum, class, "character"))))
   xml2::xml_attrs(node_sample) <- prototype_attrs[["sample"]]
 
     ##set a few attributes if applicable
-    xml2::xml_attr(node_sample, "name") <- unlist(rlum[[1]]@records[[1]]@info[c("SAMPLE")])[1]
+    if(!is.null(unlist(rlum[[1]]@records[[1]]@info[c("SAMPLE")])[1]))
+      xml2::xml_attr(node_sample, "name") <- unlist(rlum[[1]]@records[[1]]@info[c("SAMPLE")])[1]
 
   ## add <sequence/>
   for (s in seq_along(rlum)) {

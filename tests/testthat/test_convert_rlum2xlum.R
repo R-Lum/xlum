@@ -33,9 +33,10 @@ test_that("read_xlum()", {
     expect_s3_class(convert_rlum2xlum(RLum.Data.Spectrum), "xml_document")
 
   ## use BIN/BINX data
-  file <- system.file("extdata/BINfile_V8.binx", package = "Luminescence")
-  BINfile <- Luminescence::read_BIN2R(file, fastForward = TRUE, verbose = FALSE)
-  expect_s3_class(convert_rlum2xlum(BINfile), "xml_document")
+  ## TODO activate after Luminescence was shipped
+  # file <- system.file("extdata/BINfile_V8.binx", package = "Luminescence")
+  # BINfile <- Luminescence::read_BIN2R(file, fastForward = TRUE, verbose = FALSE)
+  # expect_s3_class(convert_rlum2xlum(BINfile), "xml_document")
 
   ## Daybreak
   file <- system.file("extdata/Daybreak_TestFile.txt", package = "Luminescence")

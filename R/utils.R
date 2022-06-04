@@ -132,7 +132,7 @@
 #'@md
 #'@noRd
 .regmatches <- function(x, match, ignore.case = FALSE, invert = FALSE){
-  trimws(
+  t <- trimws(
     regmatches(
       x = x,
       m = regexpr(
@@ -141,6 +141,11 @@
         ignore.case = ignore.case[1],
         perl = TRUE),
       invert = invert[1]))
+
+  if(length(t) == 0)
+    return(NA_character_)
+  else
+    return(t)
 }
 # +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#
 #'@title Character strings to ISO 8601-1:2019 date format

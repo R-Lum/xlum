@@ -63,4 +63,7 @@ test_that(".regmatches", {
   t <- expect_type(.regmatches(text, "(?<=\\()[a-z]+"), "character")
   expect_equal(t, "extract")
 
+  ## check for NA
+  expect_true(is.na(.regmatches(text, "error")))
+
 })

@@ -86,6 +86,7 @@
             <xs:enumeration value="camera"/>
             <xs:enumeration value="TL"/>
             <xs:enumeration value="ITL"/>
+            <xs:enumeration value="IRSL"/>
             <xs:enumeration value="TM-OSL"/>
             <xs:enumeration value="RF"/>
             <xs:enumeration value="UV-RF"/>

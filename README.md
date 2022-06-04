@@ -71,7 +71,7 @@ for more details.
 The [development of xlum](https://github.com/R-Lum/xlum) benefited
 received funding from the European Union’s Horizon 2020 research and
 innovation programme under the Marie Skłodowska-Curie grant agreement No
-844457 (project: CREDit).
+844457 (project: [CREDit](https://cordis.europa.eu/project/id/844457)).
 
 ## Related projects
 

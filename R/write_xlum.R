@@ -41,7 +41,7 @@ write_xlum <- function(
 
 # Sanitize file -----------------------------------------------------------
   ## check for ending
-  if(!grepl("(.)+\\.xlum", file, perl = TRUE))
+  if(!grepl("^(.*)\\.xlum$", file, perl = TRUE))
     file <- normalizePath(paste0(file, ".xlum"), mustWork = FALSE)
 
 # Export depending on the input -------------------------------------------

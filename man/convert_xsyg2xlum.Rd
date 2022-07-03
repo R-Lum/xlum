@@ -17,7 +17,8 @@ Depending on the setting. If \code{out_file == NULL} an \link[xml2:oldclass]{xml
 if file is set the function attempts to write an \verb{*.xlum} file`.
 }
 \description{
-Convert Freiberg Instruments XSYG files to XLUM
+Wrapped function to quickly convert Freiberg Instruments XSYG-files
+to \code{xlum} (files)
 }
 \section{Function version}{
  0.1.0

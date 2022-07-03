@@ -20,7 +20,8 @@ Depending on the setting. If \code{out_file == NULL} an \link[xml2:oldclass]{xml
 if file is set the function attempts to write an \verb{*.xlum} file`.
 }
 \description{
-Convert Risø BIN/BINX to XLUM
+Wrapped function to quickly convert BIN/BINX files
+to \code{xlum} (files)
 }
 \section{Function version}{
  0.1.0

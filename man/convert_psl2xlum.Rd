@@ -17,7 +17,8 @@ Depending on the setting. If \code{out_file == NULL} an \link[xml2:oldclass]{xml
 if file is set the function attempts to write an \verb{*.xlum} file`.
 }
 \description{
-Convert SUERC PSL-files to XLUM
+Wrapped function to quickly convert PSL files
+to \code{xlum} (files) from the portable luminescence system produced by the SUERC
 }
 \section{Function version}{
  0.1.0

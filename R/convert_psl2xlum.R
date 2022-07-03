@@ -1,6 +1,6 @@
 #'@title Convert SUERC PSL-files to XLUM
 #'
-#'@decription Wrapped function to quickly convert PSL files
+#'@description Wrapped function to quickly convert PSL files
 #'to `xlum` (files) from the portable luminescence system produced by the SUERC
 #'
 #'@param file [character] (**required**): file

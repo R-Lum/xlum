@@ -8,7 +8,9 @@
 #'@param out_file [character] (*optional*): output file, if set a file
 #'output is created
 #'
-#'@author Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University (United Kingdom)
+#'@param ... support for a limited number of additional arguments to be forwarded to [Luminescence::read_BIN2R]: `position`, `n.records`
+#'
+#'@author Sebastian Kreutzer, Institute of Geography, Heidelberg University, Heidelberg (Germany)
 #'
 #'@section Function version: 0.1.0
 #'
@@ -29,11 +31,24 @@
 #'@export
 convert_binx2xlum <- function(
     file,
-    out_file = NULL
+    out_file = NULL,
+    ...
 ){
+  ## additional argument handling
+  import_args <- modifyList(
+    x = list(
+      position = NULL,
+      n.records = NULL
+    ),
+    val = list(...),
+    keep.null = TRUE)
+
+  ## import
   rlum <-
     Luminescence::read_BIN2R(
       file = file,
+      position = import_args$position,
+      n.records = import_args$n.records,
       fastForward = TRUE,
       verbose = FALSE)
   convert_rlum2xlum(rlum, out_file)

@@ -162,7 +162,7 @@
 #'@return Returns a correctly formatted character
 #'
 #'@examples
-#'.toISODate("20221005110501")
+#'.toISODate("20221005110501", "lexsyg")
 #'
 #'@md
 #'@noRd

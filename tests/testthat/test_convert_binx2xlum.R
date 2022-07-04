@@ -10,4 +10,7 @@ test_that("convert_binx2_xlum()", {
   ## BIN
   #testthat::expect_s3_class(convert_bin2xlum(file), "xml_document")
 
+  ## arguments
+  #testthat::expect_s3_class(convert_binx2xlum(file, position = 1), "xml_document")
+
 })

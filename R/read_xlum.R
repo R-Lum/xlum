@@ -25,7 +25,7 @@
 #'@return The output depends on the setting selected in `output`. It will
 #'be either an [xml2::xml_document-class], [list], or a [list] of class `xlum_list`.
 #'
-#'@author Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University (United Kingdom)
+#'@author Sebastian Kreutzer, Institute of Geography, Heidelberg University, Heidelberg (Germany)
 #'
 #'@section Function version: 0.1.0
 #'

@@ -8,7 +8,7 @@
 #'
 #'@param l [numeric] [list] (**required**): list of numeric vectors (see example)
 #'
-#'@author Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University (United Kingdom)
+#'@author Sebastian Kreutzer, Institute of Geography, Heidelberg University, Heidelberg (Germany)
 #'
 #'@return [list] of [numeric] vectors
 #'
@@ -39,7 +39,7 @@
 #'
 #'@param l [character] [list] (**required**): list of character vectors (see example)
 #'
-#'@author Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University (United Kingdom)
+#'@author Sebastian Kreutzer, Institute of Geography, Heidelberg University, Heidelberg (Germany)
 #'
 #'@return [list] of [numeric] vectors
 #'
@@ -70,7 +70,7 @@
 #'
 #'@param match [character] (**required**): named list element in question
 #'
-#'@author Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University (United Kingdom)
+#'@author Sebastian Kreutzer, Institute of Geography, Heidelberg University, Heidelberg (Germany)
 #'
 #'@return [list] of index vectors. The length of vector depends index level where `match` was found
 #'
@@ -123,7 +123,7 @@
 #'
 #'@return Matched expression
 #'
-#'@author Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University (United Kingdom)
+#'@author Sebastian Kreutzer, Institute of Geography, Heidelberg University, Heidelberg (Germany)
 #'
 #'@examples
 #'t <- c("Text to (extract )")
@@ -157,7 +157,7 @@
 #'
 #'@param format [character] (*with default*): fixed formats
 #'
-#'@author Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University (United Kingdom)
+#'@author Sebastian Kreutzer, Institute of Geography, Heidelberg University, Heidelberg (Germany)
 #'
 #'@return Returns a correctly formatted character
 #'

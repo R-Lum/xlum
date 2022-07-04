@@ -19,6 +19,9 @@
 #'@seealso [convert_rlum2xlum], [Luminescence::read_XSYG2R]
 #'
 #'@examples
+#'## load package example data
+#'## for loading own data use
+#'## file <- file.choose()
 #'file <- system.file("extdata/XSYG_file.xsyg", package = "Luminescence")
 #'convert_xsyg2xlum(file)
 #'

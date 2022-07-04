@@ -19,6 +19,9 @@
 #'@seealso [convert_rlum2xlum], [Luminescence::read_Daybreak2R]
 #'
 #'@examples
+#'## load package example data
+#'## for loading own data use
+#'## file <- file.choose()
 #'file <- system.file("extdata/Daybreak_TestFile.txt", package = "Luminescence")
 #'convert_Daybreak2xlum(file)
 #'

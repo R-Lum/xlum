@@ -25,6 +25,9 @@ to \code{xlum} (files)
 }
 
 \examples{
+## load package example data
+## for loading own data use
+## file <- file.choose()
 file <- system.file("extdata/XSYG_file.xsyg", package = "Luminescence")
 convert_xsyg2xlum(file)
 
@@ -33,10 +36,10 @@ convert_xsyg2xlum(file)
 \link{convert_rlum2xlum}, \link[Luminescence:read_XSYG2R]{Luminescence::read_XSYG2R}
 }
 \author{
-Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University (United Kingdom)
+Sebastian Kreutzer, Institute of Geography, Heidelberg University, Heidelberg (Germany)
 } 
 
 \section{How to cite}{
-Kreutzer, S., 2022. convert_xsyg2xlum(): Convert Freiberg Instruments XSYG files to XLUM. Function version 0.1.0. In: Kreutzer, S., 2022. xlum: Read, Write, and Convert XLUM Data. R package version 0.1.0.9000-77. 
+Kreutzer, S., 2022. convert_xsyg2xlum(): Convert Freiberg Instruments XSYG files to XLUM. Function version 0.1.0. In: Kreutzer, S., 2022. xlum: Read, Write, and Convert XLUM Data. R package version 0.1.0.9000-91. 
 }
 

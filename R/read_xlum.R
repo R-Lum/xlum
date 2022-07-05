@@ -35,7 +35,7 @@
 #'
 #'@examples
 #'file <- system.file("extdata/xlum_example.xlum", package="xlum")
-#'read_xlum(file)
+# read_xlum(file)
 #'
 #'@md
 #'@export

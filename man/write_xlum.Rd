@@ -36,11 +36,11 @@ write_xlum(xlum_data, out_file)
 \link[xml2:write_xml]{xml2::write_xml}, \link{read_xlum}
 }
 \author{
-Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University (united Kingdom)
+Sebastian Kreutzer, Institute of Geography, Heidelberg University, Heidelberg (Germany)
 } 
 
 \section{How to cite}{
-Kreutzer, S., 2022. write_xlum(): Write XLUM-files. Function version 0.1.0. In: Kreutzer, S., 2022. xlum: Read, Write, and Convert XLUM Data. R package version 0.1.0.9000-77. 
+Kreutzer, S., 2022. write_xlum(): Write XLUM-files. Function version 0.1.0. In: Kreutzer, S., 2022. xlum: Read, Write, and Convert XLUM Data. R package version 0.1.0.9000-91. 
 }
 
 \keyword{IO}

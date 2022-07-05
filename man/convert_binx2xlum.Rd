@@ -5,7 +5,7 @@
 \alias{convert_bin2xlum}
 \title{Convert Risø BIN/BINX to XLUM}
 \usage{
-convert_binx2xlum(file, out_file = NULL)
+convert_binx2xlum(file, out_file = NULL, ...)
 
 convert_bin2xlum(file, out_file = NULL)
 }
@@ -14,6 +14,8 @@ convert_bin2xlum(file, out_file = NULL)
 
 \item{out_file}{\link{character} (\emph{optional}): output file, if set a file
 output is created}
+
+\item{...}{support for a limited number of additional arguments to be forwarded to \link[Luminescence:read_BIN2R]{Luminescence::read_BIN2R}: \code{position}, \code{n.records}}
 }
 \value{
 Depending on the setting. If \code{out_file == NULL} an \link[xml2:oldclass]{xml2::xml_document} object is returned,
@@ -39,10 +41,10 @@ convert_binx2xlum(file)
 \link{convert_rlum2xlum}, \link[Luminescence:read_BIN2R]{Luminescence::read_BIN2R}
 }
 \author{
-Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University (United Kingdom)
+Sebastian Kreutzer, Institute of Geography, Heidelberg University, Heidelberg (Germany)
 } 
 
 \section{How to cite}{
-Kreutzer, S., 2022. convert_binx2xlum(): Convert Risø BIN/BINX to XLUM. Function version 0.1.0. In: Kreutzer, S., 2022. xlum: Read, Write, and Convert XLUM Data. R package version 0.1.0.9000-77. 
+Kreutzer, S., 2022. convert_binx2xlum(): Convert Risø BIN/BINX to XLUM. Function version 0.1.0. In: Kreutzer, S., 2022. xlum: Read, Write, and Convert XLUM Data. R package version 0.1.0.9000-91. 
 }
 

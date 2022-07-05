@@ -2,16 +2,16 @@
   "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
   "@type": "SoftwareSourceCode",
   "identifier": "xlum",
-  "description": "Support for the XLUM-file format for exchange and long-term preservation of luminescence data. Facilitated are the import and export of XLUM-files and the conversion from other ASCII and binary formats commonly used to store luminescence (dating) data.",
+  "description": "Support for the XLUM file format for exchange and long-term preservation of luminescence data. Facilitated are the import and export of XLUM files and the conversion from other formats commonly used to store luminescence (dating) data.",
   "name": "xlum: Read, Write, and Convert XLUM Data",
   "license": "https://spdx.org/licenses/GPL-3.0",
-  "version": "0.1.0.9000.77",
+  "version": "0.1.0.9000.91",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R Under development (unstable) (2022-05-18 r82376)",
+  "runtimePlatform": "R Under development (unstable) (2022-06-27 r82528)",
   "author": [
     {
       "@type": "Person",
@@ -19,6 +19,14 @@
       "familyName": "Kreutzer",
       "email": "sebastian.kreutzer@uni-heidelberg.de",
       "@id": "https://orcid.org/0000-0002-0734-2199"
+    }
+  ],
+  "contributor": [
+    {
+      "@type": "Person",
+      "givenName": "Christoph",
+      "familyName": "Burow",
+      "@id": "https://orcid.org/0000-0002-5023-4046"
     }
   ],
   "maintainer": [
@@ -103,7 +111,7 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "82.176KB",
+  "fileSize": "85.102KB",
   "codeRepository": "https://github.com/R-Lum/xlum",
   "releaseNotes": "https://github.com/R-Lum/xlum/blob/master/NEWS.md",
   "developmentStatus": "https://www.repostatus.org/#Concept"

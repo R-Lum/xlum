@@ -43,11 +43,11 @@ convert_rlum2xlum(IRSAR.RF.Data)
 \link[Luminescence:RLum.Data-class]{Luminescence::RLum.Data}, \link{write_xlum}
 }
 \author{
-Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University (United Kingdom)
+Sebastian Kreutzer, Institute of Geography, Heidelberg University, Heidelberg (Germany)
 } 
 
 \section{How to cite}{
-Kreutzer, S., 2022. convert_rlum2xlum(): Convert RLum-class objects to the XLUM format. Function version 0.1.0. In: Kreutzer, S., 2022. xlum: Read, Write, and Convert XLUM Data. R package version 0.1.0.9000-77. 
+Kreutzer, S., 2022. convert_rlum2xlum(): Convert RLum-class objects to the XLUM format. Function version 0.1.0. In: Kreutzer, S., 2022. xlum: Read, Write, and Convert XLUM Data. R package version 0.1.0.9000-91. 
 }
 
 \keyword{datagen}

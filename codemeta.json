@@ -5,7 +5,7 @@
   "description": "Support for the XLUM file format for exchange and long-term preservation of luminescence data. Facilitated are the import and export of XLUM files and the conversion from other formats commonly used to store luminescence (dating) data.",
   "name": "xlum: Read, Write, and Convert XLUM Data",
   "license": "https://spdx.org/licenses/GPL-3.0",
-  "version": "0.1.0.9000.91",
+  "version": "0.1.0.9000.98",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
@@ -85,6 +85,19 @@
     },
     "4": {
       "@type": "SoftwareApplication",
+      "identifier": "base64enc",
+      "name": "base64enc",
+      "version": ">= 0.1",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=base64enc"
+    },
+    "5": {
+      "@type": "SoftwareApplication",
       "identifier": "Luminescence",
       "name": "Luminescence",
       "version": ">= 0.9.19",
@@ -96,7 +109,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=Luminescence"
     },
-    "5": {
+    "6": {
       "@type": "SoftwareApplication",
       "identifier": "xml2",
       "name": "xml2",
@@ -111,7 +124,7 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "85.102KB",
+  "fileSize": "89.497KB",
   "codeRepository": "https://github.com/R-Lum/xlum",
   "releaseNotes": "https://github.com/R-Lum/xlum/blob/master/NEWS.md",
   "developmentStatus": "https://www.repostatus.org/#Concept"

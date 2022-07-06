@@ -47,7 +47,7 @@ Sebastian Kreutzer, Institute of Geography, Heidelberg University, Heidelberg (G
 } 
 
 \section{How to cite}{
-Kreutzer, S., 2022. convert_rlum2xlum(): Convert RLum-class objects to the XLUM format. Function version 0.1.0. In: Kreutzer, S., 2022. xlum: Read, Write, and Convert XLUM Data. R package version 0.1.0.9000-91. 
+Kreutzer, S., 2022. convert_rlum2xlum(): Convert RLum-class objects to the XLUM format. Function version 0.1.0. In: Kreutzer, S., 2022. xlum: Read, Write, and Convert XLUM Data. R package version 0.1.0.9000-98. 
 }
 
 \keyword{datagen}

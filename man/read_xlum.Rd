@@ -39,6 +39,7 @@ for level \verb{<curve>} are transposed into \link{numeric} vectors for better h
 
 \examples{
 file <- system.file("extdata/xlum_example.xlum", package="xlum")
+read_xlum(file)
 
 }
 \seealso{
@@ -49,7 +50,7 @@ Sebastian Kreutzer, Institute of Geography, Heidelberg University, Heidelberg (G
 } 
 
 \section{How to cite}{
-Kreutzer, S., 2022. read_xlum(): Import XLUM files. Function version 0.1.0. In: Kreutzer, S., 2022. xlum: Read, Write, and Convert XLUM Data. R package version 0.1.0.9000-91. 
+Kreutzer, S., 2022. read_xlum(): Import XLUM files. Function version 0.1.0. In: Kreutzer, S., 2022. xlum: Read, Write, and Convert XLUM Data. R package version 0.1.0.9000-98. 
 }
 
 \keyword{IO}

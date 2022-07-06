@@ -4,13 +4,17 @@
 \alias{write_xlum}
 \title{Write XLUM-files}
 \usage{
-write_xlum(x, file, ...)
+write_xlum(x, file, encode_base64 = FALSE, ...)
 }
 \arguments{
 \item{x}{\code{xlum_list}, \link{list}, \link[xml2:oldclass]{xml2::xml_document} (\strong{required}) : input object}
 
 \item{file}{\link{character} (\strong{required}): valid file path and file name with ending
 \code{.xlum} (will be add automatically if needed)}
+
+\item{encode_base64}{\link{logical} (\emph{with default}): enable/disable base64 encoding for values
+in the \verb{<curve/>} node. Please note that this parameter works only if the input is of
+class \code{xlum_list}}
 
 \item{...}{further arguments to be passed to \link[xml2:write_xml]{xml2::write_xml}}
 }
@@ -40,7 +44,7 @@ Sebastian Kreutzer, Institute of Geography, Heidelberg University, Heidelberg (G
 } 
 
 \section{How to cite}{
-Kreutzer, S., 2022. write_xlum(): Write XLUM-files. Function version 0.1.0. In: Kreutzer, S., 2022. xlum: Read, Write, and Convert XLUM Data. R package version 0.1.0.9000-91. 
+Kreutzer, S., 2022. write_xlum(): Write XLUM-files. Function version 0.1.0. In: Kreutzer, S., 2022. xlum: Read, Write, and Convert XLUM Data. R package version 0.1.0.9000-98. 
 }
 
 \keyword{IO}

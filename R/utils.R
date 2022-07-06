@@ -8,6 +8,8 @@
 #'
 #'@param l [numeric] [list] (**required**): list of numeric vectors (see example)
 #'
+#'@param encode_base64 [logical] (*with default*): enable/disable base64 encoding
+#'
 #'@author Sebastian Kreutzer, Institute of Geography, Heidelberg University, Heidelberg (Germany)
 #'
 #'@return [list] of [numeric] vectors
@@ -19,16 +21,29 @@
 #'
 #'@md
 #'@noRd
-.convert2character <- function(l, decode_base64 = FALSE){
+.convert2character <- function(l, encode_base64 = FALSE){
   ## handle NA values
   if (anyNA(l)) l[which(is.na(l))] <- "0"
 
-  ##list
-  if(class(l)[1] == "list")
-    return(lapply(l, function(x) paste(as.character(x), collapse = " ")))
+  ##list and non-list
+  if(inherits(l, "list")) {
+    out <- lapply(l, function(x) paste(as.character(x), collapse = " "))
 
-  ##non-list
-  return(paste(as.character(l), collapse = " "))
+  } else {
+    out <- paste(as.character(l), collapse = " ")
+
+  }
+
+  ## base64 encoding
+  if(encode_base64) {
+   out <- switch(class(out)[1],
+      "list" = lapply(out, function(x) base64enc::base64encode(charToRaw(x))),
+      "character" = base64enc::base64encode(charToRaw(out))
+    )
+
+  }
+
+  return(out)
 
 }
 # +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#

@@ -4,7 +4,7 @@
 
 #'@md
 #'@export
-as.list.xlum_list <- function(x, ...){
+as.list.xlum_list <- function(x, encode_base64 = FALSE, ...){
   ## convert values back to character otherwise it does not work
   ## properly
   curve_index <- .get_element_index(x)
@@ -24,7 +24,7 @@ as.list.xlum_list <- function(x, ...){
 
   ## convert values
   #print(curve_values)
-  curve_values <- .convert2character(curve_values)
+  curve_values <- .convert2character(curve_values, encode_base64 = encode_base64)
   tValues <- .convert2character(tValues)
   xValues <- .convert2character(xValues)
   yValues <- .convert2character(yValues)

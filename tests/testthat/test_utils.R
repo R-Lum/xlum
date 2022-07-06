@@ -11,6 +11,11 @@ test_that(".convert2character", {
     ## test character
     a <- c(12, 12, 13, NA)
     expect_type(.convert2character(a), "character")
+
+  ## .convert2character with base64 encoding
+  expect_type(.convert2character(l, encode_base64 = TRUE), "list")
+  expect_type(.convert2character(a, encode_base64 = TRUE), "character")
+
 })
 # +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#
 test_that(".convert2numeric", {

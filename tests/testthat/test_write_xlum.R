@@ -9,7 +9,7 @@ test_that("write_xlum()", {
   xlum_data_xlum_list <- read_xlum(file, output = "xlum_list")
 
   ## set outfile
-  out_file <- tempfile()
+  out_file <- tempfile(fileext = ".xlum")
 
   ## crash function
   expect_error(write_xlum("error", file = out_file),
@@ -19,5 +19,9 @@ test_that("write_xlum()", {
   expect_silent(write_xlum(xlum_data_xml_document, out_file))
   expect_silent(write_xlum(xlum_data_list, out_file))
   expect_silent(write_xlum(xlum_data_xlum_list, out_file))
+  expect_silent(write_xlum(xlum_data_xlum_list, out_file, encode_base64 = TRUE))
+
+    ## regression test
+    expect_s3_class(read_xlum(out_file), "xlum_list")
 
 })

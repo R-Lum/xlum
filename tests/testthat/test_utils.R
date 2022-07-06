@@ -17,13 +17,22 @@ test_that(".convert2numeric", {
   testthat::skip_on_cran()
   local_edition(3)
 
-  ## .convert2numeric
+  ## .convert2numeric (standard)
   l <- list(a = c("12 12 13"), b = "0")
   out <- expect_type(xlum:::.convert2numeric(l), "list")
 
     ## regression test
     expect_type(out[[1]], "double")
     expect_type(out[[2]], "double")
+
+  ## .convert2numeric (base64 encoding)
+  l <- list(a = base64enc::base64encode(charToRaw(c("12 12 13"))), b = "0")
+  out <- expect_type(xlum:::.convert2numeric(l, check_base64 = TRUE), "list")
+
+    ## regression tests
+  expect_type(out[[1]], "double")
+  expect_type(out[[2]], "double")
+
 })
 # +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#
 test_that(".get_element_index", {

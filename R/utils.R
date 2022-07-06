@@ -19,7 +19,7 @@
 #'
 #'@md
 #'@noRd
-.convert2character <- function(l){
+.convert2character <- function(l, decode_base64 = FALSE){
   ## handle NA values
   if (anyNA(l)) l[which(is.na(l))] <- "0"
 
@@ -39,20 +39,34 @@
 #'
 #'@param l [character] [list] (**required**): list of character vectors (see example)
 #'
+#'@param check_base64 [logical] (*with default*): check for base 64 encoding and decode if needed
+#'
 #'@author Sebastian Kreutzer, Institute of Geography, Heidelberg University, Heidelberg (Germany)
 #'
 #'@return [list] of [numeric] vectors
 #'
 #'@examples
 #'
-#'l = list(a <- c("12 12 13"), b = "0")
+#'l <- list(a = c("12 12 13"), b = "0")
 #'.convert2numeric(l)
 #'
 #'@md
 #'@noRd
-.convert2numeric <- function(l){
+.convert2numeric <- function(l, check_base64 = FALSE){
   ## handle NA values
   if (any(l == "0")) l[which(l == "0")] <- NA_character_
+
+  ## check for base64 encoding and convert if needed
+  if(check_base64) {
+    l <- lapply(l, function(x){
+      ## if it contains white space it is not base64
+      if(any(grepl(" ", x, fixed = TRUE)) || is.na(x)) return(x)
+
+      ## decode to raw convert to char
+      rawToChar(x = base64enc::base64decode(x), multiple = FALSE)
+
+    })
+  }
 
   ##extract values
   lapply(
@@ -177,4 +191,3 @@
   )
 
 }
-

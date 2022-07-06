@@ -61,7 +61,7 @@ read_xlum <- function(
 
       ## extract the numeric values for nodes
       ## the measured values
-      curve_values <- .convert2numeric(xml2::xml_text(curve_nodes, trim = TRUE))
+      curve_values <- .convert2numeric(xml2::xml_text(curve_nodes, trim = TRUE), check_base64 = TRUE)
       tValues <- .convert2numeric(xml2::xml_attr(curve_nodes, attr = "tValues"))
       xValues <- .convert2numeric(xml2::xml_attr(curve_nodes, attr = "xValues"))
       yValues <- .convert2numeric(xml2::xml_attr(curve_nodes, attr = "yValues"))

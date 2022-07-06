@@ -11,6 +11,8 @@ as.list.xlum_list <- function(x, ...){
   curve_values <- tValues <- xValues <- yValues <- list()
 
   ## extract values
+  ## yes, it looks ugly and it is, and should be refactored
+  ## the idea is to access the lowest and deepest element of type curve
   j <- 1
   for (i in curve_index) {
     curve_values[[j]] <- x[[i[1]]][[i[2]]][[i[3]]][[i[4]]][[i[5]]][[1]]
@@ -44,3 +46,5 @@ as.list.xlum_list <- function(x, ...){
   return(x)
 
 }
+
+l <- as.list.xlum_list(a, "list")

@@ -46,5 +46,3 @@ as.list.xlum_list <- function(x, ...){
   return(x)
 
 }
-
-l <- as.list.xlum_list(a, "list")

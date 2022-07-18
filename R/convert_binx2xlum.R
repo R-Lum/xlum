@@ -45,15 +45,17 @@ convert_binx2xlum <- function(
 
   ## import
   rlum <-
-    Luminescence::read_BIN2R(
+    as.list(Luminescence::read_BIN2R(
       file = file,
       position = import_args$position,
       n.records = import_args$n.records,
       fastForward = TRUE,
-      verbose = FALSE)
+      verbose = FALSE))
+
   convert_rlum2xlum(rlum, out_file)
 }
 
 #'
 #'@rdname convert_binx2xlum
+#'@export
 convert_bin2xlum <- function(file, out_file = NULL) convert_binx2xlum(file, out_file)

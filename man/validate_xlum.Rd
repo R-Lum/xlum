@@ -29,6 +29,6 @@ Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University
 } 
 
 \section{How to cite}{
-Kreutzer, S., 2022. validate_xlum(): Validate xlum format against an XSD reference schema. In: Kreutzer, S., 2022. xlum: Read, Write, and Convert XLUM Data. R package version 0.1.0.9000-98. 
+Kreutzer, S., 2022. validate_xlum(): Validate xlum format against an XSD reference schema. In: Kreutzer, S., 2022. xlum: Read, Write, and Convert XLUM Data. R package version 0.1.0.9000-101. 
 }
 

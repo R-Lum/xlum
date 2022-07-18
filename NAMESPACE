@@ -2,6 +2,7 @@
 
 S3method(as.list,xlum_list)
 export(convert_Daybreak2xlum)
+export(convert_bin2xlum)
 export(convert_binx2xlum)
 export(convert_psl2xlum)
 export(convert_rlum2xlum)

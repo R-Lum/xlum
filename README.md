@@ -15,6 +15,8 @@ state and is being actively
 developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#Concept)
 [![CRAN](https://www.r-pkg.org/badges/version/xlum)](https://cran.r-project.org/package=xlum)
 
+[![Coverage
+Status](https://img.shields.io/codecov/c/github/R-Lum/xlum.svg)](https://codecov.io/github/R-Lum/xlum?branch=master)
 [![R-CMD-check](https://github.com/R-Lum/xlum/workflows/GitHub%20Actions%20CI/badge.svg)](https://github.com/R-Lum/xlum/actions)
 
 ## Installation

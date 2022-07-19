@@ -70,11 +70,14 @@ for more details.
 
 ## <span class="glyphicon glyphicon-euro"></span> Funding
 
-The [development of xlum](https://github.com/R-Lum/xlum) benefited
-received funding from the European Union’s Horizon 2020 research and
-innovation programme under the Marie Skłodowska-Curie grant agreement No
-844457 (project: [CREDit](https://cordis.europa.eu/project/id/844457)).
+The [development of xlum](https://github.com/R-Lum/xlum_specification)
+benefited received funding from the European Union’s Horizon 2020
+research and innovation programme under the Marie Skłodowska-Curie grant
+agreement No 844457 (project:
+[CREDit](https://cordis.europa.eu/project/id/844457)).
 
 ## Related projects
 
+-   [xlum specification](https://github.com/R-Lum/xlum_specification)
+-   [xlum-python](https://github.com/SteveGrehl/xlum-python)
 -   [Luminescence](https://github.com/R-Lum/Luminescence)

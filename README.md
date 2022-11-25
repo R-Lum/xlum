@@ -23,12 +23,12 @@ Status](https://img.shields.io/codecov/c/github/R-Lum/xlum.svg)](https://codecov
 
 #### i. Requirements
 
--   *Windows (32/64bit)*:
-    [Rtools](https://cran.r-project.org/bin/windows/Rtools/) (provided
-    by CRAN)
--   *macOS*: [Xcode](https://developer.apple.com/) (provided by Apple)
--   *Linux*: [gcc](https://gcc.gnu.org) often comes pre-installed in
-    most distributions.
+- *Windows (32/64bit)*:
+  [Rtools](https://cran.r-project.org/bin/windows/Rtools/) (provided by
+  CRAN)
+- *macOS*: [Xcode](https://developer.apple.com/) (provided by Apple)
+- *Linux*: [gcc](https://gcc.gnu.org) often comes pre-installed in most
+  distributions.
 
 ##### The plain **R** way
 
@@ -78,6 +78,6 @@ agreement No 844457 (project:
 
 ## Related projects
 
--   [xlum specification](https://github.com/R-Lum/xlum_specification)
--   [xlum-python](https://github.com/SteveGrehl/xlum-python)
--   [Luminescence](https://github.com/R-Lum/Luminescence)
+- [xlum specification](https://github.com/R-Lum/xlum_specification)
+- [xlum-python](https://github.com/SteveGrehl/xlum-python)
+- [Luminescence](https://github.com/R-Lum/Luminescence)

@@ -14,6 +14,7 @@ and long-term preservation of luminescence data.
 state and is being actively
 developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#Concept)
 [![CRAN](https://www.r-pkg.org/badges/version/xlum)](https://cran.r-project.org/package=xlum)
+[![DOI](https://zenodo.org/badge/477672855.svg)](https://zenodo.org/badge/latestdoi/477672855)
 
 [![Coverage
 Status](https://img.shields.io/codecov/c/github/R-Lum/xlum.svg)](https://codecov.io/github/R-Lum/xlum?branch=master)
@@ -51,9 +52,8 @@ devtools::install_github("R-Lum/xlum@<wanted branch>")
 
 **The package comes without any guarantee!**
 
-Please further note that this version is a development version and may
-change day by day. For stable branches please visit the package on [CRAN
-xlum](https://CRAN.R-project.org/package=xlum).
+<!-- Please further note that this version is a development version and may change day by day. For stable branches please visit -->
+<!-- the package on [CRAN xlum](https://CRAN.R-project.org/package=xlum). -->
 
 ## License
 

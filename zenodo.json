@@ -1,0 +1,44 @@
+{
+  "license": "GPL-2.0-or-later",
+  "description": "<p>Changes in version 0.1.0 (2022-11-25)</p>\n\n<ul>\n\t<li>Initial version</li>\n</ul>",
+  "language": "eng",
+  "title": "R-Lum/xlum: v0.1.0",
+  "grants": [
+    {
+      "id": "10.13039/501100000780::844457"
+    }
+  ],
+  "upload_type": "software",
+  "version": "v0.1.0",
+  "keywords": [
+    "Luminescence dating",
+    "data format",
+    "xml"
+  ],
+  "publication_date": "2022-11-25",
+  "creators": [
+    {
+      "orcid": "0000-0002-0734-2199",
+      "affiliation": "Ruprecht-Karl University of Heidelberg (Institute of Geography)",
+      "name": "Sebastian Kreutzer"
+    },
+    {
+      "orcid": "0000-0002-5023-4046",
+      "affiliation": "piazza blu2 GmbH, Cologne",
+      "name": "Christoph Burow"
+    }
+  ],
+  "access_right": "open",
+  "related_identifiers": [
+    {
+      "scheme": "url",
+      "identifier": "https://github.com/R-Lum/xlum/tree/v0.1.0",
+      "relation": "isPreviousVersionOf"
+    },
+    {
+      "scheme": "doi",
+      "identifier": "10.5281/zenodo.7362363",
+      "relation": "isVersionOf"
+    }
+  ]
+}

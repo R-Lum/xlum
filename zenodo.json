@@ -2,7 +2,7 @@
   "license": "GPL-2.0-or-later",
   "description": "<p>Changes in version 0.1.0 (2022-11-25)</p>\n\n<ul>\n\t<li>Initial version</li>\n</ul>",
   "language": "eng",
-  "title": "R-Lum/xlum: v0.1.0",
+  "title": "xlum: Read, Write, and Convert XLUM Data",
   "grants": [
     {
       "id": "10.13039/501100000780::844457"

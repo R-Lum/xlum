@@ -11,7 +11,7 @@
     "name": "R",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R Under development (unstable) (2022-09-26 r82921)",
+  "runtimePlatform": "R Under development (unstable) (2024-07-11 r86890)",
   "author": [
     {
       "@type": "Person",
@@ -124,7 +124,7 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "89.638KB",
+  "fileSize": "91.11KB",
   "codeRepository": "https://github.com/R-Lum/xlum",
   "releaseNotes": "https://github.com/R-Lum/xlum/blob/master/NEWS.md",
   "contIntegration": "https://codecov.io/github/R-Lum/xlum?branch=master",

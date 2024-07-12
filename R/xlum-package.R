@@ -13,8 +13,6 @@
 #'
 #' @aliases xlum-package xlum
 #'
-#' @docType package
-#'
 #' @details
 #'
 #' **Support contact**
@@ -48,4 +46,4 @@
 #'
 #' @md
 #' @include xlum-package.R
-NULL
+"_PACKAGE"

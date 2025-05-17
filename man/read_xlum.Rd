@@ -50,7 +50,7 @@ Sebastian Kreutzer, Institute of Geography, Heidelberg University, Heidelberg (G
 } 
 
 \section{How to cite}{
-Kreutzer, S., 2025. read_xlum(): Import XLUM files. Function version 0.1.0. In: Kreutzer, S., 2025. xlum: Read, Write, and Convert XLUM Data. R package version 0.1.0. 
+Kreutzer, S., 2025. read_xlum(): Import XLUM files. Function version 0.1.0. In: Kreutzer, S., 2025. xlum: Read, Write, and Convert XLUM Data. R package version 0.1.0. https://r-lum.github.io/xlum/
 }
 
 \keyword{IO}

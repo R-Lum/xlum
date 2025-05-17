@@ -1,48 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>/404.html</loc>
-  </url>
-  <url>
-    <loc>/LICENSE-text.html</loc>
-  </url>
-  <url>
-    <loc>/authors.html</loc>
-  </url>
-  <url>
-    <loc>/index.html</loc>
-  </url>
-  <url>
-    <loc>/news/index.html</loc>
-  </url>
-  <url>
-    <loc>/reference/convert_Daybreak2xlum.html</loc>
-  </url>
-  <url>
-    <loc>/reference/convert_binx2xlum.html</loc>
-  </url>
-  <url>
-    <loc>/reference/convert_psl2xlum.html</loc>
-  </url>
-  <url>
-    <loc>/reference/convert_rlum2xlum.html</loc>
-  </url>
-  <url>
-    <loc>/reference/convert_xsyg2xlum.html</loc>
-  </url>
-  <url>
-    <loc>/reference/index.html</loc>
-  </url>
-  <url>
-    <loc>/reference/read_xlum.html</loc>
-  </url>
-  <url>
-    <loc>/reference/validate_xlum.html</loc>
-  </url>
-  <url>
-    <loc>/reference/write_xlum.html</loc>
-  </url>
-  <url>
-    <loc>/reference/xlum-package.html</loc>
-  </url>
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>https://r-lum.github.io/xlum/404.html</loc></url>
+<url><loc>https://r-lum.github.io/xlum/LICENSE-text.html</loc></url>
+<url><loc>https://r-lum.github.io/xlum/authors.html</loc></url>
+<url><loc>https://r-lum.github.io/xlum/index.html</loc></url>
+<url><loc>https://r-lum.github.io/xlum/news/index.html</loc></url>
+<url><loc>https://r-lum.github.io/xlum/reference/convert_Daybreak2xlum.html</loc></url>
+<url><loc>https://r-lum.github.io/xlum/reference/convert_binx2xlum.html</loc></url>
+<url><loc>https://r-lum.github.io/xlum/reference/convert_psl2xlum.html</loc></url>
+<url><loc>https://r-lum.github.io/xlum/reference/convert_rlum2xlum.html</loc></url>
+<url><loc>https://r-lum.github.io/xlum/reference/convert_xsyg2xlum.html</loc></url>
+<url><loc>https://r-lum.github.io/xlum/reference/index.html</loc></url>
+<url><loc>https://r-lum.github.io/xlum/reference/read_xlum.html</loc></url>
+<url><loc>https://r-lum.github.io/xlum/reference/validate_xlum.html</loc></url>
+<url><loc>https://r-lum.github.io/xlum/reference/write_xlum.html</loc></url>
+<url><loc>https://r-lum.github.io/xlum/reference/xlum-package.html</loc></url>
 </urlset>
+

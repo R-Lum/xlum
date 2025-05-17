@@ -40,6 +40,6 @@ Sebastian Kreutzer, Institute of Geography, Heidelberg University, Heidelberg (G
 } 
 
 \section{How to cite}{
-Kreutzer, S., 2025. convert_psl2xlum(): Convert SUERC PSL-files to XLUM. Function version 0.1.0. In: Kreutzer, S., 2025. xlum: Read, Write, and Convert XLUM Data. R package version 0.1.0. 
+Kreutzer, S., 2025. convert_psl2xlum(): Convert SUERC PSL-files to XLUM. Function version 0.1.0. In: Kreutzer, S., 2025. xlum: Read, Write, and Convert XLUM Data. R package version 0.1.0. https://r-lum.github.io/xlum/
 }
 

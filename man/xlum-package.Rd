@@ -43,6 +43,13 @@ from the European Union’s Horizon 2020 research and innovation programme under
 the Marie Skłodowska-Curie grant agreement No 844457 (CREDit), and the
 work was carried out at the Geography & Earth Sciences, Aberystwyth University (United Kingdom)
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://r-lum.github.io/xlum/}
+}
+
+}
 \author{
 \strong{Maintainer}: Sebastian Kreutzer \email{sebastian.kreutzer@uni-heidelberg.de} (\href{https://orcid.org/0000-0002-0734-2199}{ORCID})
 

@@ -4,6 +4,7 @@
   "identifier": "xlum",
   "description": "Support for the XLUM file format for exchange and long-term preservation of luminescence data. Facilitated are the import and export of XLUM files and the conversion from other formats commonly used to store luminescence (dating) data.",
   "name": "xlum: Read, Write, and Convert XLUM Data",
+  "codeRepository": "https://github.com/R-Lum/xlum",
   "license": "https://spdx.org/licenses/GPL-3.0",
   "version": "0.1.0",
   "programmingLanguage": {
@@ -71,7 +72,7 @@
       "@type": "SoftwareApplication",
       "identifier": "R",
       "name": "R",
-      "version": ">= 4.1"
+      "version": ">= 4.4"
     },
     "2": {
       "@type": "SoftwareApplication",
@@ -100,7 +101,7 @@
       "@type": "SoftwareApplication",
       "identifier": "Luminescence",
       "name": "Luminescence",
-      "version": ">= 0.9.19",
+      "version": ">= 1.0.1",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -113,7 +114,7 @@
       "@type": "SoftwareApplication",
       "identifier": "xml2",
       "name": "xml2",
-      "version": ">= 1.3.3",
+      "version": ">= 1.3.8",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -124,8 +125,8 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "90.015KB",
-  "codeRepository": "https://github.com/R-Lum/xlum",
+  "fileSize": "90.215KB",
+  "relatedLink": "https://r-lum.github.io/xlum/",
   "releaseNotes": "https://github.com/R-Lum/xlum/blob/master/NEWS.md",
   "readme": "https://github.com/R-Lum/xlum/blob/main/README.md",
   "contIntegration": "https://app.codecov.io/github/R-Lum/xlum?branch=master",

@@ -1,0 +1,5 @@
+url: https://r-lum.github.io/xlum/
+template:
+  bootstrap: 5
+  params:
+   bootswatch: cosmo

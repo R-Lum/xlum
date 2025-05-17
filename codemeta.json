@@ -11,7 +11,7 @@
     "name": "R",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R Under development (unstable) (2024-07-11 r86890)",
+  "runtimePlatform": "R version 4.5.0 RC (2025-04-04 r88126)",
   "author": [
     {
       "@type": "Person",
@@ -124,9 +124,11 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "91.11KB",
+  "fileSize": "90.015KB",
   "codeRepository": "https://github.com/R-Lum/xlum",
   "releaseNotes": "https://github.com/R-Lum/xlum/blob/master/NEWS.md",
-  "contIntegration": "https://codecov.io/github/R-Lum/xlum?branch=master",
-  "developmentStatus": "https://www.repostatus.org/#Concept"
+  "readme": "https://github.com/R-Lum/xlum/blob/main/README.md",
+  "contIntegration": "https://app.codecov.io/github/R-Lum/xlum?branch=master",
+  "developmentStatus": "https://www.repostatus.org/#Concept",
+  "keywords": ["geochronology", "luminescence", "luminescence-dating", "open-data", "open-science", "rpackage", "xml", "xlum"]
 }

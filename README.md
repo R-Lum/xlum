@@ -17,7 +17,7 @@ developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.re
 [![DOI](https://zenodo.org/badge/477672855.svg)](https://zenodo.org/badge/latestdoi/477672855)
 
 [![Coverage
-Status](https://img.shields.io/codecov/c/github/R-Lum/xlum.svg)](https://codecov.io/github/R-Lum/xlum?branch=master)
+Status](https://img.shields.io/codecov/c/github/R-Lum/xlum.svg)](https://app.codecov.io/github/R-Lum/xlum?branch=master)
 [![R-CMD-check](https://github.com/R-Lum/xlum/workflows/GitHub%20Actions%20CI/badge.svg)](https://github.com/R-Lum/xlum/actions)
 
 ## Installation

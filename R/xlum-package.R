@@ -44,5 +44,4 @@
 #' @import utils methods
 #'
 #' @md
-#' @include xlum-package.R
 "_PACKAGE"

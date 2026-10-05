@@ -26,16 +26,4 @@ Suggests:
 Encoding: UTF-8
 Language: en-GB
 LazyData: true
-Collate: 
-    'convert_Daybreak2xlum.R'
-    'convert_binx2xlum.R'
-    'convert_psl2xlum.R'
-    'convert_rlum2xlum.R'
-    'convert_xsyg2xlum.R'
-    'methods.R'
-    'read_xlum.R'
-    'utils.R'
-    'validate_xlum.R'
-    'write_xlum.R'
-    'xlum-package.R'
 Config/roxygen2/version: 8.1.0

@@ -6,7 +6,7 @@ on:
   pull_request:
     branches: [main]
 
-name: GitHub Actions CI
+name: R CMD check
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
@@ -35,7 +35,7 @@ jobs:
 
     steps:
 
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - uses: r-lib/actions/setup-pandoc@v2
 

@@ -7,7 +7,7 @@
 write_xlum(x, file, encode_base64 = FALSE, ...)
 }
 \arguments{
-\item{x}{\code{xlum_list}, \link{list}, \link[xml2:oldclass]{xml2::xml_document} (\strong{required}) : input object}
+\item{x}{\code{xlum_list}, \link{list}, \link[xml2:xml_document-class]{xml2::xml_document} (\strong{required}) : input object}
 
 \item{file}{\link{character} (\strong{required}): valid file path and file name with ending
 \code{.xlum} (will be add automatically if needed)}
@@ -41,10 +41,5 @@ write_xlum(xlum_data, out_file)
 }
 \author{
 Sebastian Kreutzer, Institute of Geography, Heidelberg University, Heidelberg (Germany)
-} 
-
-\section{How to cite}{
-Kreutzer, S., 2025. write_xlum(): Write XLUM-files. Function version 0.1.0. In: Kreutzer, S., 2025. xlum: Read, Write, and Convert XLUM Data. R package version 0.1.0. https://r-lum.github.io/xlum/
 }
-
 \keyword{IO}

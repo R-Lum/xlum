@@ -1,5 +1,4 @@
 #' @title Read, Write, and Convert xlum Data\cr
-#'
 #' \if{html}{
 #' \figure{xlum_logo.png}{options: width="75"}
 #' }

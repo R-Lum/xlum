@@ -11,10 +11,10 @@ convert_rlum2xlum(rlum, file = NULL)
 for the conversion}
 
 \item{file}{\link{character} (\emph{optional}): file name for the export, if \code{NULL} (the default),
-an \link[xml2:oldclass]{xml2::xml_document} object is returned}
+an \link[xml2:xml_document-class]{xml2::xml_document} object is returned}
 }
 \value{
-Depending on the setting. If \code{file == NULL} an \link[xml2:oldclass]{xml2::xml_document} object is returned,
+Depending on the setting. If \code{file == NULL} an \link[xml2:xml_document-class]{xml2::xml_document} object is returned,
 if file is set the function attempts to write an \verb{*.xlum} file`.
 }
 \description{
@@ -44,10 +44,5 @@ convert_rlum2xlum(IRSAR.RF.Data)
 }
 \author{
 Sebastian Kreutzer, Institute of Geography, Heidelberg University, Heidelberg (Germany)
-} 
-
-\section{How to cite}{
-Kreutzer, S., 2025. convert_rlum2xlum(): Convert RLum-class objects to the XLUM format. Function version 0.1.0. In: Kreutzer, S., 2025. xlum: Read, Write, and Convert XLUM Data. R package version 0.1.0. https://r-lum.github.io/xlum/
 }
-
 \keyword{datagen}

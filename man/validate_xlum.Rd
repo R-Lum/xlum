@@ -7,7 +7,7 @@
 validate_xlum(file, xsd_version = NULL)
 }
 \arguments{
-\item{file}{\link[xml2:oldclass]{xml2::xml_document} (\strong{required}): object to test}
+\item{file}{\link[xml2:xml_document-class]{xml2::xml_document} (\strong{required}): object to test}
 
 \item{xsd_version}{\link{numeric} (\emph{optional}): specify format version for the
 validation, e.g., \code{1}, \code{1.1}. The default is \code{NULL}, which will use the most recent version}
@@ -26,9 +26,4 @@ validate_xlum(file)
 }
 \author{
 Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University
-} 
-
-\section{How to cite}{
-Kreutzer, S., 2025. validate_xlum(): Validate xlum format against an XSD reference schema. In: Kreutzer, S., 2025. xlum: Read, Write, and Convert XLUM Data. R package version 0.1.0. https://r-lum.github.io/xlum/
 }
-

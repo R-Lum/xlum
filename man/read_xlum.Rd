@@ -16,7 +16,7 @@ supported are \code{"xml_document"}, \code{"list"}, \code{"xlum_list"} (the defa
 }
 \value{
 The output depends on the setting selected in \code{output}. It will
-be either an \link[xml2:oldclass]{xml2::xml_document}, \link{list}, or a \link{list} of class \code{xlum_list}.
+be either an \link[xml2:xml_document-class]{xml2::xml_document}, \link{list}, or a \link{list} of class \code{xlum_list}.
 }
 \description{
 Imports XLUM-files using \link[xml2:read_xml]{xml2::read_xml}. Comes with a few
@@ -47,10 +47,5 @@ read_xlum(file)
 }
 \author{
 Sebastian Kreutzer, Institute of Geography, Heidelberg University, Heidelberg (Germany)
-} 
-
-\section{How to cite}{
-Kreutzer, S., 2025. read_xlum(): Import XLUM files. Function version 0.1.0. In: Kreutzer, S., 2025. xlum: Read, Write, and Convert XLUM Data. R package version 0.1.0. https://r-lum.github.io/xlum/
 }
-
 \keyword{IO}

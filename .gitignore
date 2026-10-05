@@ -41,5 +41,12 @@ vignettes/*.pdf
 # RLumBuild stuff
 xlum.BuildResults
 
+# emacs stuff
+*~
+.#*
+\#*#
+.*.swp
+
 # more stuff
 README.HTML
+*.DS_Store

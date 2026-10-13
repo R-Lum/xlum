@@ -1,0 +1,9 @@
+# Changelog
+
+## Changes in version 0.1.0 (2026-10-13)
+
+- The documentation was revamped.
+
+## Changes in version 0.1.0 (2022-11-25)
+
+- Initial version

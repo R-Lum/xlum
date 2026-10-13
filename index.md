@@ -1,0 +1,74 @@
+# xlum ![](reference/figures/xlum_logo.png)
+
+The R package `xlum` interfaces with the `<xlum/>` data format for
+exchange and long-term preservation of luminescence data.
+
+[![Project Status: Active – The project has reached a stable, usable
+state and is being actively
+developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#Active)
+[![CRAN](https://www.r-pkg.org/badges/version/xlum)](https://cran.r-project.org/package=xlum)
+[![DOI](https://zenodo.org/badge/477672855.svg)](https://zenodo.org/badge/latestdoi/477672855)
+
+[![Coverage
+Status](https://img.shields.io/codecov/c/github/R-Lum/xlum.svg)](https://app.codecov.io/github/R-Lum/xlum?branch=main)
+[![R-CMD-check](https://github.com/R-Lum/xlum/workflows/R%20CMD%20check/badge.svg)](https://github.com/R-Lum/xlum/actions)
+
+## Installation
+
+#### i. Requirements
+
+- *Windows (32/64bit)*:
+  [Rtools](https://cran.r-project.org/bin/windows/Rtools/) (provided by
+  CRAN)
+- *macOS*: [Xcode](https://developer.apple.com/) (provided by Apple)
+- *Linux*: [gcc](https://gcc.gnu.org) often comes pre-installed in most
+  distributions.
+
+##### The plain **R** way
+
+To install the stable version from CRAN, simply run the following from
+an R console:
+
+``` r
+
+install.packages("xlum")
+```
+
+To install the latest development builds directly from GitHub, run
+
+``` r
+
+if (!require("pak"))
+  install.packages("pak")
+pak::pak("R-Lum/xlum")
+```
+
+## Note
+
+**The package comes without any guarantee!**
+
+## License
+
+This program is free software: you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published by the
+Free Software Foundation, either version 3 of the License, or any later
+version.
+
+This program is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the [GNU
+General Public License](https://github.com/R-Lum/xlum/blob/main/LICENSE)
+for more details.
+
+##  Funding
+
+The [development of xlum](https://github.com/R-Lum/xlum_specification)
+received funding from the European Union’s Horizon 2020 research and
+innovation programme under the Marie Skłodowska-Curie grant agreement No
+844457 (project: [CREDit](https://cordis.europa.eu/project/id/844457)).
+
+## Related projects
+
+- [xlum specification](https://github.com/R-Lum/xlum_specification)
+- [xlum-python](https://github.com/SteveGrehl/xlum-python)
+- [Luminescence](https://github.com/R-Lum/Luminescence)

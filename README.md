@@ -43,9 +43,9 @@ install.packages("xlum")
 To install the latest development builds directly from GitHub, run
 
 ``` r
-if(!require("devtools"))
-  install.packages("devtools")
-devtools::install_github("R-Lum/xlum@<wanted branch>")
+if (!require("pak"))
+  install.packages("pak")
+pak::pak("R-Lum/xlum")
 ```
 
 ## Note
@@ -53,7 +53,6 @@ devtools::install_github("R-Lum/xlum@<wanted branch>")
 **The package comes without any guarantee!**
 
 <!-- Please further note that this version is a development version and may change day by day. For stable branches please visit -->
-
 <!-- the package on [CRAN xlum](https://CRAN.R-project.org/package=xlum). -->
 
 ## License

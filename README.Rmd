@@ -46,9 +46,9 @@ install.packages("xlum")
 To install the latest development builds directly from GitHub, run
 
 ```{r, eval=FALSE}
-if(!require("devtools"))
-  install.packages("devtools")
-devtools::install_github("R-Lum/xlum@<wanted branch>")
+if (!require("pak"))
+  install.packages("pak")
+pak::pak("R-Lum/xlum")
 ```
 
 ## Note

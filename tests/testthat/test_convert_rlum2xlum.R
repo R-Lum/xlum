@@ -19,7 +19,7 @@ test_that("read_xlum()", {
    ## simple conversions
     ## RLum.Data.Curve
     expect_s3_class(convert_rlum2xlum(RLum.Data.Curve[[1]]), "xml_document")
-    expect_silent(convert_rlum2xlum(RLum.Data.Curve[[1]], file = tempfile()))
+    expect_silent(convert_rlum2xlum(RLum.Data.Curve[[1]], out_file = tempfile()))
     expect_s3_class(convert_rlum2xlum(RLum.Data.Curve), "xml_document")
 
     ## RLum.Data.Analysis

@@ -28,10 +28,7 @@
 #' @param rlum [Luminescence::RLum-class] or a [list] of it (**required**):
 #' input object.
 #'
-#' @param file [character] (*optional*):
-#' path to an output file where the XLUM file should be written to. If `NULL`
-#' (default), no file is written, but an [xml2::xml_document-class] object is
-#' returned.
+#' @inheritParams convert_2xlum
 #'
 #' @return
 #' When `file` is `NULL` (default), an [xml2::xml_document-class] object
@@ -61,7 +58,7 @@
 #' @export
 convert_rlum2xlum <- function(
   rlum,
-  file = NULL
+  out_file = NULL
 ){
 
 # Sanitize input ---------------------------------------------------------
@@ -254,10 +251,9 @@ if(all(grepl("RLum\\.Data", vapply(rlum, class, "character"))))
 
 
 # Return ------------------------------------------------------------------
-  if (!is.null(file)) {
-    write_xlum(out, file)
-
-  } else {
+  if (is.null(out_file))
     return(out)
-  }
+
+  ## silently return NULL
+  write_xlum(out, out_file)
 }

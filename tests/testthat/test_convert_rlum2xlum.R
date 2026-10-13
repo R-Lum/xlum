@@ -1,15 +1,21 @@
-test_that("read_xlum()", {
+data(ExampleData.RLum.Analysis, envir = environment(), package = "Luminescence")
+data(ExampleData.RLum.Data.Image, envir = environment(), package = "Luminescence")
+data(ExampleData.XSYG, envir = environment(), package = "Luminescence")
+
+test_that("input validation", {
   testthat::skip_on_cran()
 
-   ## break function
-   expect_error(
-     object = convert_rlum2xlum("error"),
-     regexp = "\\[convert\\_rlum2xlum\\(\\)\\] class 'character' not supported as input")
+  expect_error(convert_rlum2xlum("error"),
+               "[convert_rlum2xlum()] Class 'character' not supported as input",
+               fixed = TRUE)
+  expect_error(convert_rlum2xlum(list(IRSAR.RF.Data, iris, "error")),
+               "Class 'data.frame' not supported as input")
+  expect_error(convert_rlum2xlum(list(IRSAR.RF.Data, IRSAR.RF.Data@records[[1]])),
+               "All input objects must be of the same class, either")
+})
 
-   ## use example data from Luminescence
-   data(ExampleData.RLum.Analysis, envir = environment(), package = "Luminescence")
-   data(ExampleData.RLum.Data.Image, envir = environment(), package = "Luminescence")
-   data(ExampleData.XSYG, envir = environment(), package = "Luminescence")
+test_that("check functionality", {
+  testthat::skip_on_cran()
 
    RLum.Data.Curve <- IRSAR.RF.Data@records
    RLum.Data.Analysis <- IRSAR.RF.Data

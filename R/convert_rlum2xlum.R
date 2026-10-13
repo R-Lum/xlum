@@ -10,7 +10,9 @@
 #' [Luminescence::RLum.Data-class] objects they may contain.
 #' [Luminescence::RLum.Results-class] objects are not supported.
 #'
-#' The input may be a single object or a [list] of objects. A list of data
+#' The input may be a single object or a [list] of objects. All objects in a
+#' list must be of the same class, either [Luminescence::RLum.Analysis-class]
+#' or [Luminescence::RLum.Data-class]. A list of data
 #' objects is combined into a single sequence, whereas a list of
 #' [Luminescence::RLum.Analysis-class] objects produces one `<sequence/>` per
 #' element.
@@ -64,14 +66,25 @@ convert_rlum2xlum <- function(
 # Sanitize input ---------------------------------------------------------
 ## always convert to a list
 if(!inherits(rlum, "list")) {
-  tmp_class <- class(rlum)[1]
   rlum <- list(rlum)
 }
 
-## now check whether input is allowed
-if(!all(vapply(rlum, class, "character") %in%
-   c("RLum.Analysis", "RLum.Data.Curve", "RLum.Data.Image", "RLum.Data.Spectrum")))
-  stop(paste0("[convert_rlum2xlum()] class '", tmp_class,"' not supported as input"), call. = FALSE)
+  ## check whether the input is valid
+  class.valid <- c("RLum.Analysis", "RLum.Data.Curve", "RLum.Data.Image",
+                   "RLum.Data.Spectrum")
+  class.found <- vapply(rlum, class, character(1))
+  valid <- class.found %in% class.valid
+  if (!all(valid)) {
+    stop("[convert_rlum2xlum()] Class '", class.found[which(!valid)[1]],
+         "' not supported as input", call. = FALSE)
+  }
+
+  ## don't support lists of mixed RLum.Analysis/RLum.Data objects
+  class.found <- gsub("(RLum\\.Data).*", "\\1", class.found)
+  if (length(unique(class.found)) > 1) {
+    stop("[convert_rlum2xlum()] All input objects must be of the same class, ",
+         "either 'RLum.Analysis' or 'RLum.Data'", call. = FALSE)
+  }
 
 ## we can assume that we have correct objects, so always coerce to RLum.Analysis
 if(all(grepl("RLum\\.Data", vapply(rlum, class, "character"))))

@@ -36,4 +36,6 @@ convert_binx2xlum <- function(
 
 #' @rdname convert_2xlum
 #' @export
-convert_bin2xlum <- function(file, out_file = NULL) convert_binx2xlum(file, out_file)
+convert_bin2xlum <- function(file, out_file = NULL, ...) {
+  convert_binx2xlum(file, out_file, ...)
+}

@@ -14,7 +14,7 @@ convert_Daybreak2xlum(file, out_file = NULL)
 
 convert_binx2xlum(file, out_file = NULL, ...)
 
-convert_bin2xlum(file, out_file = NULL)
+convert_bin2xlum(file, out_file = NULL, ...)
 
 convert_psl2xlum(file, out_file = NULL)
 

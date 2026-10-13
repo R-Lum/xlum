@@ -1,6 +1,5 @@
 test_that("convert_binx2_xlum()", {
   testthat::skip_on_cran()
-  local_edition(3)
 
   # BINX
   file <- system.file("extdata/BINfile_V8.binx", package = "Luminescence")

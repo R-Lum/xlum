@@ -1,6 +1,5 @@
 test_that("write_xlum()", {
   testthat::skip_on_cran()
-  local_edition(3)
 
   ## import file
   file <- system.file("extdata/xlum_prototype.xlum", package = "xlum")
@@ -23,5 +22,4 @@ test_that("write_xlum()", {
 
     ## regression test
     expect_s3_class(read_xlum(out_file), "xlum_list")
-
 })

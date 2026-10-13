@@ -1,6 +1,5 @@
 test_that("read_xlum()", {
   testthat::skip_on_cran()
-  local_edition(3)
 
    ## break function
    expect_error(

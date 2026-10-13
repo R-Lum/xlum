@@ -1,7 +1,6 @@
 # +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#
 test_that(".convert2character", {
   testthat::skip_on_cran()
-  local_edition(3)
 
   ## .convert2character
     ## test list
@@ -15,12 +14,11 @@ test_that(".convert2character", {
   ## .convert2character with base64 encoding
   expect_type(.convert2character(l, encode_base64 = TRUE), "list")
   expect_type(.convert2character(a, encode_base64 = TRUE), "character")
-
 })
+
 # +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#
 test_that(".convert2numeric", {
   testthat::skip_on_cran()
-  local_edition(3)
 
   ## .convert2numeric (standard)
   l <- list(a = c("12 12 13"), b = "0")
@@ -37,12 +35,11 @@ test_that(".convert2numeric", {
     ## regression tests
   expect_type(out[[1]], "double")
   expect_type(out[[2]], "double")
-
 })
+
 # +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#
 test_that(".get_element_index", {
   testthat::skip_on_cran()
-  local_edition(3)
 
   ## .get_element_index()
   l <- list(a = list(aa = 1), b = list(bb = 2), c = list(cc = 2))
@@ -50,8 +47,8 @@ test_that(".get_element_index", {
 
     ## regression test
     expect_equal(sum(out[[1]]), 4)
-
 })
+
 # +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#
 test_that(".toISODate", {
   testthat::skip_on_cran()
@@ -66,12 +63,11 @@ test_that(".toISODate", {
   expect_true(!is.na(t))
   expect_error(.toISODate("2021-01-0112:12:12", format = "error"),
                regexp = "\\[\\.toISODate\\(\\)\\] unknown date format")
-
 })
+
 # +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#
 test_that(".regmatches", {
   testthat::skip_on_cran()
-  local_edition(3)
 
   text <- c("Text to (extract )")
   t <- expect_type(.regmatches(text, "(?<=\\()[a-z]+"), "character")
@@ -79,5 +75,4 @@ test_that(".regmatches", {
 
   ## check for NA
   expect_true(is.na(.regmatches(text, "error")))
-
 })

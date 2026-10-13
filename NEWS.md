@@ -7,6 +7,12 @@
 
 # Changes in version 0.1.0 (2026-10-13)
 
+## `convert_rlum2xlum`
+
+- Improved input object validation (#3).
+
+## Other changes
+
 - The documentation was revamped.
 
 # Changes in version 0.1.0 (2022-11-25)

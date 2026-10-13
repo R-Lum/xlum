@@ -30,7 +30,9 @@ Supported are \link[Luminescence:RLum.Analysis-class]{Luminescence::RLum.Analysi
 \link[Luminescence:RLum.Data-class]{Luminescence::RLum.Data} objects they may contain.
 \link[Luminescence:RLum.Results-class]{Luminescence::RLum.Results} objects are not supported.
 
-The input may be a single object or a \link{list} of objects. A list of data
+The input may be a single object or a \link{list} of objects. All objects in a
+list must be of the same class, either \link[Luminescence:RLum.Analysis-class]{Luminescence::RLum.Analysis}
+or \link[Luminescence:RLum.Data-class]{Luminescence::RLum.Data}. A list of data
 objects is combined into a single sequence, whereas a list of
 \link[Luminescence:RLum.Analysis-class]{Luminescence::RLum.Analysis} objects produces one \verb{<sequence/>} per
 element.

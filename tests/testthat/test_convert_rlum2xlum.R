@@ -40,17 +40,17 @@ test_that("read_xlum()", {
 
   ## Daybreak
   file <- system.file("extdata/Daybreak_TestFile.txt", package = "Luminescence")
-  temp <- Luminescence::read_Daybreak2R(file)
+  temp <- Luminescence::read_Daybreak2R(file, verbose = FALSE)
   expect_s3_class(convert_rlum2xlum(temp), "xml_document")
 
   ## PSL
   file <- system.file("extdata", "DorNie_0016.psl", package = "Luminescence")
-  psl <- Luminescence::read_PSL2R(file, drop_bg = FALSE, as_decay_curve = TRUE, smooth = TRUE, merge = FALSE)
+  psl <- Luminescence::read_PSL2R(file, drop_bg = FALSE, as_decay_curve = TRUE,
+                                  smooth = TRUE, merge = FALSE, verbose = FALSE)
   expect_s3_class(convert_rlum2xlum(psl), "xml_document")
 
   ## RF
   file <- system.file("extdata", "RF_file.rf", package = "Luminescence")
-  temp <- Luminescence::read_RF2R(file)
+  temp <- Luminescence::read_RF2R(file, verbose = FALSE)
   expect_s3_class(convert_rlum2xlum(temp), "xml_document")
-
 })

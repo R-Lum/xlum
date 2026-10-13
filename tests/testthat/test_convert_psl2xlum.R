@@ -4,7 +4,8 @@ test_that("convert_psl2xlum()", {
 
   ## PSL
   file <- system.file("extdata", "DorNie_0016.psl", package = "Luminescence")
+
+  SW({
   testthat::expect_s3_class(convert_psl2xlum(file), "xml_document")
-
-
+  })
 })

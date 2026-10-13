@@ -26,7 +26,8 @@ input file.}
 
 \item{out_file}{\link{character} (\emph{optional}):
 path to an output file where the XLUM file should be written to. If \code{NULL}
-(default), no file is written.}
+(default), no file is written, but an \link[xml2:xml_document-class]{xml2::xml_document} object is
+returned.}
 
 \item{...}{support for a limited number of additional arguments (currently
 only \code{position} and \code{n.records}) to be forwarded to \link[Luminescence:read_BIN2R]{Luminescence::read_BIN2R}.}

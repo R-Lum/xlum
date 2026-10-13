@@ -10,7 +10,8 @@
 #'
 #' @param out_file [character] (*optional*):
 #' path to an output file where the XLUM file should be written to. If `NULL`
-#' (default), no file is written.
+#' (default), no file is written, but an [xml2::xml_document-class] object is
+#' returned.
 #'
 #' @param ... support for a limited number of additional arguments (currently
 #' only `position` and `n.records`) to be forwarded to [Luminescence::read_BIN2R].

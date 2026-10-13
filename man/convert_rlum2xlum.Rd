@@ -4,13 +4,13 @@
 \alias{convert_rlum2xlum}
 \title{Convert RLum-class objects to the XLUM format}
 \usage{
-convert_rlum2xlum(rlum, file = NULL)
+convert_rlum2xlum(rlum, out_file = NULL)
 }
 \arguments{
 \item{rlum}{\link[Luminescence:RLum-class]{Luminescence::RLum} or a \link{list} of it (\strong{required}):
 input object.}
 
-\item{file}{\link{character} (\emph{optional}):
+\item{out_file}{\link{character} (\emph{optional}):
 path to an output file where the XLUM file should be written to. If \code{NULL}
 (default), no file is written, but an \link[xml2:xml_document-class]{xml2::xml_document} object is
 returned.}

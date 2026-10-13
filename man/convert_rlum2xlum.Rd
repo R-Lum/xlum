@@ -7,42 +7,64 @@
 convert_rlum2xlum(rlum, file = NULL)
 }
 \arguments{
-\item{rlum}{\link[Luminescence:RLum.Data-class]{Luminescence::RLum.Data} and \link[Luminescence:RLum.Analysis-class]{Luminescence::RLum.Analysis} or a \link{list} of it (\strong{required}): input
-for the conversion}
+\item{rlum}{\link[Luminescence:RLum-class]{Luminescence::RLum} or a \link{list} of it (\strong{required}):
+input object.}
 
-\item{file}{\link{character} (\emph{optional}): file name for the export, if \code{NULL} (the default),
-an \link[xml2:xml_document-class]{xml2::xml_document} object is returned}
+\item{file}{\link{character} (\emph{optional}):
+path to an output file where the XLUM file should be written to. If \code{NULL}
+(default), no file is written, but an \link[xml2:xml_document-class]{xml2::xml_document} object is
+returned.}
 }
 \value{
-Depending on the setting. If \code{file == NULL} an \link[xml2:xml_document-class]{xml2::xml_document} object is returned,
-if file is set the function attempts to write an \verb{*.xlum} file`.
+When \code{file} is \code{NULL} (default), an \link[xml2:xml_document-class]{xml2::xml_document} object
+is returned. Otherwise the document is written to \code{file} (with the \code{.xlum}
+extension added automatically if needed) and \code{NULL} is returned invisibly.
 }
 \description{
-Converts \link[Luminescence:RLum-class]{Luminescence::RLum} objects to xlum format
+Converts \link[Luminescence:RLum-class]{Luminescence::RLum} objects to XLUM format.
 }
 \details{
-The function tries to make a best possible conversion of the \link[Luminescence:RLum-class]{Luminescence::RLum}
-to the \code{xlum} format. \link[Luminescence:RLum.Results-class]{Luminescence::RLum.Results} objects are not supported.
+The function tries to make the best possible conversion of an
+\link[Luminescence:RLum-class]{Luminescence::RLum} object to the XLUM format.
+Supported are \link[Luminescence:RLum.Analysis-class]{Luminescence::RLum.Analysis} objects as well as the
+\link[Luminescence:RLum.Data-class]{Luminescence::RLum.Data} objects they may contain.
+\link[Luminescence:RLum.Results-class]{Luminescence::RLum.Results} objects are not supported.
 
-Because of the nature the \link[Luminescence:RLum-class]{Luminescence::RLum} structure, the nodes \verb{<xlum/>}, \verb{<sample/>}
-are set automatically because the \link[Luminescence:RLum-class]{Luminescence::RLum} does not distinguish between
-different samples.
+The input may be a single object or a \link{list} of objects. A list of data
+objects is combined into a single sequence, whereas a list of
+\link[Luminescence:RLum.Analysis-class]{Luminescence::RLum.Analysis} objects produces one \verb{<sequence/>} per
+element.
+
+Each analysis record is mapped to a \verb{<record/>} node holding one or more
+\verb{<curve/>} nodes. The measured values are stored as the text content of the
+\verb{<curve/>} node, while \code{tValues}, \code{xValues}, and \code{yValues} are kept as node
+attributes. Additional record attributes, such as \code{curveType} and
+\code{startDate}, are transferred where available.
+
+As \link[Luminescence:RLum-class]{Luminescence::RLum} objects do not distinguish between different
+samples, the \verb{<xlum/>} and \verb{<sample/>} nodes are created automatically, so
+all converted objects end up in a single sample.
 }
 \section{Function version}{
  0.1.0
 }
 
 \examples{
-data(ExampleData.RLum.Analysis,
-envir = environment(),
-package = "Luminescence")
-convert_rlum2xlum(IRSAR.RF.Data)
+## load example data
+data(ExampleData.RLum.Analysis, envir = environment(), package = "Luminescence")
+
+## convert to an in-memory XLUM document
+xlum <- convert_rlum2xlum(IRSAR.RF.Data)
+
+## convert and write to a file
+convert_rlum2xlum(IRSAR.RF.Data, tempfile(fileext = ".xlum"))
 
 }
 \seealso{
-\link[Luminescence:RLum.Data-class]{Luminescence::RLum.Data}, \link{write_xlum}
+\link{convert_2xlum}, \link{write_xlum}, \link{read_xlum},
+\link[Luminescence:RLum.Analysis-class]{Luminescence::RLum.Analysis}
 }
 \author{
-Sebastian Kreutzer, Institute of Geography, Heidelberg University, Heidelberg (Germany)
+Sebastian Kreutzer, F2.1 Geophysical Parametrisation/Regionalisation, LIAG - Institute for Applied Geophysics (Germany)\cr
 }
 \keyword{datagen}

@@ -1,41 +1,64 @@
-#'@title Convert RLum-class objects to the XLUM format
+#' @title Convert RLum-class objects to the XLUM format
 #'
-#'@description Converts [Luminescence::RLum-class] objects to xlum format
+#' @description
+#' Converts [Luminescence::RLum-class] objects to XLUM format.
 #'
-#'@details
+#' @details
+#' The function tries to make the best possible conversion of an
+#' [Luminescence::RLum-class] object to the XLUM format.
+#' Supported are [Luminescence::RLum.Analysis-class] objects as well as the
+#' [Luminescence::RLum.Data-class] objects they may contain.
+#' [Luminescence::RLum.Results-class] objects are not supported.
 #'
-#'The function tries to make a best possible conversion of the [Luminescence::RLum-class]
-#'to the `xlum` format. [Luminescence::RLum.Results-class] objects are not supported.
+#' The input may be a single object or a [list] of objects. A list of data
+#' objects is combined into a single sequence, whereas a list of
+#' [Luminescence::RLum.Analysis-class] objects produces one `<sequence/>` per
+#' element.
 #'
-#'Because of the nature the [Luminescence::RLum-class] structure, the nodes `<xlum/>`, `<sample/>`
-#'are set automatically because the [Luminescence::RLum-class] does not distinguish between
-#'different samples.
+#' Each analysis record is mapped to a `<record/>` node holding one or more
+#' `<curve/>` nodes. The measured values are stored as the text content of the
+#' `<curve/>` node, while `tValues`, `xValues`, and `yValues` are kept as node
+#' attributes. Additional record attributes, such as `curveType` and
+#' `startDate`, are transferred where available.
 #'
-#'@param rlum [Luminescence::RLum.Data-class] and [Luminescence::RLum.Analysis-class] or a [list] of it (**required**): input
-#'for the conversion
+#' As [Luminescence::RLum-class] objects do not distinguish between different
+#' samples, the `<xlum/>` and `<sample/>` nodes are created automatically, so
+#' all converted objects end up in a single sample.
 #'
-#'@param file [character] (*optional*): file name for the export, if `NULL` (the default),
-#'an [xml2::xml_document-class] object is returned
+#' @param rlum [Luminescence::RLum-class] or a [list] of it (**required**):
+#' input object.
 #'
-#'@author Sebastian Kreutzer, Institute of Geography, Heidelberg University, Heidelberg (Germany)
+#' @param file [character] (*optional*):
+#' path to an output file where the XLUM file should be written to. If `NULL`
+#' (default), no file is written, but an [xml2::xml_document-class] object is
+#' returned.
 #'
-#'@section Function version: 0.1.0
+#' @return
+#' When `file` is `NULL` (default), an [xml2::xml_document-class] object
+#' is returned. Otherwise the document is written to `file` (with the `.xlum`
+#' extension added automatically if needed) and `NULL` is returned invisibly.
 #'
-#'@return Depending on the setting. If `file == NULL` an [xml2::xml_document-class] object is returned,
-#' if file is set the function attempts to write an `*.xlum` file`.
+#' @section Function version: 0.1.0
 #'
-#'@keywords datagen
+#' @author
+#' Sebastian Kreutzer, F2.1 Geophysical Parametrisation/Regionalisation, LIAG - Institute for Applied Geophysics (Germany)\cr
 #'
-#'@seealso [Luminescence::RLum.Data-class], [write_xlum]
+#' @seealso [convert_2xlum], [write_xlum], [read_xlum],
+#' [Luminescence::RLum.Analysis-class]
 #'
-#'@examples
-#'data(ExampleData.RLum.Analysis,
-#' envir = environment(),
-#' package = "Luminescence")
-#'convert_rlum2xlum(IRSAR.RF.Data)
+#' @keywords datagen
 #'
-#'@md
-#'@export
+#' @examples
+#' ## load example data
+#' data(ExampleData.RLum.Analysis, envir = environment(), package = "Luminescence")
+#'
+#' ## convert to an in-memory XLUM document
+#' xlum <- convert_rlum2xlum(IRSAR.RF.Data)
+#'
+#' ## convert and write to a file
+#' convert_rlum2xlum(IRSAR.RF.Data, tempfile(fileext = ".xlum"))
+#'
+#' @export
 convert_rlum2xlum <- function(
   rlum,
   file = NULL
@@ -74,7 +97,6 @@ if(all(grepl("RLum\\.Data", vapply(rlum, class, "character"))))
       "RLum.Data.Curve" = node_text <- .convert2character(x@data[,2]),
       "RLum.Data.Image" = node_text <- .convert2character(as.numeric(x@data)),
       "RLum.Data.Spectrum" = node_text <- .convert2character(as.numeric(x@data)))
-
   }
 
   .create_node_attrs <- function(x, attrs){
@@ -238,5 +260,4 @@ if(all(grepl("RLum\\.Data", vapply(rlum, class, "character"))))
   } else {
     return(out)
   }
-
 }

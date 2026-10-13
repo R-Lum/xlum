@@ -1,44 +1,51 @@
-#'@title Import XLUM files
+#' @title Import XLUM files
 #'
-#'@description Imports XLUM-files using [xml2::read_xml]. Comes with a few
-#'convenience features, such as the transformation of string lists to numeric
-#'vectors where meaningful.
+#' @description
+#' Imports XLUM files using [xml2::read_xml]. Comes with a few convenience
+#' features, such as the transformation of string lists to numeric vectors
+#' where meaningful.
 #'
-#'@details
+#' @details
+#' **Supported output options**
 #'
-#'**Supported output options**\cr
+#' - `"xlum_list"` (default): imports XML data and coerces it to a list.
+#' Numeric values for level `<curve/>` are converted into [numeric] vectors
+#' for better handling.
 #'
-#'`"xlum_list"` (default): imports XML-data and coerces them to list. Numeric values
-#'for level `<curve>` are transposed into [numeric] vectors for better handling
+#' - `"list"`: imports XML data and coerces it to a [list], no further
+#' treatment of data.
 #'
-#'`"list"`: imports XML-data and coerces it to a [list], no further treatment of data
+#' - `"xml_document"`: unprocessed output from [xml2::read_xml].
 #'
-#'`"xml_document"`: unprocessed output from [xml2::read_xml]
+#' @param file [character] (**required**):
+#' path to file.
 #'
-#'@param file [character] (**required**): path to file
+#' @param verify [logical] (*with default*):
+#' enable/disable format validation.
 #'
-#'@param verify [logical] (*with default*): enable/disable format validation
+#' @param output [character] (*with default*):
+#' output object of the import, one of `"xlum_list"` (default), `"list"`, or
+#' `"xml_document"` (see Details).
 #'
-#'@param output [character] (*with default*): output object of the import,
-#'supported are `"xml_document"`, `"list"`, `"xlum_list"` (the default)
+#' @return
+#' The output depends on the setting selected in `output`. It will
+#' be either an [xml2::xml_document-class], a plain [list], or a [list] of
+#' class `xlum_list`.
 #'
-#'@return The output depends on the setting selected in `output`. It will
-#'be either an [xml2::xml_document-class], [list], or a [list] of class `xlum_list`.
+#' @section Function version: 0.1.0
 #'
-#'@author Sebastian Kreutzer, Institute of Geography, Heidelberg University, Heidelberg (Germany)
+#' @author
+#' Sebastian Kreutzer, F2.1 Geophysical Parametrisation/Regionalisation, LIAG - Institute for Applied Geophysics (Germany)\cr
 #'
-#'@section Function version: 0.1.0
+#' @seealso [xml2::read_xml], [validate_xlum], [write_xlum]
 #'
-#'@seealso [xml2::read_xml], [validate_xlum], [write_xlum]
+#' @keywords IO
 #'
-#'@keywords IO
+#' @examples
+#' file <- system.file("extdata/xlum_example.xlum", package = "xlum")
+#' read_xlum(file)
 #'
-#'@examples
-#'file <- system.file("extdata/xlum_example.xlum", package="xlum")
-#'read_xlum(file)
-#'
-#'@md
-#'@export
+#' @export
 read_xlum <- function(
  file,
  verify = TRUE,
@@ -89,5 +96,4 @@ read_xlum <- function(
 # Return ------------------------------------------------------------------
   if (output[1] == "xlum_list") attr(xlum, "class") <- "xlum_list"
   return(xlum)
-
 }

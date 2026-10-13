@@ -4,15 +4,15 @@
 \name{xlum-package}
 \alias{xlum-package}
 \alias{xlum}
-\title{Read, Write, and Convert xlum Data\cr
+\title{Read, write, and convert XLUM data\cr
 \if{html}{
 \figure{xlum_logo.png}{options: width="75"}
 }}
 \description{
-Support for the XLUM-file format for exchange and long-term
-preservation of luminescence data. Facilitated are the import and export
-of XLUM-files and the conversion from other ASCII and binary formats commonly
-used to store luminescence (dating) data.
+Support for the XLUM file format for exchange and long-term preservation
+of luminescence data. The package facilitates the import and export of XLUM
+files and the conversion from other ASCII and binary formats commonly used
+to store luminescence (dating) data.
 }
 \details{
 \strong{Support contact}
@@ -32,15 +32,15 @@ used to store luminescence (dating) data.
 
 \strong{Package maintainer}
 
-Sebastian Kreutzer, Institute of Geography, Heidelberg University (Germany),\cr
-\email{sebastian.kreutzer@uni-heidelberg.de}
+Sebastian Kreutzer, F2.1 Geophysical Parametrisation/Regionalisation, LIAG - Institute for Applied Geophysics (Germany)\cr
 
 \strong{Funding}
 
-Between 2020--2022, the work of Sebastian Kreutzer as maintainer of the package has received funding
-from the European Union’s Horizon 2020 research and innovation programme under
-the Marie Skłodowska-Curie grant agreement No 844457 (CREDit), and the
-work was carried out at the Geography & Earth Sciences, Aberystwyth University (United Kingdom)
+01/2020--04/2022, Sebastian Kreutzer as maintainer of the package has
+received funding from the European Union's Horizon 2020 research and
+innovation programme under the Marie Skłodowska-Curie grant agreement
+No 844457 (CREDit), and the work was carried out at the Geography & Earth
+Sciences, Aberystwyth University (United Kingdom).
 }
 \seealso{
 Useful links:

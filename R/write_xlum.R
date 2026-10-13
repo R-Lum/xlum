@@ -1,37 +1,39 @@
-#'@title Write XLUM-files
+#' @title Write XLUM files
 #'
-#'@description Create XLUM-files using [xml2::read_xml]
+#' @description
+#' Create XLUM files using [xml2::write_xml].
 #'
-#'@param x `xlum_list`, [list], [xml2::xml_document-class] (**required**) : input object
+#' @param x `xlum_list`, [list], [xml2::xml_document-class] (**required**):
+#' input object.
 #'
-#'@param file [character] (**required**): valid file path and file name with ending
-#'`.xlum` (will be add automatically if needed)
+#' @param file [character] (**required**):
+#' path to the output file, with the `.xlum` extension added automatically if
+#' needed.
 #'
-#'@param encode_base64 [logical] (*with default*): enable/disable base64 encoding for values
-#'in the `<curve/>` node. Please note that this parameter works only if the input is of
-#'class `xlum_list`
+#' @param encode_base64 [logical] (*with default*):
+#' enable/disable base64 encoding for values in the `<curve/>` node. Please
+#' note that this parameter works only if the input is of class `xlum_list`.
 #'
-#'@param ... further arguments to be passed to [xml2::write_xml]
+#' @param ... further arguments to be passed to [xml2::write_xml].
 #'
-#'@return Creates an XML-file with ending `*.xlum`
+#' @return
+#' The document is written to `file`; `NULL` is returned invisibly.
 #'
-#'@seealso [xml2::write_xml], [read_xlum]
+#' @section Function version: 0.1.0
 #'
-#'@section Function version: 0.1.0
+#' @author
+#' Sebastian Kreutzer, F2.1 Geophysical Parametrisation/Regionalisation, LIAG - Institute for Applied Geophysics (Germany)\cr
 #'
-#'@author Sebastian Kreutzer, Institute of Geography, Heidelberg University, Heidelberg (Germany)
+#' @seealso [xml2::write_xml], [read_xlum]
 #'
-#'@keywords IO
+#' @keywords IO
 #'
-#'@examples
-#'file <- system.file("extdata/xlum_prototype.xlum", package="xlum")
-#'out_file <- tempfile()
+#' @examples
+#' file <- system.file("extdata/xlum_prototype.xlum", package = "xlum")
+#' xlum_data <- read_xlum(file)
+#' write_xlum(xlum_data, tempfile())
 #'
-#'xlum_data <- read_xlum(file)
-#'write_xlum(xlum_data, out_file)
-#'
-#'@md
-#'@export
+#' @export
 write_xlum <- function(
   x,
   file,

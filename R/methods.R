@@ -2,8 +2,7 @@
 ##                      METHODS FOR S3 GENERICS                               ##
 ################################################################################
 
-#'@md
-#'@export
+#' @export
 as.list.xlum_list <- function(x, encode_base64 = FALSE, ...){
   ## convert values back to character otherwise it does not work
   ## properly
@@ -37,12 +36,10 @@ as.list.xlum_list <- function(x, encode_base64 = FALSE, ...){
     attr(x[[i[1]]][[i[2]]][[i[3]]][[i[4]]][[i[5]]], "xValues") <- xValues[[j]]
     attr(x[[i[1]]][[i[2]]][[i[3]]][[i[4]]][[i[5]]], "yValues") <- yValues[[j]]
     j <- j + 1
-
   }
 
   ## replace class attribute
   attr(x, "class") <- "list"
 
   return(x)
-
 }

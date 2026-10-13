@@ -7,18 +7,18 @@
 
 # xlum <img width=120px src="man/figures/xlum_logo.png" align="right" />
 
-The R package `'xlum'` to interface `<xlum/>` a data format for exchange
-and long-term preservation of luminescence data.
+The R package `xlum` interfaces with the `<xlum/>` data format for
+exchange and long-term preservation of luminescence data.
 
 [![Project Status: Active – The project has reached a stable, usable
 state and is being actively
-developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#Concept)
+developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#Active)
 [![CRAN](https://www.r-pkg.org/badges/version/xlum)](https://cran.r-project.org/package=xlum)
 [![DOI](https://zenodo.org/badge/477672855.svg)](https://zenodo.org/badge/latestdoi/477672855)
 
 [![Coverage
-Status](https://img.shields.io/codecov/c/github/R-Lum/xlum.svg)](https://app.codecov.io/github/R-Lum/xlum?branch=master)
-[![R-CMD-check](https://github.com/R-Lum/xlum/workflows/GitHub%20Actions%20CI/badge.svg)](https://github.com/R-Lum/xlum/actions)
+Status](https://img.shields.io/codecov/c/github/R-Lum/xlum.svg)](https://app.codecov.io/github/R-Lum/xlum?branch=main)
+[![R-CMD-check](https://github.com/R-Lum/xlum/workflows/R%20CMD%20check/badge.svg)](https://github.com/R-Lum/xlum/actions)
 
 ## Installation
 
@@ -71,10 +71,9 @@ for more details.
 ## <span class="glyphicon glyphicon-euro"></span> Funding
 
 The [development of xlum](https://github.com/R-Lum/xlum_specification)
-benefited received funding from the European Union’s Horizon 2020
-research and innovation programme under the Marie Skłodowska-Curie grant
-agreement No 844457 (project:
-[CREDit](https://cordis.europa.eu/project/id/844457)).
+received funding from the European Union’s Horizon 2020 research and
+innovation programme under the Marie Skłodowska-Curie grant agreement No
+844457 (project: [CREDit](https://cordis.europa.eu/project/id/844457)).
 
 ## Related projects
 

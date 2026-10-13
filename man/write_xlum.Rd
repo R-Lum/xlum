@@ -2,44 +2,44 @@
 % Please edit documentation in R/write_xlum.R
 \name{write_xlum}
 \alias{write_xlum}
-\title{Write XLUM-files}
+\title{Write XLUM files}
 \usage{
 write_xlum(x, file, encode_base64 = FALSE, ...)
 }
 \arguments{
-\item{x}{\code{xlum_list}, \link{list}, \link[xml2:xml_document-class]{xml2::xml_document} (\strong{required}) : input object}
+\item{x}{\code{xlum_list}, \link{list}, \link[xml2:xml_document-class]{xml2::xml_document} (\strong{required}):
+input object.}
 
-\item{file}{\link{character} (\strong{required}): valid file path and file name with ending
-\code{.xlum} (will be add automatically if needed)}
+\item{file}{\link{character} (\strong{required}):
+path to the output file, with the \code{.xlum} extension added automatically if
+needed.}
 
-\item{encode_base64}{\link{logical} (\emph{with default}): enable/disable base64 encoding for values
-in the \verb{<curve/>} node. Please note that this parameter works only if the input is of
-class \code{xlum_list}}
+\item{encode_base64}{\link{logical} (\emph{with default}):
+enable/disable base64 encoding for values in the \verb{<curve/>} node. Please
+note that this parameter works only if the input is of class \code{xlum_list}.}
 
-\item{...}{further arguments to be passed to \link[xml2:write_xml]{xml2::write_xml}}
+\item{...}{further arguments to be passed to \link[xml2:write_xml]{xml2::write_xml}.}
 }
 \value{
-Creates an XML-file with ending \verb{*.xlum}
+The document is written to \code{file}; \code{NULL} is returned invisibly.
 }
 \description{
-Create XLUM-files using \link[xml2:read_xml]{xml2::read_xml}
+Create XLUM files using \link[xml2:write_xml]{xml2::write_xml}.
 }
 \section{Function version}{
  0.1.0
 }
 
 \examples{
-file <- system.file("extdata/xlum_prototype.xlum", package="xlum")
-out_file <- tempfile()
-
+file <- system.file("extdata/xlum_prototype.xlum", package = "xlum")
 xlum_data <- read_xlum(file)
-write_xlum(xlum_data, out_file)
+write_xlum(xlum_data, tempfile())
 
 }
 \seealso{
 \link[xml2:write_xml]{xml2::write_xml}, \link{read_xlum}
 }
 \author{
-Sebastian Kreutzer, Institute of Geography, Heidelberg University, Heidelberg (Germany)
+Sebastian Kreutzer, F2.1 Geophysical Parametrisation/Regionalisation, LIAG - Institute for Applied Geophysics (Germany)\cr
 }
 \keyword{IO}

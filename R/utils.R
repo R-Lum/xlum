@@ -1,26 +1,28 @@
 # +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#
 # NON-EXPORTED INTERNAL PACKAGE UTILTY FUNCTIONS
 # +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#
-#'@title Fast Conversion of Numeric Values into White Space Separated Strings
+
+#' @title Fast conversion of numeric values into whitespace-separated strings
 #'
-#'@description Converts numeric vector to a character with numbers separated by white space. `NA`
-#'values are transformed to `"0"`.
+#' @description
+#' Converts numeric vector to a character with numbers separated by white
+#' space. `NA` values are transformed to `"0"`.
 #'
-#'@param l [numeric] [list] (**required**): list of numeric vectors (see example)
+#' @param l [numeric] [list] (**required**): list of numeric vectors (see example)
 #'
-#'@param encode_base64 [logical] (*with default*): enable/disable base64 encoding
+#' @param encode_base64 [logical] (*with default*): enable/disable base64 encoding
 #'
-#'@author Sebastian Kreutzer, Institute of Geography, Heidelberg University, Heidelberg (Germany)
+#' @return
+#' A [list] of [numeric] vectors.
 #'
-#'@return [list] of [numeric] vectors
+#' @author
+#' Sebastian Kreutzer, F2.1 Geophysical Parametrisation/Regionalisation, LIAG - Institute for Applied Geophysics (Germany)\cr
 #'
-#'@examples
+#' @examples
+#' l  <- list(a = c(12, 12, 13), b = NA)
+#' .convert2character(l)
 #'
-#'l  <- list(a = c(12, 12, 13), b = NA)
-#'.convert2character(l)
-#'
-#'@md
-#'@noRd
+#' @noRd
 .convert2character <- function(l, encode_base64 = FALSE){
   ## handle NA values
   if (anyNA(l)) l[which(is.na(l))] <- "0"
@@ -31,7 +33,6 @@
 
   } else {
     out <- paste(as.character(l), collapse = " ")
-
   }
 
   ## base64 encoding
@@ -44,29 +45,30 @@
   }
 
   return(out)
-
 }
+
 # +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#
-#'@title Fast Conversion of White Space Separated Strings to Numeric
+#' @title Fast conversion of whitespace-separated strings to numeric
 #'
-#'@description Converts strings with white space separated numbers to a numeric vector. `"0"`
-#'values are transformed to `NA`.
+#' @description
+#' Converts strings with white space separated numbers to a numeric vector. `"0"`
+#' values are transformed to `NA`.
 #'
-#'@param l [character] [list] (**required**): list of character vectors (see example)
+#' @param l [character] [list] (**required**): list of character vectors (see example)
 #'
-#'@param check_base64 [logical] (*with default*): check for base 64 encoding and decode if needed
+#' @param check_base64 [logical] (*with default*): check for base 64 encoding and decode if needed
 #'
-#'@author Sebastian Kreutzer, Institute of Geography, Heidelberg University, Heidelberg (Germany)
+#' @return
+#' A [list] of [numeric] vectors.
 #'
-#'@return [list] of [numeric] vectors
+#' @author
+#' Sebastian Kreutzer, F2.1 Geophysical Parametrisation/Regionalisation, LIAG - Institute for Applied Geophysics (Germany)\cr
 #'
-#'@examples
+#' @examples
+#' l <- list(a = c("12 12 13"), b = "0")
+#' .convert2numeric(l)
 #'
-#'l <- list(a = c("12 12 13"), b = "0")
-#'.convert2numeric(l)
-#'
-#'@md
-#'@noRd
+#' @noRd
 .convert2numeric <- function(l, check_base64 = FALSE){
   ## handle NA values
   if (any(l == "0")) l[which(l == "0")] <- NA_character_
@@ -79,7 +81,6 @@
 
       ## decode to raw convert to char
       rawToChar(x = base64enc::base64decode(x), multiple = FALSE)
-
     })
   }
 
@@ -90,26 +91,30 @@
       recursive = FALSE),
     as.numeric)
 }
+
 # +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#
-#'@title Get Names-based Element Index from Nested list
+#' @title Get names-based element index from nested list
 #'
-#'@description Obtain numeric index vectors for a specific named list element from nested list
+#' @description
+#' Obtain numeric index vectors for a specific named list element from nested
+#' list.
 #'
-#'@param l [list] (**required**): input list
+#' @param l [list] (**required**): input list
 #'
-#'@param match [character] (**required**): named list element in question
+#' @param match [character] (**required**): named list element in question
 #'
-#'@author Sebastian Kreutzer, Institute of Geography, Heidelberg University, Heidelberg (Germany)
+#' @return
+#' A [list] of index vectors. The length of vector depends index level where
+#' `match` was found.
 #'
-#'@return [list] of index vectors. The length of vector depends index level where `match` was found
+#' @author
+#' Sebastian Kreutzer, F2.1 Geophysical Parametrisation/Regionalisation, LIAG - Institute for Applied Geophysics (Germany)\cr
 #'
-#'@examples
+#' @examples
+#' l <- list(a = list(aa = 1), b = list(bb = 2), c = list(cc = 2))
+#' .get_element_index(l, match = "cc")
 #'
-#'l <- list(a = list(aa = 1), b = list(bb = 2), c = list(cc = 2))
-#'.get_element_index(l, match = "cc")
-#'
-#'@md
-#'@noRd
+#' @noRd
 .get_element_index <- function(l, match = "curve"){
   ## set crawler function
   .crawler <- function(l, match, i = 0){
@@ -124,7 +129,6 @@
         .crawler(l[[x]], match, i = c(i,x))
       else
         NULL
-
     })
   }
 
@@ -136,30 +140,37 @@
 
   return(id)
 }
+
 # +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#
-#'@title Regular expression match wrapper to extract found values conveniently
+#' @title Regular expression match wrapper to extract found values conveniently
 #'
-#'@description Combination of [regmatches], [regexpr] and [trimws]. The regular
-#'expressions use `perl = TRUE` by default
+#' @description
+#' Combination of [regmatches], [regexpr] and [trimws]. The regular expressions
+#' use `perl = TRUE` by default.
 #'
-#'@param x [character] vector (**required**): input
+#' @param x [character] vector (**required**):
+#' input.
 #'
-#'@param match [character] (**required**): regular expression
+#' @param match [character] (**required**):
+#' regular expression.
 #'
-#'@param ignore.case [logical] (*with default*): enable/disable case sensitivity
+#' @param ignore.case [logical] (*with default*):
+#' enable/disable case sensitivity.
 #'
-#'@param invert [logical] (*with default*): enable/disable inversion
+#' @param invert [logical] (*with default*):
+#' enable/disable inversion.
 #'
-#'@return Matched expression
+#' @return
+#' The matched expressions.
 #'
-#'@author Sebastian Kreutzer, Institute of Geography, Heidelberg University, Heidelberg (Germany)
+#' @author
+#' Sebastian Kreutzer, F2.1 Geophysical Parametrisation/Regionalisation, LIAG - Institute for Applied Geophysics (Germany)\cr
 #'
-#'@examples
-#'t <- c("Text to (extract )")
-#'.regmatches(t, "(?<=\\()[a-z]+")
+#' @examples
+#' t <- c("Text to (extract )")
+#' .regmatches(t, "(?<=\\()[a-z]+")
 #'
-#'@md
-#'@noRd
+#' @noRd
 .regmatches <- function(x, match, ignore.case = FALSE, invert = FALSE){
   t <- trimws(
     regmatches(
@@ -176,25 +187,27 @@
   else
     return(t)
 }
+
 # +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#
-#'@title Character strings to ISO 8601-1:2019 date format
+#' @title Character strings to ISO 8601-1:2019 date format
 #'
-#'@description Fast conversion of characters of certain pattern to ISO conform
-#'dates
+#' @description
+#' Fast conversion of characters of certain pattern to ISO-conform dates.
 #'
-#'@param x [character] (**required**): input character
+#' @param x [character] (**required**): input character
 #'
-#'@param format [character] (*with default*): fixed formats
+#' @param format [character] (*with default*): fixed formats
 #'
-#'@author Sebastian Kreutzer, Institute of Geography, Heidelberg University, Heidelberg (Germany)
+#' @return
+#' A correctly formatted character.
 #'
-#'@return Returns a correctly formatted character
+#' @author
+#' Sebastian Kreutzer, F2.1 Geophysical Parametrisation/Regionalisation, LIAG - Institute for Applied Geophysics (Germany)\cr
 #'
-#'@examples
-#'.toISODate("20221005110501", "lexsyg")
+#' @examples
+#' .toISODate("20221005110501", "lexsyg")
 #'
-#'@md
-#'@noRd
+#' @noRd
 .toISODate <- function(x, format = "default"){
   switch(format,
     "lexsyg"  = return(format(strptime(x, "%Y%m%d%H%M%S", tz = "UTC"), "%Y-%m-%dT%XZ")),
@@ -202,7 +215,5 @@
     "Daybreak" = return(format(strptime(x, "%d/%m/%Y %H:%M:%S", tz = "UTC"), "%Y-%m-%dT%XZ")),
     "psl"  =  return(format(strptime(x, "%Y-%m-%d%H:%M:%S", tz = "UTC"), "%Y-%m-%dT%XZ")),
     stop("[.toISODate()] unknown date format", call. = FALSE)
-
   )
-
 }

@@ -2,28 +2,37 @@
 % Please edit documentation in R/validate_xlum.R
 \name{validate_xlum}
 \alias{validate_xlum}
-\title{Validate xlum format against an XSD reference schema}
+\title{Validate XLUM format against an XSD reference schema}
 \usage{
 validate_xlum(file, xsd_version = NULL)
 }
 \arguments{
-\item{file}{\link[xml2:xml_document-class]{xml2::xml_document} (\strong{required}): object to test}
+\item{file}{\link{character} or \link[xml2:xml_document-class]{xml2::xml_document} (\strong{required}):
+path to an XLUM file, or an in-memory \link[xml2:read_xml]{xml2::read_xml} document to test.}
 
-\item{xsd_version}{\link{numeric} (\emph{optional}): specify format version for the
-validation, e.g., \code{1}, \code{1.1}. The default is \code{NULL}, which will use the most recent version}
+\item{xsd_version}{\link{numeric} (\emph{optional}):
+format version to be used for validation, e.g., 1. If \code{NULL} (default), the
+most recent version will be used.}
 }
 \value{
-Results of the validation \link{logical} with attributes
+A \link{logical} value, with the validation errors in its attributes.
 }
 \description{
-A a convenience wrapper around \link[xml2:xml_validate]{xml2::xml_validate} against
-the reference format description shipped with \link{xlum-package}
+A convenience wrapper around \link[xml2:xml_validate]{xml2::xml_validate} to check an XLUM file
+against the reference format description shipped with \link{xlum-package}.
 }
+\section{Function version}{
+ 0.1.0
+}
+
 \examples{
 file <- system.file("extdata/xlum_prototype.xlum", package = "xlum")
 validate_xlum(file)
 
 }
+\seealso{
+\link[xml2:xml_validate]{xml2::xml_validate}, \link{read_xlum}, \link{write_xlum}
+}
 \author{
-Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University
+Sebastian Kreutzer, F2.1 Geophysical Parametrisation/Regionalisation, LIAG - Institute for Applied Geophysics (Germany)\cr
 }

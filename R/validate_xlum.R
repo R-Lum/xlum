@@ -1,23 +1,31 @@
-#'@title Validate xlum format against an XSD reference schema
+#' @title Validate XLUM format against an XSD reference schema
 #'
-#'@description A a convenience wrapper around [xml2::xml_validate] against
-#'the reference format description shipped with [xlum-package]
+#' @description
+#' A convenience wrapper around [xml2::xml_validate] to check an XLUM file
+#' against the reference format description shipped with [xlum-package].
 #'
-#'@param file [xml2::xml_document-class] (**required**): object to test
+#' @param file [character] or [xml2::xml_document-class] (**required**):
+#' path to an XLUM file, or an in-memory [xml2::read_xml] document to test.
 #'
-#'@param xsd_version [numeric] (*optional*): specify format version for the
-#'validation, e.g., `1`, `1.1`. The default is `NULL`, which will use the most recent version
+#' @param xsd_version [numeric] (*optional*):
+#' format version to be used for validation, e.g., 1. If `NULL` (default), the
+#' most recent version will be used.
 #'
-#'@return Results of the validation [logical] with attributes
+#' @return
+#' A [logical] value, with the validation errors in its attributes.
 #'
-#'@author Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University
+#' @section Function version: 0.1.0
 #'
-#'@examples
-#'file <- system.file("extdata/xlum_prototype.xlum", package = "xlum")
-#'validate_xlum(file)
+#' @author
+#' Sebastian Kreutzer, F2.1 Geophysical Parametrisation/Regionalisation, LIAG - Institute for Applied Geophysics (Germany)\cr
 #'
-#'@md
-#'@export
+#' @seealso [xml2::xml_validate], [read_xlum], [write_xlum]
+#'
+#' @examples
+#' file <- system.file("extdata/xlum_prototype.xlum", package = "xlum")
+#' validate_xlum(file)
+#'
+#' @export
 validate_xlum <- function(
     file,
     xsd_version = NULL

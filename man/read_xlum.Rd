@@ -7,38 +7,43 @@
 read_xlum(file, verify = TRUE, output = "xlum_list")
 }
 \arguments{
-\item{file}{\link{character} (\strong{required}): path to file}
+\item{file}{\link{character} (\strong{required}):
+path to file.}
 
-\item{verify}{\link{logical} (\emph{with default}): enable/disable format validation}
+\item{verify}{\link{logical} (\emph{with default}):
+enable/disable format validation.}
 
-\item{output}{\link{character} (\emph{with default}): output object of the import,
-supported are \code{"xml_document"}, \code{"list"}, \code{"xlum_list"} (the default)}
+\item{output}{\link{character} (\emph{with default}):
+output object of the import, one of \code{"xlum_list"} (default), \code{"list"}, or
+\code{"xml_document"} (see Details).}
 }
 \value{
 The output depends on the setting selected in \code{output}. It will
-be either an \link[xml2:xml_document-class]{xml2::xml_document}, \link{list}, or a \link{list} of class \code{xlum_list}.
+be either an \link[xml2:xml_document-class]{xml2::xml_document}, a plain \link{list}, or a \link{list} of
+class \code{xlum_list}.
 }
 \description{
-Imports XLUM-files using \link[xml2:read_xml]{xml2::read_xml}. Comes with a few
-convenience features, such as the transformation of string lists to numeric
-vectors where meaningful.
+Imports XLUM files using \link[xml2:read_xml]{xml2::read_xml}. Comes with a few convenience
+features, such as the transformation of string lists to numeric vectors
+where meaningful.
 }
 \details{
-\strong{Supported output options}\cr
-
-\code{"xlum_list"} (default): imports XML-data and coerces them to list. Numeric values
-for level \verb{<curve>} are transposed into \link{numeric} vectors for better handling
-
-\code{"list"}: imports XML-data and coerces it to a \link{list}, no further treatment of data
-
-\code{"xml_document"}: unprocessed output from \link[xml2:read_xml]{xml2::read_xml}
+\strong{Supported output options}
+\itemize{
+\item \code{"xlum_list"} (default): imports XML data and coerces it to a list.
+Numeric values for level \verb{<curve/>} are converted into \link{numeric} vectors
+for better handling.
+\item \code{"list"}: imports XML data and coerces it to a \link{list}, no further
+treatment of data.
+\item \code{"xml_document"}: unprocessed output from \link[xml2:read_xml]{xml2::read_xml}.
+}
 }
 \section{Function version}{
  0.1.0
 }
 
 \examples{
-file <- system.file("extdata/xlum_example.xlum", package="xlum")
+file <- system.file("extdata/xlum_example.xlum", package = "xlum")
 read_xlum(file)
 
 }
@@ -46,6 +51,6 @@ read_xlum(file)
 \link[xml2:read_xml]{xml2::read_xml}, \link{validate_xlum}, \link{write_xlum}
 }
 \author{
-Sebastian Kreutzer, Institute of Geography, Heidelberg University, Heidelberg (Germany)
+Sebastian Kreutzer, F2.1 Geophysical Parametrisation/Regionalisation, LIAG - Institute for Applied Geophysics (Germany)\cr
 }
 \keyword{IO}

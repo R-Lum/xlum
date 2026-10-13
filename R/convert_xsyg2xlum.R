@@ -1,32 +1,13 @@
-#'@title Convert Freiberg Instruments XSYG files to XLUM
+#' @describeIn convert_2xlum
+#' Convert Freiberg Instruments XSYG files to `xlum` format. This is a shallow
+#' wrapper around [Luminescence::read_XSYG2R] and [convert_rlum2xlum].
 #'
-#'@description Wrapped function to quickly convert Freiberg Instruments XSYG-files
-#'to `xlum` (files)
+#' @examples
+#' ## load XSYG example data
+#' file <- system.file("extdata/XSYG_file.xsyg", package = "Luminescence")
+#' convert_xsyg2xlum(file)
 #'
-#'@param file [character] (**required**): file
-#'
-#'@param out_file [character] (*optional*): output file, if set a file
-#'output is created
-#'
-#'@author Sebastian Kreutzer, Institute of Geography, Heidelberg University, Heidelberg (Germany)
-#'
-#'@section Function version: 0.1.0
-#'
-#'@return Depending on the setting. If `out_file == NULL` an [xml2::xml_document-class] object is returned,
-#' if file is set the function attempts to write an `*.xlum` file`.
-#'
-#'
-#'@seealso [convert_rlum2xlum], [Luminescence::read_XSYG2R]
-#'
-#'@examples
-#'## load package example data
-#'## for loading own data use
-#'## file <- file.choose()
-#'file <- system.file("extdata/XSYG_file.xsyg", package = "Luminescence")
-#'convert_xsyg2xlum(file)
-#'
-#'@md
-#'@export
+#' @export
 convert_xsyg2xlum <- function(
     file,
     out_file = NULL
@@ -38,4 +19,3 @@ convert_xsyg2xlum <- function(
       verbose = FALSE)
   convert_rlum2xlum(rlum, out_file)
 }
-

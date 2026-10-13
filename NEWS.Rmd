@@ -8,4 +8,8 @@ header-includes:
 
 # Changes in version `r RLumBuild::.get_pkg_version()` (`r Sys.Date()`)
 
+* The documentation was revamped.
+
+# Changes in version 0.1.0 (2022-11-25)
+
 * Initial version

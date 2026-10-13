@@ -48,5 +48,6 @@ xlum.BuildResults
 .*.swp
 
 # more stuff
-README.HTML
+NEWS.html
+README.html
 *.DS_Store

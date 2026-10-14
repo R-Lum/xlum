@@ -9,6 +9,9 @@ test_that("read_xlum()", {
   expect_type(read_xlum(file, output = "list"), "list")
   expect_s3_class(read_xlum(file, output = "xml_document"), "xml_document")
 
-  ## test verification argument
-  expect_s3_class(read_xlum(file, verify = FALSE), "xlum_list")
+  ## verify argument
+  xlum <- read_xlum(file, verify = FALSE)
+  expect_s3_class(xlum, "xlum_list")
+  expect_equal(read_xlum(file, verify = NA),
+               xlum)
 })

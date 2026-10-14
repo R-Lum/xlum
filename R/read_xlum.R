@@ -56,7 +56,7 @@ read_xlum <- function(
   xlum <- xml2::read_xml(normalizePath(file))
 
 # Validate xlum schema -------------------------------  ---------------------
-  if (verify[1])
+  if (isTRUE(verify[1]))
     validate_xlum(xlum)
 
 # Sanitize input ----------------------------------------------------------

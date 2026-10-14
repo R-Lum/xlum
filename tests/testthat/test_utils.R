@@ -53,16 +53,27 @@ test_that(".get_element_index", {
 test_that(".toISODate", {
   testthat::skip_on_cran()
 
-  t <- expect_type(.toISODate("20221111150310", format = "lexsyg"), "character")
-  expect_true(!is.na(t))
-  t <- expect_type(.toISODate("20102012:12:12", format = "Risoe"), "character")
-  expect_true(!is.na(t))
-  t <- expect_type(.toISODate("06/12/2021 12:12:12", format = "Daybreak"), "character")
-  expect_true(!is.na(t))
-  t <- expect_type(.toISODate("2021-01-0112:12:12", format = "psl"), "character")
-  expect_true(!is.na(t))
+  expect_error(.toISODate("2021-01-0112:12:12"),
+               "\\[\\.toISODate\\(\\)\\] Unknown date format")
   expect_error(.toISODate("2021-01-0112:12:12", format = "error"),
-               regexp = "\\[\\.toISODate\\(\\)\\] unknown date format")
+               "\\[\\.toISODate\\(\\)\\] Unknown date format")
+
+  expect_equal(.toISODate("20221111150310", format = "lexsyg"),
+               "2022-11-11T15:03:10Z")
+  expect_equal(.toISODate("20102012:12:12", format = "Risoe"),
+               "2020-10-20T12:12:12Z")
+  expect_equal(.toISODate("06/12/2021 12:12:12", format = "Daybreak"),
+               "2021-12-06T12:12:12Z")
+  expect_equal(.toISODate("2021-01-0112:12:12", format = "psl"),
+               "2021-01-01T12:12:12Z")
+
+  ## vectorised input
+  expect_equal(.toISODate(c("20221111150310", "20230101000000"), format = "lexsyg"),
+               c("2022-11-11T15:03:10Z", "2023-01-01T00:00:00Z"))
+
+  ## unparsable dates return NA
+  expect_true(is.na(.toISODate("error", format = "lexsyg")))
+  expect_true(is.na(.toISODate(NA_character_, format = "lexsyg")))
 })
 
 # +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#

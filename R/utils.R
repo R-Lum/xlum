@@ -41,7 +41,6 @@
       "list" = lapply(out, function(x) base64enc::base64encode(charToRaw(x))),
       "character" = base64enc::base64encode(charToRaw(out))
     )
-
   }
 
   return(out)
@@ -209,13 +208,14 @@
 #'
 #' @noRd
 .toISODate <- function(x, format = "default"){
-  switch(format,
-    "lexsyg"  = return(format(strptime(x, "%Y%m%d%H%M%S", tz = "UTC"), "%Y-%m-%dT%XZ")),
-    "Risoe"  = return(format(strptime(x, "%y%m%d%H:%M:%S", tz = "UTC"), "%Y-%m-%dT%XZ")),
-    "Daybreak" = return(format(strptime(x, "%d/%m/%Y %H:%M:%S", tz = "UTC"), "%Y-%m-%dT%XZ")),
-    "psl"  =  return(format(strptime(x, "%Y-%m-%d%H:%M:%S", tz = "UTC"), "%Y-%m-%dT%XZ")),
-    stop("[.toISODate()] unknown date format", call. = FALSE)
-  )
+  fmt <- switch(format,
+                "lexsyg"   = "%Y%m%d%H%M%S",
+                "Risoe"    = "%y%m%d%H:%M:%S",
+                "Daybreak" = "%d/%m/%Y %H:%M:%S",
+                "psl"      = "%Y-%m-%d%H:%M:%S",
+                stop("[.toISODate()] Unknown date format", call. = FALSE)
+                )
+  format(strptime(x, fmt, tz = "UTC"), "%Y-%m-%dT%XZ")
 }
 
 # +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#

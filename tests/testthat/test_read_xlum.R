@@ -28,6 +28,8 @@ test_that("check functionality", {
   ## test options for output
   expect_s3_class(read_xlum(file, output = "unknown"),
                   "xml_document")
+  expect_s3_class(read_xlum(file, output = NA),
+                  "xml_document")
 
   ## verify argument
   xlum <- read_xlum(file, verify = FALSE)

@@ -87,13 +87,12 @@ read_xlum <- function(
         attr(xlum[[i[1]]][[i[2]]][[i[3]]][[i[4]]][[i[5]]], "xValues") <- xValues[[j]]
         attr(xlum[[i[1]]][[i[2]]][[i[3]]][[i[4]]][[i[5]]], "yValues") <- yValues[[j]]
         j <- j + 1
-
       }
     }
-
+    if (output[1] == "xlum_list")
+      attr(xlum, "class") <- "xlum_list"
   }
 
 # Return ------------------------------------------------------------------
-  if (output[1] == "xlum_list") attr(xlum, "class") <- "xlum_list"
   return(xlum)
 }

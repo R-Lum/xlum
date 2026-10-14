@@ -86,9 +86,12 @@ if(!inherits(rlum, "list")) {
          "either 'RLum.Analysis' or 'RLum.Data'", call. = FALSE)
   }
 
-## we can assume that we have correct objects, so always coerce to RLum.Analysis
-if(all(grepl("RLum\\.Data", vapply(rlum, class, "character"))))
-  rlum <- list(Luminescence::set_RLum("RLum.Analysis", records = rlum, originator = rlum[[1]]@originator))
+  ## we can assume that we have correct objects, so always coerce to RLum.Analysis
+  if (all(vapply(rlum, inherits, "RLum.Data", FUN.VALUE = logical(1)))) {
+    rlum <- list(Luminescence::set_RLum("RLum.Analysis",
+                                        records = rlum,
+                                        originator = rlum[[1]]@originator))
+  }
 
 # Set prototype ------------------------------------------------------------
   ## get prototype attributes
@@ -103,27 +106,30 @@ if(all(grepl("RLum\\.Data", vapply(rlum, class, "character"))))
 
 # Helper functions --------------------------------------------------------
   .create_node_values <- function(x){
-    switch(class(x)[1],
-      "RLum.Data.Curve" = node_text <- .convert2character(x@data[,2]),
-      "RLum.Data.Image" = node_text <- .convert2character(as.numeric(x@data)),
-      "RLum.Data.Spectrum" = node_text <- .convert2character(as.numeric(x@data)))
+    vals <- switch(class(x)[1],
+                   "RLum.Data.Curve" = x@data[, 2],
+                   "RLum.Data.Image" = as.numeric(x@data),
+                   "RLum.Data.Spectrum" = as.numeric(x@data)
+                   )
+    .convert2character(vals)
   }
 
   .create_node_attrs <- function(x, attrs){
       ## obtain tValues (this should be consistent)
-       switch(class(x)[1],
-         "RLum.Data.Curve" = attrs[["tValues"]] <- .convert2character(x@data[,1]),
-         "RLum.Data.Image" = attrs[["tValues"]]  <- .convert2character(seq_len(dim(x@data)[3])),
-         "RLum.Data.Spectrum" = attrs[["tValues"]]<- .convert2character(rownames(x@data)))
+    vals <- switch(class(x)[1],
+                   "RLum.Data.Curve" = x@data[, 1],
+                   "RLum.Data.Image" = seq_len(dim(x@data)[3]),
+                   "RLum.Data.Spectrum" = rownames(x@data)
+                   )
+    attrs[["tValues"]] <- .convert2character(vals)
 
        ## tackle x and y values
-        if(inherits(x, "RLum.Data.Image")) {
+    if (inherits(x, "RLum.Data.Image")) {
           attrs[["xValues"]] <- .convert2character(seq_len(dim(x@data)[2]))
           attrs[["yValues"]] <- .convert2character(seq_len(dim(x@data)[1]))
-
         }
 
-       if(inherits(x, "RLum.Data.Spectrum"))
+    else if (inherits(x, "RLum.Data.Spectrum"))
           attrs[["xValues"]] <- .convert2character(seq_len(dim(x@data)[2]))
 
       ## common attributes
@@ -209,9 +215,10 @@ if(all(grepl("RLum\\.Data", vapply(rlum, class, "character"))))
   node_sample <- xml2::xml_add_child(node_xlum, "sample")
   xml2::xml_attrs(node_sample) <- prototype_attrs[["sample"]]
 
-    ##set a few attributes if applicable
-    if(!is.null(unlist(rlum[[1]]@records[[1]]@info[c("SAMPLE")])[1]))
-      xml2::xml_attr(node_sample, "name") <- unlist(rlum[[1]]@records[[1]]@info[c("SAMPLE")])[1]
+  ## set a few attributes if applicable
+  sample_name <- unlist(rlum[[1]]@records[[1]]@info[c("SAMPLE")])[1]
+  if (!is.null(sample_name))
+    xml2::xml_attr(node_sample, "name") <- sample_name
 
   ## add <sequence/>
   for (s in seq_along(rlum)) {
@@ -260,7 +267,6 @@ if(all(grepl("RLum\\.Data", vapply(rlum, class, "character"))))
           attrs = xml2::xml_attrs(node_curve))
 
       } ## end loop curve
-
     } ## end loop record
   } ## end loop sequence
 

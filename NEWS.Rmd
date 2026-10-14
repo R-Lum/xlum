@@ -12,6 +12,9 @@ header-includes:
 
 * Improved input object validation (#3).
 
+* Objects with `.uid` slot set to `NA` and no `parentID` specified in the
+`info` slot field can now be converted correctly (#5).
+
 ## Other changes
 
 * The documentation was revamped.

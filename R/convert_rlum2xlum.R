@@ -227,7 +227,9 @@ if(all(grepl("RLum\\.Data", vapply(rlum, class, "character"))))
 
     ## get curve ID; including unique IDs and recordType
     id_curves <- vapply(rlum[[s]]@records, function(x) {
-      parentID <- if(is.null(x@info[["parentID"]])) x@.uid else x@info[["parentID"]]
+      parentID <- x@info[["parentID"]] %||% x@.uid
+      if (is.na(parentID))
+        parentID <- "none"
       c(strsplit(x@recordType," ", TRUE)[[1]][1], parentID)
      }, character(2))
 

@@ -75,3 +75,11 @@ test_that("snapshot tests", {
   spectrum@data <- spectrum@data[1:100, 1:10]
   expect_snapshot_xlum(convert_rlum2xlum(spectrum))
 })
+
+test_that("regression tests", {
+  testthat::skip_on_cran()
+
+  ## issue 5
+  image <- as(array(1:200, dim = c(10, 10, 2)), "RLum.Data.Image")
+  expect_snapshot_xlum(convert_rlum2xlum(image))
+})

@@ -217,3 +217,39 @@
     stop("[.toISODate()] unknown date format", call. = FALSE)
   )
 }
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#
+#' @title Read and cache the XLUM prototype attributes
+#'
+#' @description
+#' Reads the XLUM prototype shipped with the package and returns the
+#' attributes of its `xlum`, `sample`, `sequence`, `record`, and `curve`
+#' nodes. The result is computed only once and cached for subsequent calls.
+#'
+#' @return
+#' A named [list] of character vectors.
+#'
+#' @author
+#' Marco Colombo, Institute of Geography, Heidelberg University (Germany)\cr
+#'
+#' @noRd
+.get_prototype_attrs <- function(){
+  if (is.null(.xlum.env$prototype_attrs)) {
+    xlum_proto <- xml2::read_xml(system.file("extdata/xlum_prototype.xlum",
+                                             package = "xlum"))
+    xlum_proto_ns <- xml2::xml_ns(xlum_proto)
+
+    .xlum.env$prototype_attrs <- list(
+        xlum = xml2::xml_attrs(xml2::xml_root(xlum_proto)),
+        sample = xml2::xml_attrs(xml2::xml_child(xlum_proto, ".//sample",
+                                                 xlum_proto_ns)),
+        sequence = xml2::xml_attrs(xml2::xml_child(xlum_proto, ".//sequence",
+                                                   xlum_proto_ns)),
+        record = xml2::xml_attrs(xml2::xml_child(xlum_proto, ".//record",
+                                                 xlum_proto_ns)),
+        curve = xml2::xml_attrs(xml2::xml_child(xlum_proto, ".//curve",
+                                                xlum_proto_ns)))
+  }
+
+  return(.xlum.env$prototype_attrs)
+}

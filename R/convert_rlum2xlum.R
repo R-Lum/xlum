@@ -95,13 +95,7 @@ if(!inherits(rlum, "list")) {
 
 # Set prototype ------------------------------------------------------------
   ## get prototype attributes
-  xlum_proto <- xml2::read_xml(system.file("extdata/xlum_prototype.xlum", package="xlum"))
-  prototype_attrs <- list(
-    xlum = xml2::xml_attrs(xml2::xml_root(xlum_proto)),
-    sample = xml2::xml_attrs(xml2::xml_child(xlum_proto, ".//sample", xml2::xml_ns(xlum_proto))),
-    sequence = xml2::xml_attrs(xml2::xml_child(xlum_proto, ".//sequence", xml2::xml_ns(xlum_proto))),
-    record = xml2::xml_attrs(xml2::xml_child(xlum_proto, ".//record", xml2::xml_ns(xlum_proto))),
-    curve = xml2::xml_attrs(xml2::xml_child(xlum_proto, ".//curve", xml2::xml_ns(xlum_proto))))
+  prototype_attrs <- .get_prototype_attrs()
 
 
 # Helper functions --------------------------------------------------------

@@ -15,6 +15,9 @@ header-includes:
 * Objects with `.uid` slot set to `NA` and no `parentID` specified in the
 `info` slot field can now be converted correctly (#5).
 
+* The attributes from the `xlum_prototype` file are read only once and then
+cached, rather than at each function call (#7).
+
 ## Other changes
 
 * The documentation was revamped.

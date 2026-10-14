@@ -66,8 +66,8 @@ test_that("snapshot tests", {
   image_1_frame@data <- image_1_frame@data[1:100, 1:10, , drop = FALSE]
   expect_snapshot_xlum(convert_rlum2xlum(image_1_frame))
 
-  set.seed(1)
-  image_2_frames <- as(array(rnorm(200), dim = c(10, 10, 2)), "RLum.Data.Image")
+  image_2_frames <- image_1_frame
+  dim(image_2_frames@data) <- c(50, 10, 2)
   expect_snapshot_xlum(convert_rlum2xlum(image_2_frames))
 
   ## RLum.Data.Spectrum

@@ -60,14 +60,16 @@ read_xlum <- function(
     validate_xlum(xlum)
 
 # Sanitize input ----------------------------------------------------------
-  if (any(output[1] %in% c("list", "xlum_list"))) {
+  output <- output[1]
+  as_xlum_list <- identical(output, "xlum_list")
 
-    if (output[1] == "xlum_list") {
-    ## we have to find all curve objects to create numeric vectors
-    curve_nodes <- xml2::xml_find_all(xlum, "//curve", xml2::xml_ns(xlum))
+  if (output %in% c("list", "xlum_list")) {
+    ## extract the values from the XML document before it is converted to a list
+    if (as_xlum_list) {
+      ## we have to find all curve objects to create numeric vectors
+      curve_nodes <- xml2::xml_find_all(xlum, "//curve", xml2::xml_ns(xlum))
 
-      ## extract the numeric values for nodes
-      ## the measured values
+      ## extract the numeric values and the attributes
       curve_values <- .convert2numeric(xml2::xml_text(curve_nodes, trim = TRUE), check_base64 = TRUE)
       tValues <- .convert2numeric(xml2::xml_attr(curve_nodes, attr = "tValues"))
       xValues <- .convert2numeric(xml2::xml_attr(curve_nodes, attr = "xValues"))
@@ -77,20 +79,21 @@ read_xlum <- function(
     ## convert input to standard R list
     xlum <- xml2::as_list(xlum)
 
-    if (output[1] == "xlum_list") {
+    if (as_xlum_list) {
       ## replace all long string values with numeric values
       ## we hard-code this here; it suffices
-      j <- 1
-      for (i in .get_element_index(xlum)) {
-        xlum[[i[1]]][[i[2]]][[i[3]]][[i[4]]][[i[5]]][[1]] <- curve_values[[j]]
-        attr(xlum[[i[1]]][[i[2]]][[i[3]]][[i[4]]][[i[5]]], "tValues") <- tValues[[j]]
-        attr(xlum[[i[1]]][[i[2]]][[i[3]]][[i[4]]][[i[5]]], "xValues") <- xValues[[j]]
-        attr(xlum[[i[1]]][[i[2]]][[i[3]]][[i[4]]][[i[5]]], "yValues") <- yValues[[j]]
-        j <- j + 1
+      curve_index <- .get_element_index(xlum)
+      for (j in seq_along(curve_index)) {
+        i <- curve_index[[j]]
+        node <- xlum[[i[1]]][[i[2]]][[i[3]]][[i[4]]][[i[5]]]
+        node[[1]] <- curve_values[[j]]
+        attr(node, "tValues") <- tValues[[j]]
+        attr(node, "xValues") <- xValues[[j]]
+        attr(node, "yValues") <- yValues[[j]]
+        xlum[[i[1]]][[i[2]]][[i[3]]][[i[4]]][[i[5]]] <- node
       }
-    }
-    if (output[1] == "xlum_list")
       attr(xlum, "class") <- "xlum_list"
+    }
   }
 
 # Return ------------------------------------------------------------------

@@ -7,7 +7,10 @@
 
 # Changes in version 0.1.0 (2026-10-14)
 
-## `convert_rlum2xlum`
+## `convert_rlum2xlum()`
+
+- The `file` argument was renames to `out_file` for consistency with the
+  other `convert_*2xlum()` functions (#1).
 
 - Improved input object validation (#3).
 

@@ -1,6 +1,7 @@
 data(ExampleData.RLum.Analysis, envir = environment(), package = "Luminescence")
 data(ExampleData.RLum.Data.Image, envir = environment(), package = "Luminescence")
 data(ExampleData.XSYG, envir = environment(), package = "Luminescence")
+RLum.Data.Curve <- IRSAR.RF.Data@records
 
 test_that("input validation", {
   testthat::skip_on_cran()
@@ -17,31 +18,21 @@ test_that("input validation", {
 test_that("check functionality", {
   testthat::skip_on_cran()
 
-   RLum.Data.Curve <- IRSAR.RF.Data@records
-   RLum.Data.Analysis <- IRSAR.RF.Data
-   RLum.Data.Image <- ExampleData.RLum.Data.Image
-   RLum.Data.Spectrum <- TL.Spectrum
+  ## writing to file
+  out_file <- tempfile(fileext = ".xlum")
+  expect_silent(convert_rlum2xlum(RLum.Data.Curve[[1]], out_file = out_file))
+  expect_true(file.exists(out_file))
 
-   ## simple conversions
-    ## RLum.Data.Curve
-    expect_s3_class(convert_rlum2xlum(RLum.Data.Curve[[1]]), "xml_document")
-    expect_silent(convert_rlum2xlum(RLum.Data.Curve[[1]], out_file = tempfile()))
-    expect_s3_class(convert_rlum2xlum(RLum.Data.Curve), "xml_document")
-
-    ## RLum.Data.Analysis
-    expect_s3_class(convert_rlum2xlum(RLum.Data.Analysis), "xml_document")
-
-    ## RLum.Data.Image
-    expect_s3_class(convert_rlum2xlum(RLum.Data.Image), "xml_document")
-
-    ## RLum.Data.Spectrum
-    expect_s3_class(convert_rlum2xlum(RLum.Data.Spectrum), "xml_document")
+  out_file_noext <- tempfile()
+  expect_silent(convert_rlum2xlum(RLum.Data.Curve[[1]], out_file = out_file_noext))
+  expect_true(file.exists(paste0(out_file_noext, ".xlum")))
 
   ## use BIN/BINX data
-  ## TODO activate after Luminescence was shipped
-  # file <- system.file("extdata/BINfile_V8.binx", package = "Luminescence")
-  # BINfile <- Luminescence::read_BIN2R(file, fastForward = TRUE, verbose = FALSE)
-  # expect_s3_class(convert_rlum2xlum(BINfile), "xml_document")
+  file <- system.file("extdata/BINfile_V8.binx", package = "Luminescence")
+  SW({
+  BINfile <- Luminescence::read_BIN2R(file, fastForward = TRUE, verbose = FALSE)
+  })
+  expect_s3_class(convert_rlum2xlum(BINfile), "xml_document")
 
   ## Daybreak
   file <- system.file("extdata/Daybreak_TestFile.txt", package = "Luminescence")
@@ -58,4 +49,29 @@ test_that("check functionality", {
   file <- system.file("extdata", "RF_file.rf", package = "Luminescence")
   temp <- Luminescence::read_RF2R(file, verbose = FALSE)
   expect_s3_class(convert_rlum2xlum(temp), "xml_document")
+})
+
+test_that("snapshot tests", {
+  testthat::skip_on_cran()
+
+  ## RLum.Data.Analysis
+  expect_snapshot_xlum(convert_rlum2xlum(IRSAR.RF.Data))
+
+  ## RLum.Data.Curve
+  expect_snapshot_xlum(convert_rlum2xlum(RLum.Data.Curve[[1]]))
+  expect_snapshot_xlum(convert_rlum2xlum(RLum.Data.Curve))
+
+  ## RLum.Data.Image
+  image_1_frame <- ExampleData.RLum.Data.Image
+  image_1_frame@data <- image_1_frame@data[1:100, 1:10, , drop = FALSE]
+  expect_snapshot_xlum(convert_rlum2xlum(image_1_frame))
+
+  set.seed(1)
+  image_2_frames <- as(array(rnorm(200), dim = c(10, 10, 2)), "RLum.Data.Image")
+  expect_snapshot_xlum(convert_rlum2xlum(image_2_frames))
+
+  ## RLum.Data.Spectrum
+  spectrum <- TL.Spectrum
+  spectrum@data <- spectrum@data[1:100, 1:10]
+  expect_snapshot_xlum(convert_rlum2xlum(spectrum))
 })

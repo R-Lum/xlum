@@ -127,7 +127,8 @@ if(!inherits(rlum, "list")) {
           attrs[["xValues"]] <- .convert2character(seq_len(dim(x@data)[2]))
 
       ## common attributes
-      ## curve type
+    ## curve type
+    if (!is.na(x@curveType))
       attrs[["curveType"]] <- x@curveType
 
       ##XSYG and default

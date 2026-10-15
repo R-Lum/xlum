@@ -32,18 +32,24 @@ test_that("check functionality", {
   SW({
   BINfile <- Luminescence::read_BIN2R(file, fastForward = TRUE, verbose = FALSE)
   })
-  expect_s3_class(convert_rlum2xlum(BINfile), "xml_document")
+  xlum <- convert_rlum2xlum(BINfile)
+  expect_s3_class(xlum, "xml_document")
+  expect_true(validate_xlum(xlum))
 
   ## Daybreak
   file <- system.file("extdata/Daybreak_TestFile.txt", package = "Luminescence")
   temp <- Luminescence::read_Daybreak2R(file, verbose = FALSE)
-  expect_s3_class(convert_rlum2xlum(temp), "xml_document")
+  xlum <- convert_rlum2xlum(temp)
+  expect_s3_class(xlum, "xml_document")
+  expect_true(validate_xlum(xlum))
 
   ## PSL
   file <- system.file("extdata", "DorNie_0016.psl", package = "Luminescence")
   psl <- Luminescence::read_PSL2R(file, drop_bg = FALSE, as_decay_curve = TRUE,
                                   smooth = TRUE, merge = FALSE, verbose = FALSE)
-  expect_s3_class(convert_rlum2xlum(psl), "xml_document")
+  xlum <- convert_rlum2xlum(psl)
+  expect_s3_class(xlum, "xml_document")
+  expect_true(validate_xlum(xlum))
 
   ## RF
   file <- system.file("extdata", "RF_file.rf", package = "Luminescence")

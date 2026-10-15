@@ -9,7 +9,7 @@ test_that("input validation", {
   testthat::skip_on_cran()
 
   expect_error(write_xlum("error", file = out_file),
-               "[write_xlum()] object of class 'character' not supported as input",
+               "[write_xlum()] Object of class 'character' not supported as input",
                fixed = TRUE)
   expect_error(write_xlum(xlum, file.path(tempdir(), "sub_dir", "test.xlum")),
                "does not exist")

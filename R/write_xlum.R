@@ -42,13 +42,13 @@ write_xlum <- function(
 ){
 
 # Check input -------------------------------------------------------------
-  if(!(class(x)[1] %in% c("xlum_list", "list", "xml_document")))
-    stop(paste0("[write_xlum()] object of class '", class(x)[1], "' not supported as input!"),
+  if (!inherits(x, c("xlum_list", "list", "xml_document")))
+    stop("[write_xlum()] Object of class '", class(x)[1], "' not supported as input",
          call. = FALSE)
 
 # Sanitize file -----------------------------------------------------------
   ## check for ending
-  if(!grepl("^(.*)\\.xlum$", file, perl = TRUE))
+  if (!endsWith(file, ".xlum"))
     file <- normalizePath(paste0(file, ".xlum"), mustWork = FALSE)
 
 # Export depending on the input -------------------------------------------

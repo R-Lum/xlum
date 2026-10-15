@@ -24,6 +24,7 @@ test_that("check functionality", {
   expect_silent(write_xlum(xlum_data_list, out_file))
 
   ## encode_base64 is ignored if the input is not an xlum_list
+  expect_silent(write_xlum(xlum, out_file, encode_base64 = NA))
   write_xlum(xlum_data_list, out_file, encode_base64 = FALSE)
   write_xlum(xlum_data_list, out_file_b64, encode_base64 = TRUE)
   expect_identical(readLines(out_file),

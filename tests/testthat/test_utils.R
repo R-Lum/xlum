@@ -14,6 +14,9 @@ test_that(".convert2character", {
   ## .convert2character with base64 encoding
   expect_type(.convert2character(l, encode_base64 = TRUE), "list")
   expect_type(.convert2character(a, encode_base64 = TRUE), "character")
+
+  expect_identical(.convert2character(l, encode_base64 = NA),
+                   .convert2character(l, encode_base64 = FALSE))
 })
 
 # +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#
@@ -27,6 +30,9 @@ test_that(".convert2numeric", {
     ## regression test
     expect_type(out[[1]], "double")
     expect_type(out[[2]], "double")
+
+  expect_identical(.convert2numeric(l, check_base64 = NA),
+                   .convert2numeric(l, check_base64 = FALSE))
 
   ## .convert2numeric (base64 encoding)
   l <- list(a = base64enc::base64encode(charToRaw(c("12 12 13"))), b = "0")

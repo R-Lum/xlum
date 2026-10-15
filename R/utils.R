@@ -8,9 +8,11 @@
 #' Converts numeric vector to a character with numbers separated by white
 #' space. `NA` values are transformed to `"0"`.
 #'
-#' @param l [numeric] [list] (**required**): list of numeric vectors (see example)
+#' @param l [numeric] [list] (**required**):
+#' list of numeric vectors (see example).
 #'
-#' @param encode_base64 [logical] (*with default*): enable/disable base64 encoding
+#' @param encode_base64 [logical] (*with default*):
+#' enable/disable base64 encoding.
 #'
 #' @return
 #' A [list] of [numeric] vectors.
@@ -36,7 +38,7 @@
   }
 
   ## base64 encoding
-  if(encode_base64) {
+  if (isTRUE(encode_base64)) {
    out <- switch(class(out)[1],
       "list" = lapply(out, function(x) base64enc::base64encode(charToRaw(x))),
       "character" = base64enc::base64encode(charToRaw(out))
@@ -53,9 +55,11 @@
 #' Converts strings with white space separated numbers to a numeric vector. `"0"`
 #' values are transformed to `NA`.
 #'
-#' @param l [character] [list] (**required**): list of character vectors (see example)
+#' @param l [character] [list] (**required**):
+#' list of character vectors (see example).
 #'
-#' @param check_base64 [logical] (*with default*): check for base 64 encoding and decode if needed
+#' @param check_base64 [logical] (*with default*):
+#' check for base 64 encoding and decode if needed.
 #'
 #' @return
 #' A [list] of [numeric] vectors.
@@ -73,7 +77,7 @@
   if (any(l == "0")) l[which(l == "0")] <- NA_character_
 
   ## check for base64 encoding and convert if needed
-  if(check_base64) {
+  if (isTRUE(check_base64)) {
     l <- lapply(l, function(x){
       ## if it contains white space it is not base64
       if(any(grepl(" ", x, fixed = TRUE)) || is.na(x)) return(x)
@@ -100,7 +104,8 @@
 #'
 #' @param l [list] (**required**): input list
 #'
-#' @param match [character] (**required**): named list element in question
+#' @param match [character] (**required**):
+#' named list element in question.
 #'
 #' @return
 #' A [list] of index vectors. The length of vector depends index level where
@@ -193,9 +198,11 @@
 #' @description
 #' Fast conversion of characters of certain pattern to ISO-conform dates.
 #'
-#' @param x [character] (**required**): input character
+#' @param x [character] (**required**):
+#' input string.
 #'
-#' @param format [character] (*with default*): fixed formats
+#' @param format [character] (*with default*):
+#' date format.
 #'
 #' @return
 #' A correctly formatted character.

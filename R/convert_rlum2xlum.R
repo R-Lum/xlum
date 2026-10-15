@@ -219,12 +219,14 @@ if(!inherits(rlum, "list")) {
     node_sequence <- xml2::xml_add_child(node_sample, "sequence")
     xml2::xml_attrs(node_sequence) <- prototype_attrs[["sequence"]]
 
-      ## set sequence attributes
-        ## the name and position should be similar for all curves
-        xml2::xml_attr(node_sequence, "name") <- unlist(
-          rlum[[s]]@records[[1]]@info[c("name", "FNAME")])[1]
-        xml2::xml_attr(node_sequence, "position") <- unlist(
-          rlum[[s]]@records[[1]]@info[c("position", "POSITION")])[1]
+    ## set sequence attributes if present
+    ## name and position should be similar for all curves
+    name <- unlist(rlum[[s]]@records[[1]]@info[c("name", "FNAME")])[1]
+    if (!is.null(name))
+      xml2::xml_attr(node_sequence, "name") <- name
+    position <- unlist(rlum[[s]]@records[[1]]@info[c("position", "POSITION")])[1]
+    if (!is.null(position))
+      xml2::xml_attr(node_sequence, "position") <- position
 
     ## get curve ID; including unique IDs and recordType
     id_curves <- vapply(rlum[[s]]@records, function(x) {

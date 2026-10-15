@@ -50,11 +50,11 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Sebastian Kreutzer \email{sebastian.kreutzer@uni-heidelberg.de} (\href{https://orcid.org/0000-0002-0734-2199}{ORCID})
+\strong{Maintainer}: Sebastian Kreutzer \email{maintainer_luminescence@r-luminescence.org} (\href{https://orcid.org/0000-0002-0734-2199}{ORCID})
 
 Authors:
 \itemize{
-  \item Sebastian Kreutzer \email{sebastian.kreutzer@uni-heidelberg.de} (\href{https://orcid.org/0000-0002-0734-2199}{ORCID})
+  \item Sebastian Kreutzer \email{maintainer_luminescence@r-luminescence.org} (\href{https://orcid.org/0000-0002-0734-2199}{ORCID})
   \item Marco Colombo (\href{https://orcid.org/0000-0001-6672-0623}{ORCID})
 }
 

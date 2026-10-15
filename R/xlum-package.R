@@ -42,5 +42,5 @@
 #'
 #' @keywords package
 #'
-#' @import utils methods
+#' @import utils
 "_PACKAGE"

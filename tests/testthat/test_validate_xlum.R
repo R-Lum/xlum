@@ -7,7 +7,7 @@ test_that("input validation", {
   testthat::skip_on_cran()
 
   expect_error(expect_true(validate_xlum(proto, xsd_version = 9.999)),
-               "[validate_xlum()] XSD version unknown",
+               "[validate_xlum()] XSD version unknown, known versions: 1",
                fixed = TRUE)
   expect_error(validate_xlum(proto, xsd_version = NA),
                "XSD version unknown")

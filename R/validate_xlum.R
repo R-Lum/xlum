@@ -36,28 +36,23 @@ validate_xlum <- function(
              error = function(e) stop("[validate_xlum()] ", e$message,
                                       call. = FALSE))
 
-  ## load validation schema
   ## load all schema files
   f_schema <- sort(list.files(
     path = system.file("extdata/", package = "xlum"),
     full.names = TRUE,
     pattern = "xlum\\_schema"),
     decreasing = TRUE)
+  versions <- .regmatches(basename(f_schema), match = "(?<=v).+(?=.xsd)")
 
     ## use different schema
-    if(!is.null(xsd_version)) {
-      if(!any(xsd_version[1] %in% .regmatches(x = basename(f_schema), match = "(?<=v).+(?=.xsd)")))
-        stop(
-          paste("[validate_xlum()] XSD version unknown. Known versions:",
-                paste(
-                  .regmatches(x = basename(f_schema), match = "(?<=v).+(?=.xsd)"),
-                collapse = ", ")
-                ),
-          call. = FALSE)
+  if (!is.null(xsd_version)) {
+    xsd_version <- xsd_version[1]
+    if (!any(xsd_version %in% versions))
+      stop("[validate_xlum()] XSD version unknown, known versions: ",
+           paste(versions, collapse = ", "), call. = FALSE)
 
-      tmp <- f_schema[grepl(pattern = xsd_version[1], x = f_schema, fixed = TRUE)]
-
-    }
+    f_schema <- f_schema[versions %in% xsd_version]
+  }
 
   ## validate schema
   schema_check <- xml2::xml_validate(
@@ -66,7 +61,7 @@ validate_xlum <- function(
 
   ## return results
   if (!all(schema_check))
-    warning(paste0(paste(attr(schema_check, "errors"), collapse = "\n")),
+    warning(paste(attr(schema_check, "errors"), collapse = "\n"),
             call. = FALSE)
 
   return(schema_check)

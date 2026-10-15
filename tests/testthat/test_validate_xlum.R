@@ -1,18 +1,40 @@
-test_that("validate_xlum()", {
+file <- system.file("extdata/xlum_example.xlum", package = "xlum")
+proto <- system.file("extdata/xlum_prototype.xlum", package = "xlum")
+base64 <- system.file("extdata/xlum_examplebase64.xlum", package = "xlum")
+invalid <- system.file("extdata/xlum_invalid.xlum", package = "xlum")
+
+test_that("input validation", {
   testthat::skip_on_cran()
 
-  ## validate against prototype
-  file <- system.file("extdata/xlum_prototype.xlum", package = "xlum")
-  expect_true(validate_xlum(file))
+  expect_error(expect_true(validate_xlum(proto, xsd_version = 9.999)),
+               "[validate_xlum()] XSD version unknown",
+               fixed = TRUE)
+  expect_error(validate_xlum(proto, xsd_version = NA),
+               "XSD version unknown")
+  expect_error(validate_xlum("not_existing.xlum"),
+               "does not exist")
 
-  ## use different version
+})
+
+test_that("check functionality", {
+  testthat::skip_on_cran()
+
+  expect_true(validate_xlum(proto))
+  expect_true(validate_xlum(base64))
   expect_true(validate_xlum(file, xsd_version = 1))
+  expect_true(validate_xlum(file, xsd_version = "1"))
+  expect_true(validate_xlum(read_xlum(file, output = "xml_document")))
 
-  ## trigger error
-  expect_error(expect_true(validate_xlum(file, xsd_version = 9.999)),
-               regexp = "\\[validate\\_xlum\\(\\)\\] XSD version unknown")
+  expect_false(suppressWarnings(validate_xlum(invalid)))
+  expect_false(suppressWarnings(validate_xlum(read_xlum(invalid,
+                                                        output = "xml_document"))))
+})
 
-  ## check broken prototype
-  file_invalid <- system.file("extdata/xlum_invalid.xlum", package = "xlum")
-  expect_false(suppressWarnings(validate_xlum(file_invalid)))
+test_that("snapshot tests", {
+  testthat::skip_on_cran()
+
+  expect_snapshot_output(validate_xlum(file))
+  SW({
+  expect_snapshot_output(validate_xlum(invalid))
+  })
 })

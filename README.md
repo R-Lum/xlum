@@ -7,8 +7,8 @@
 
 # xlum <img width=120px src="man/figures/xlum_logo.png" align="right" />
 
-The R package `xlum` interfaces with the `<xlum/>` data format for
-exchange and long-term preservation of luminescence data.
+The R package `xlum` interfaces with the `XLUM` data format for exchange
+and long-term preservation of luminescence data.
 
 [![Project Status: Active – The project has reached a stable, usable
 state and is being actively
@@ -24,9 +24,8 @@ Status](https://img.shields.io/codecov/c/github/R-Lum/xlum.svg)](https://app.cod
 
 #### i. Requirements
 
-- *Windows (32/64bit)*:
-  [Rtools](https://cran.r-project.org/bin/windows/Rtools/) (provided by
-  CRAN)
+- *Windows*: [Rtools](https://cran.r-project.org/bin/windows/Rtools/)
+  (provided by CRAN)
 - *macOS*: [Xcode](https://developer.apple.com/) (provided by Apple)
 - *Linux*: [gcc](https://gcc.gnu.org) often comes pre-installed in most
   distributions.
@@ -68,7 +67,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the [GNU
 General Public License](https://github.com/R-Lum/xlum/blob/main/LICENSE)
 for more details.
 
-## <span class="glyphicon glyphicon-euro"></span> Funding
+## Funding
 
 The [development of xlum](https://github.com/R-Lum/xlum_specification)
 received funding from the European Union’s Horizon 2020 research and

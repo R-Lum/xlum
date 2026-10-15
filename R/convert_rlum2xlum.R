@@ -159,7 +159,9 @@ if(!inherits(rlum, "list")) {
         }
 
         ## date
-        attrs[["startDate"]] <- .toISODate(attrs[["startDate"]], format = "lexsyg")
+        date <- .toISODate(attrs[["startDate"]], format = "lexsyg")
+        if (!is.na(date))
+          attrs[["startDate"]] <- date
 
       } else if (any(grepl("BIN", x@originator))) {
         ## create parameter translation

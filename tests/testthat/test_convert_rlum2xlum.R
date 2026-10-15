@@ -48,7 +48,9 @@ test_that("check functionality", {
   ## RF
   file <- system.file("extdata", "RF_file.rf", package = "Luminescence")
   temp <- Luminescence::read_RF2R(file, verbose = FALSE)
-  expect_s3_class(convert_rlum2xlum(temp), "xml_document")
+  xlum <- convert_rlum2xlum(temp)
+  expect_s3_class(xlum, "xml_document")
+  expect_true(validate_xlum(xlum))
 })
 
 test_that("snapshot tests", {

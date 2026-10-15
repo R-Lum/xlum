@@ -32,7 +32,9 @@ validate_xlum <- function(
 ){
   ## fall back
   if (!inherits(file, "xml_document"))
-    file <- xml2::read_xml(file)
+    tryCatch(file <- xml2::read_xml(file),
+             error = function(e) stop("[validate_xlum()] ", e$message,
+                                      call. = FALSE))
 
   ## load validation schema
   ## load all schema files

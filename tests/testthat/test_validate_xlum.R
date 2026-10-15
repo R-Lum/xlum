@@ -14,6 +14,14 @@ test_that("input validation", {
   expect_error(validate_xlum("not_existing.xlum"),
                "does not exist")
 
+  ## a file that is not XML at all
+  not_xml <- tempfile()
+  expect_error(validate_xlum(not_xml),
+               "does not exist")
+  writeLines("not xml at all", not_xml)
+  expect_error(validate_xlum(not_xml),
+               "[validate_xlum()] Start tag expected, '<' not found",
+               fixed = TRUE)
 })
 
 test_that("check functionality", {

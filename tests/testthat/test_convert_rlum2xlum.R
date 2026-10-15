@@ -90,4 +90,8 @@ test_that("regression tests", {
   ## issue 5
   image <- as(array(1:200, dim = c(10, 10, 2)), "RLum.Data.Image")
   expect_snapshot_xlum(convert_rlum2xlum(image))
+
+  ## issue 11
+  xlum <- convert_rlum2xlum(IRSAR.RF.Data)
+  expect_true(validate_xlum(xlum))
 })

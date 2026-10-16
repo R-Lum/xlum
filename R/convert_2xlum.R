@@ -129,6 +129,7 @@ convert_psl2xlum <- function(
   out_file = NULL
 ) {
   rlum <- Luminescence::read_PSL2R(
-    file = file)
+    file = file,
+    verbose = FALSE)
   convert_rlum2xlum(rlum, out_file)
 }

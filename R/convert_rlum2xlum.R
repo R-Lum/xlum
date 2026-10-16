@@ -183,7 +183,13 @@ if(!inherits(rlum, "list")) {
 
       } else if(x@originator[1] == "read_Daybreak2R") {
         ## date
-        attrs[["startDate"]] <- .toISODate(x@info[["Started"]], format = "Daybreak")
+        date <- c(.toISODate(x@info[["Started"]], format = "Daybreak"),
+                  .toISODate(x@info[["Started"]], format = "Daybreak2"),
+                  .toISODate(paste(x@info[["IRRAD_DATE"]], "00:00:00"),
+                             format = "Daybreak2"))
+        date <- date[!is.na(date)][1]
+        if (length(date) > 0)
+          attrs[["startDate"]] <- date
 
       } else if(x@originator[1] == "read_PSL2R") {
         str <-  paste(

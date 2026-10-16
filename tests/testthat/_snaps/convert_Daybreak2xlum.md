@@ -30,7 +30,28 @@
         <sample name="NA" mineral="NA" latitude="52.416944" longitude="4.066389" altitude="70" doi="" comment="NA" state="NA" parentID="NA">
           <sequence position="0" name="NA" fileName="NA" software="NA" readerName="NA" readerSN="NA" readerFW="NA" comment="NA" state="NA" parentID="NA">
             <record recordType="PREHEAT_TL" sequenceStepNumber="1" sampleCondition="NA" state="NA" parentID="NA" comment="NA">
-              <curve component="string" startDate="NA" curveType="measured" duration="0" offset="0" xValues="0" yValues="0" tValues="5 10 15 20 25 30 35 40 45 50 55 60 65 70 75 80 85 90 95 100 105 110 115 120 125 130 135 140 145 150 155 160 165 170 175 180 185 190 195 200 205 210 215 220 225 230 235 240" xLabel="NA" yLabel="NA" tLabel="NA" vLabel="NA" xUnit="NA" yUnit="NA" vUnit="NA" tUnit="NA" state="string" parentID="string" comment="string">21 19 22 19 26 8 14 19 16 26 13 17 17 13 30 16 16 28 42 38 42 62 94 107 116 170 234 350 520 826 1226 1773 2597 3501 4706 6017 7146 7984 8731 9533 10574 11884 12745 13771 14300 14425 14250 13754</curve>
+              <curve component="string" startDate="2023-10-19T08:00:30Z" curveType="measured" duration="0" offset="0" xValues="0" yValues="0" tValues="5 10 15 20 25 30 35 40 45 50 55 60 65 70 75 80 85 90 95 100 105 110 115 120 125 130 135 140 145 150 155 160 165 170 175 180 185 190 195 200 205 210 215 220 225 230 235 240" xLabel="NA" yLabel="NA" tLabel="NA" vLabel="NA" xUnit="NA" yUnit="NA" vUnit="NA" tUnit="NA" state="string" parentID="string" comment="string">21 19 22 19 26 8 14 19 16 26 13 17 17 13 30 16 16 28 42 38 42 62 94 107 116 170 234 350 520 826 1226 1773 2597 3501 4706 6017 7146 7984 8731 9533 10574 11884 12745 13771 14300 14425 14250 13754</curve>
+            </record>
+          </sequence>
+        </sample>
+      </xlum>
+
+---
+
+    Code
+      cat(as.character(xlum))
+    Output
+      <?xml version="1.0" encoding="UTF-8"?>
+      <xlum xmlns:xlum="http://xlum.r-luminescence.org" lang="en" formatVersion="1.0" flavour="string" author="string" license="CC BY 4.0" doi="">
+        <sample name="NA" mineral="NA" latitude="52.416944" longitude="4.066389" altitude="70" doi="" comment="NA" state="NA" parentID="NA">
+          <sequence position="0" name="NA" fileName="NA" software="NA" readerName="NA" readerSN="NA" readerFW="NA" comment="NA" state="NA" parentID="NA">
+            <record recordType="OSL" sequenceStepNumber="1" sampleCondition="NA" state="NA" parentID="NA" comment="NA">
+              <curve component="string" startDate="2005-02-22T00:00:00Z" curveType="measured" duration="0" offset="0" xValues="0" yValues="0" tValues="0.01 0.02 0.03 0.04 0.05 1.05 2.05 3.05 4.05 5.05 6.05 7.05 8.05 9.05 10.05 11.05 12.05 13.05 14.05 15.05 16.05 17.05 18.05 19.05 20.05 21.05 22.05 23.05 24.05 25.05 26.05 27.05 28.05 29.05 30.05 31.05 32.05 33.05 34.05 35.05 36.05 37.05 38.05 39.05 40.05 41.05 42.05 43.05 44.05 45.05 46.05 47.05 48.05 49.05 50.05 51.05 52.05 53.05 54.05 55.05 56.05 57.05 58.05 59.05 60.05 61.05 62.05 63.05 64.05 65.05 66.05 67.05 68.05 69.05 70.05 71.05 72.05 73.05 74.05 75.05 76.05 77.05 78.05 79.05 80.05 81.05 82.05 83.05 84.05 85.05 86.05 87.05 88.05 89.05 90.05" xLabel="NA" yLabel="NA" tLabel="NA" vLabel="NA" xUnit="NA" yUnit="NA" vUnit="NA" tUnit="NA" state="string" parentID="string" comment="string">318 34 37 48 35 2980 3898 3859 3720 3692 3642 3839 3479 3492 3368 3389 3304 3266 3273 3247 3146 3155 3021 2998 2942 2981 2932 2949 2807 2775 2779 2702 2650 2629 2567 2626 2664 2570 2508 2506 2541 2447 2394 2442 2394 2409 2302 2295 2291 2329 2252 2254 2235 2165 2214 2105 2113 2114 2124 2074 2113 2083 2005 2034 1996 1920 1970 1958 1901 1922 1851 1846 1810 1882 1741 1857 1755 1808 1806 1773 1787 1696 1767 1749 1690 1676 1671 1718 1655 1589 1619 1628 1647 1572 1566</curve>
+            </record>
+          </sequence>
+          <sequence position="0" name="NA" fileName="NA" software="NA" readerName="NA" readerSN="NA" readerFW="NA" comment="NA" state="NA" parentID="NA">
+            <record recordType="OSL" sequenceStepNumber="1" sampleCondition="NA" state="NA" parentID="NA" comment="NA">
+              <curve component="string" startDate="2005-02-22T00:00:00Z" curveType="measured" duration="0" offset="0" xValues="0" yValues="0" tValues="0.01 0.02 0.03 0.04 0.05 1.05 2.05 3.05 4.05 5.05 6.05 7.05 8.05 9.05 10.05 11.05 12.05 13.05 14.05 15.05 16.05 17.05 18.05 19.05 20.05 21.05 22.05 23.05 24.05 25.05 26.05 27.05 28.05 29.05 30.05 31.05 32.05 33.05 34.05 35.05 36.05 37.05 38.05 39.05 40.05 41.05 42.05 43.05 44.05 45.05 46.05 47.05 48.05 49.05 50.05 51.05 52.05 53.05 54.05 55.05 56.05 57.05 58.05 59.05 60.05 61.05 62.05 63.05 64.05 65.05 66.05 67.05 68.05 69.05 70.05 71.05 72.05 73.05 74.05 75.05 76.05 77.05 78.05 79.05 80.05 81.05 82.05 83.05 84.05 85.05 86.05 87.05 88.05 89.05 90.05" xLabel="NA" yLabel="NA" tLabel="NA" vLabel="NA" xUnit="NA" yUnit="NA" vUnit="NA" tUnit="NA" state="string" parentID="string" comment="string">333 49 44 40 46 3129 3991 3985 3916 3830 3709 3676 3702 3544 3575 3507 3450 3460 3352 3323 3238 3234 3166 3175 3130 3077 2972 2969 2958 2945 2873 2838 2825 2753 2766 2745 2696 2666 2705 2618 2528 2572 2599 2550 2452 2499 2426 2379 2409 2398 2327 2323 2257 2240 2298 2249 2260 2184 2192 2112 2173 2057 2116 2052 2085 2034 2008 1937 2002 2003 1984 1889 1918 1929 1950 1907 1862 1898 1806 1885 1753 1815 1783 2047 1789 1750 1686 1687 1777 1659 1676 1692 1630 1662 1608</curve>
             </record>
           </sequence>
         </sample>

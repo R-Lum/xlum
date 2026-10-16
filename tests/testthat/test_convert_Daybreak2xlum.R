@@ -19,4 +19,8 @@ test_that("snapshot tests", {
   ## Started=2023-10-19 08:00:30
   file <- test_path("_data/daybreak-1.txt")
   expect_snapshot_xlum(convert_Daybreak2xlum(file))
+
+  ## IRRAD_DATE=2005-2-22
+  file <- test_path("_data/daybreak-2.dat")
+  expect_snapshot_xlum(convert_Daybreak2xlum(file))
 })

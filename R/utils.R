@@ -219,6 +219,7 @@
                 "lexsyg"   = "%Y%m%d%H%M%S",
                 "Risoe"    = "%y%m%d%H:%M:%S",
                 "Daybreak" = "%d/%m/%Y %H:%M:%S",
+                "Daybreak2"= "%Y-%m-%d %H:%M:%S",
                 "psl"      = "%Y-%m-%d%H:%M:%S",
                 stop("[.toISODate()] Unknown date format", call. = FALSE)
                 )

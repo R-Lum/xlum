@@ -32,6 +32,10 @@
   made more robust to accommodate the various date formats used by this
   file type (#15).
 
+- The conversion of `RLum.Data.Spectrum` objects has been fixed to set
+  the the `tValues`, `xValues`, `xLabel`, `xUnit`, `vLabel` and `vUnit`
+  attributes correctly (#17).
+
 ## Other changes
 
 - The documentation was revamped.

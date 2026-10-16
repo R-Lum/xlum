@@ -113,7 +113,7 @@ if(!inherits(rlum, "list")) {
     vals <- switch(class(x)[1],
                    "RLum.Data.Curve" = x@data[, 1],
                    "RLum.Data.Image" = seq_len(dim(x@data)[3]),
-                   "RLum.Data.Spectrum" = rownames(x@data)
+                   "RLum.Data.Spectrum" = colnames(x@data)
                    )
     attrs[["tValues"]] <- .convert2character(vals)
 
@@ -124,7 +124,7 @@ if(!inherits(rlum, "list")) {
         }
 
     else if (inherits(x, "RLum.Data.Spectrum"))
-          attrs[["xValues"]] <- .convert2character(seq_len(dim(x@data)[2]))
+          attrs[["xValues"]] <- .convert2character(rownames(x@data))
 
       ## common attributes
     ## curve type
@@ -152,10 +152,18 @@ if(!inherits(rlum, "list")) {
         ## further manual modifications
         if(!is.null(x@info[["curveDescripter"]])) {
           labels <- strsplit(x@info[["curveDescripter"]], ";", fixed = TRUE)[[1]]
+
+          ## curves have 2 labels (e.g. "t [s]; cts [1/ch]"),
+          ## spectra have 3 (e.g. "t [s]; wavelength [nm]; cts [1/ch]")
+          num.labels <- length(labels)
           attrs[["tLabel"]] <- .regmatches(labels[1], ".+(?=\\[)")
           attrs[["tUnit"]] <- .regmatches(labels[1], "(?<=\\[).+(?=\\])")
-          attrs[["vLabel"]] <- .regmatches(labels[2], ".+(?=\\[)")
-          attrs[["vUnit"]] <- .regmatches(labels[2], "(?<=\\[).+(?=\\])")
+          if (num.labels > 2) {
+            attrs[["xLabel"]] <- .regmatches(labels[2], ".+(?=\\[)")
+            attrs[["xUnit"]] <- .regmatches(labels[2], "(?<=\\[).+(?=\\])")
+          }
+          attrs[["vLabel"]] <- .regmatches(labels[num.labels], ".+(?=\\[)")
+          attrs[["vUnit"]] <- .regmatches(labels[num.labels], "(?<=\\[).+(?=\\])")
         }
 
         ## date

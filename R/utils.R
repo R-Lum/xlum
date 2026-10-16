@@ -31,10 +31,9 @@
 
   ##list and non-list
   if(inherits(l, "list")) {
-    out <- lapply(l, function(x) paste(as.character(x), collapse = " "))
-
+    out <- lapply(l, function(x) paste(x, collapse = " "))
   } else {
-    out <- paste(as.character(l), collapse = " ")
+    out <- paste(l, collapse = " ")
   }
 
   ## base64 encoding

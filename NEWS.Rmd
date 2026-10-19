@@ -33,7 +33,7 @@ when checked with `validate_xlum()` (#11).
 more robust to accommodate the various date formats used by this file type
 (#15).
 
-* The conversion of `RLum.Data.Spectrum` objects has been fixed to set the
+* The conversion of `RLum.Data.Spectrum` objects has been fixed to set
 the `tValues`, `xValues`, `xLabel`, `xUnit`, `vLabel` and `vUnit` attributes
 correctly (#17).
 

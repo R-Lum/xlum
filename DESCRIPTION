@@ -2,6 +2,7 @@ Package: xlum
 Type: Package
 Title: Read, Write, and Convert XLUM Data
 Version: 0.2.0
+Date: 2026-10-19
 Authors@R: c(
     person("Sebastian", "Kreutzer", role = c("aut", "cre"), email = "maintainer_luminescence@r-luminescence.org", comment = c(ORCID = "0000-0002-0734-2199")),
     person("Marco", "Colombo", role = c("aut"), comment = c(ORCID = "0000-0001-6672-0623")),

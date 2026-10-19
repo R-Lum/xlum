@@ -1,6 +1,6 @@
 {
   "license": "GPL-2.0-or-later",
-  "description": "<p>Support for the XLUM file format for exchange and long-term<\/p>",
+  "description": "<p>Support for the XLUM file format (Kreutzer et al. (2023)<\/p>",
   "language": "eng",
   "title": "xlum: Read, Write, and Convert XLUM Data",
   "grants": [
@@ -9,9 +9,9 @@
     }
   ],
   "upload_type": "software",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "keywords": ["Luminescence dating", "data format", "xml"],
-  "publication_date": [],
+  "publication_date": "2026-10-19",
   "creators": [
     {
       "orcid": "0000-0002-0734-2199",

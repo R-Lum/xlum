@@ -40,7 +40,7 @@ validate_xlum <- function(
   f_schema <- sort(list.files(
     path = system.file("extdata/", package = "xlum"),
     full.names = TRUE,
-    pattern = "xlum\\_schema"),
+    pattern = "xlum_schema"),
     decreasing = TRUE)
   versions <- .regmatches(basename(f_schema), match = "(?<=v).+(?=.xsd)")
 

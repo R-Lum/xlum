@@ -1,0 +1,85 @@
+# xlum ![](reference/figures/xlum_logo.png)
+
+The R package `xlum` interfaces with the `XLUM` data format for exchange
+and long-term preservation of luminescence data.
+
+[![Project Status: Active – The project has reached a stable, usable
+state and is being actively
+developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#Active)
+[![DOI](https://zenodo.org/badge/477672855.svg)](https://zenodo.org/badge/latestdoi/477672855)
+
+[![Coverage
+Status](https://img.shields.io/codecov/c/github/R-Lum/xlum.svg)](https://app.codecov.io/github/R-Lum/xlum?branch=main)
+[![R-CMD-check](https://github.com/R-Lum/xlum/workflows/R%20CMD%20check/badge.svg)](https://github.com/R-Lum/xlum/actions)
+
+## Installation
+
+#### i. Requirements
+
+- *Windows*: [Rtools](https://cran.r-project.org/bin/windows/Rtools/)
+  (provided by CRAN)
+- *macOS*: [Xcode](https://developer.apple.com/) (provided by Apple)
+- *Linux*: [gcc](https://gcc.gnu.org) often comes pre-installed in most
+  distributions.
+
+##### The plain **R** way
+
+To install the stable version from CRAN, simply run the following from
+an R console:
+
+\
+[`install.packages`](https://rdrr.io/r/utils/install.packages.html)`(``"xlum"``)`
+
+To install the latest development builds directly from GitHub, run
+
+\
+`if`` ``(``!`[`require`](https://rdrr.io/r/base/library.html)`(`[`"pak"`](https://pak.r-lib.org/)`)``)`\
+`  `[`install.packages`](https://rdrr.io/r/utils/install.packages.html)`(``"pak"``)`\
+`pak``::`[`pak`](https://pak.r-lib.org/reference/pak.html)`(``"R-Lum/xlum"``)`
+
+## Note
+
+**The package comes without any guarantee!**
+
+## License
+
+This program is free software: you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published by the
+Free Software Foundation, either version 3 of the License, or any later
+version.
+
+This program is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the [GNU
+General Public License](https://github.com/R-Lum/xlum/blob/main/LICENSE)
+for more details.
+
+## Funding
+
+- The initial [development of
+  xlum](https://github.com/R-Lum/xlum_specification) received funding
+  from the European Union’s Horizon 2020 research and innovation
+  programme under the Marie Skłodowska-Curie grant agreement No 844457
+  (project: [CREDit](https://cordis.europa.eu/project/id/844457)),
+
+- since 03/2023: Sebastian Kreutzer as maintainer of the package
+  receives funding from the DFG Heisenberg programme [No
+  505822867](https://gepris.dfg.de/project/505822867).
+
+- the contribution by Marco Colombo was enabled through the DFG
+  programme “REPLAY: REProducible Luminescence Data AnalYses” [No
+  528704761](https://gepris.dfg.de/project/528704761)
+
+## References
+
+- Kreutzer, S., Grehl, S., Höhne, M., Simmank, O., Dornich, K., Adamiec,
+  G., Burow, C., Roberts, H. M., Duller, G. A. T., 2023. XLUM: an open
+  data format for exchange and long-term preservation of luminescence
+  data. [*Geochronology*, 5,
+  271-284](https://doi.org/10.5194/gchron-5-271-2023).
+
+## Related projects
+
+- [xlum specification](https://github.com/R-Lum/xlum_specification)
+- [xlum-python](https://github.com/SteveGrehl/xlum-python)
+- [Luminescence](https://github.com/R-Lum/Luminescence)

@@ -16,8 +16,8 @@ path to an output file where the XLUM file should be written to. If \code{NULL}
 returned.}
 }
 \value{
-When \code{file} is \code{NULL} (default), an \link[xml2:xml_document-class]{xml2::xml_document} object
-is returned. Otherwise the document is written to \code{file} (with the \code{.xlum}
+When \code{out_file} is \code{NULL} (default), an \link[xml2:xml_document-class]{xml2::xml_document} object
+is returned. Otherwise the document is written to \code{out_file} (with the \code{.xlum}
 extension added automatically if needed) and \code{NULL} is returned invisibly.
 }
 \description{

@@ -33,8 +33,8 @@
 #' @inheritParams convert_2xlum
 #'
 #' @return
-#' When `file` is `NULL` (default), an [xml2::xml_document-class] object
-#' is returned. Otherwise the document is written to `file` (with the `.xlum`
+#' When `out_file` is `NULL` (default), an [xml2::xml_document-class] object
+#' is returned. Otherwise the document is written to `out_file` (with the `.xlum`
 #' extension added automatically if needed) and `NULL` is returned invisibly.
 #'
 #' @section Function version: 0.1.0

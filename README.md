@@ -13,7 +13,6 @@ and long-term preservation of luminescence data.
 [![Project Status: Active – The project has reached a stable, usable
 state and is being actively
 developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#Active)
-[![CRAN](https://www.r-pkg.org/badges/version/xlum)](https://cran.r-project.org/package=xlum)
 [![DOI](https://zenodo.org/badge/477672855.svg)](https://zenodo.org/badge/latestdoi/477672855)
 
 [![Coverage
@@ -73,6 +72,14 @@ The [development of xlum](https://github.com/R-Lum/xlum_specification)
 received funding from the European Union’s Horizon 2020 research and
 innovation programme under the Marie Skłodowska-Curie grant agreement No
 844457 (project: [CREDit](https://cordis.europa.eu/project/id/844457)).
+
+## References
+
+- Kreutzer, S., Grehl, S., Höhne, M., Simmank, O., Dornich, K., Adamiec,
+  G., Burow, C., Roberts, H. M., Duller, G. A. T., 2023. XLUM: an open
+  data format for exchange and long-term preservation of luminescence
+  data. [*Geochronology*, 5,
+  271-284](https://doi.org/10.5194/gchron-5-271-2023).
 
 ## Related projects
 

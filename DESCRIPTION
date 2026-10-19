@@ -7,12 +7,14 @@ Authors@R: c(
     person("Marco", "Colombo", role = c("aut"), comment = c(ORCID = "0000-0001-6672-0623")),
     person("Christoph", "Burow", role = c("ctb"), comment = c(ORCID = "0000-0002-5023-4046")))
 Maintainer: Sebastian Kreutzer <maintainer_luminescence@r-luminescence.org>
-Description: Support for the XLUM file format for exchange and long-term
+Description: Support for the XLUM file format (Kreutzer et al. (2023)
+    <doi:10.5194/gchron-5-271-2023>) for exchange and long-term
     preservation of luminescence data. The package facilitates the import
     and export of XLUM files and the conversion from other ASCII and binary
     formats commonly used to store luminescence (dating) data.
 License: GPL-3
 URL: https://r-lum.github.io/xlum/
+BugReports: https://github.com/R-Lum/xlum/issues
 Depends: 
   R (>= 4.5)
 Imports: 

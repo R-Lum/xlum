@@ -1,12 +1,11 @@
 # xlum ![](reference/figures/xlum_logo.png)
 
-The R package `xlum` interfaces with the `<xlum/>` data format for
-exchange and long-term preservation of luminescence data.
+The R package `xlum` interfaces with the `XLUM` data format for exchange
+and long-term preservation of luminescence data.
 
 [![Project Status: Active – The project has reached a stable, usable
 state and is being actively
 developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#Active)
-[![CRAN](https://www.r-pkg.org/badges/version/xlum)](https://cran.r-project.org/package=xlum)
 [![DOI](https://zenodo.org/badge/477672855.svg)](https://zenodo.org/badge/latestdoi/477672855)
 
 [![Coverage
@@ -17,9 +16,8 @@ Status](https://img.shields.io/codecov/c/github/R-Lum/xlum.svg)](https://app.cod
 
 #### i. Requirements
 
-- *Windows (32/64bit)*:
-  [Rtools](https://cran.r-project.org/bin/windows/Rtools/) (provided by
-  CRAN)
+- *Windows*: [Rtools](https://cran.r-project.org/bin/windows/Rtools/)
+  (provided by CRAN)
 - *macOS*: [Xcode](https://developer.apple.com/) (provided by Apple)
 - *Linux*: [gcc](https://gcc.gnu.org) often comes pre-installed in most
   distributions.
@@ -60,12 +58,29 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the [GNU
 General Public License](https://github.com/R-Lum/xlum/blob/main/LICENSE)
 for more details.
 
-##  Funding
+## Funding
 
-The [development of xlum](https://github.com/R-Lum/xlum_specification)
-received funding from the European Union’s Horizon 2020 research and
-innovation programme under the Marie Skłodowska-Curie grant agreement No
-844457 (project: [CREDit](https://cordis.europa.eu/project/id/844457)).
+- The initial [development of
+  xlum](https://github.com/R-Lum/xlum_specification) received funding
+  from the European Union’s Horizon 2020 research and innovation
+  programme under the Marie Skłodowska-Curie grant agreement No 844457
+  (project: [CREDit](https://cordis.europa.eu/project/id/844457)),
+
+- since 03/2023: Sebastian Kreutzer as maintainer of the package
+  receives funding from the DFG Heisenberg programme [No
+  505822867](https://gepris.dfg.de/project/505822867).
+
+- the contribution by Marco Colombo was enabled through the DFG
+  programme “REPLAY: REProducible Luminescence Data AnalYses” [No
+  528704761](https://gepris.dfg.de/project/528704761)
+
+## References
+
+- Kreutzer, S., Grehl, S., Höhne, M., Simmank, O., Dornich, K., Adamiec,
+  G., Burow, C., Roberts, H. M., Duller, G. A. T., 2023. XLUM: an open
+  data format for exchange and long-term preservation of luminescence
+  data. [*Geochronology*, 5,
+  271-284](https://doi.org/10.5194/gchron-5-271-2023).
 
 ## Related projects
 
@@ -77,11 +92,11 @@ innovation programme under the Marie Skłodowska-Curie grant agreement No
 
 ## All functions
 
-- [`convert_Daybreak2xlum()`](https://r-lum.github.io/xlum/reference/convert_2xlum.md)
-  [`convert_binx2xlum()`](https://r-lum.github.io/xlum/reference/convert_2xlum.md)
+- [`convert_binx2xlum()`](https://r-lum.github.io/xlum/reference/convert_2xlum.md)
   [`convert_bin2xlum()`](https://r-lum.github.io/xlum/reference/convert_2xlum.md)
-  [`convert_psl2xlum()`](https://r-lum.github.io/xlum/reference/convert_2xlum.md)
   [`convert_xsyg2xlum()`](https://r-lum.github.io/xlum/reference/convert_2xlum.md)
+  [`convert_Daybreak2xlum()`](https://r-lum.github.io/xlum/reference/convert_2xlum.md)
+  [`convert_psl2xlum()`](https://r-lum.github.io/xlum/reference/convert_2xlum.md)
   : Convert input files to XLUM
 
 - [`convert_rlum2xlum()`](https://r-lum.github.io/xlum/reference/convert_rlum2xlum.md)

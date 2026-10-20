@@ -12,13 +12,16 @@
 
 ## Citation
 
+Source:
+[`DESCRIPTION`](https://github.com/R-Lum/xlum/blob/main/DESCRIPTION)
+
 Kreutzer S, Colombo M (2026). *xlum: Read, Write, and Convert XLUM
-Data*. R package version 0.1.0, <https://r-lum.github.io/xlum/>.
+Data*. R package version 0.2.0, <https://r-lum.github.io/xlum/>.
 
     @Manual{,
       title = {xlum: Read, Write, and Convert XLUM Data},
       author = {Sebastian Kreutzer and Marco Colombo},
       year = {2026},
-      note = {R package version 0.1.0},
+      note = {R package version 0.2.0},
       url = {https://r-lum.github.io/xlum/},
     }

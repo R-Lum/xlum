@@ -2,11 +2,11 @@
 
 ## All functions
 
-- [`convert_Daybreak2xlum()`](https://r-lum.github.io/xlum/reference/convert_2xlum.md)
-  [`convert_binx2xlum()`](https://r-lum.github.io/xlum/reference/convert_2xlum.md)
+- [`convert_binx2xlum()`](https://r-lum.github.io/xlum/reference/convert_2xlum.md)
   [`convert_bin2xlum()`](https://r-lum.github.io/xlum/reference/convert_2xlum.md)
-  [`convert_psl2xlum()`](https://r-lum.github.io/xlum/reference/convert_2xlum.md)
   [`convert_xsyg2xlum()`](https://r-lum.github.io/xlum/reference/convert_2xlum.md)
+  [`convert_Daybreak2xlum()`](https://r-lum.github.io/xlum/reference/convert_2xlum.md)
+  [`convert_psl2xlum()`](https://r-lum.github.io/xlum/reference/convert_2xlum.md)
   : Convert input files to XLUM
 
 - [`convert_rlum2xlum()`](https://r-lum.github.io/xlum/reference/convert_rlum2xlum.md)

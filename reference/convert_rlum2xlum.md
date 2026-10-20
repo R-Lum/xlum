@@ -7,7 +7,7 @@ objects to XLUM format.
 ## Usage
 
 ``` r
-convert_rlum2xlum(rlum, file = NULL)
+convert_rlum2xlum(rlum, out_file = NULL)
 ```
 
 ## Arguments
@@ -18,7 +18,7 @@ convert_rlum2xlum(rlum, file = NULL)
   or a [list](https://rdrr.io/r/base/list.html) of it (**required**):
   input object.
 
-- file:
+- out_file:
 
   [character](https://rdrr.io/r/base/character.html) (*optional*): path
   to an output file where the XLUM file should be written to. If `NULL`
@@ -28,9 +28,9 @@ convert_rlum2xlum(rlum, file = NULL)
 
 ## Value
 
-When `file` is `NULL` (default), an
+When `out_file` is `NULL` (default), an
 [xml2::xml_document](http://xml2.r-lib.org/reference/oldclass.md) object
-is returned. Otherwise the document is written to `file` (with the
+is returned. Otherwise the document is written to `out_file` (with the
 `.xlum` extension added automatically if needed) and `NULL` is returned
 invisibly.
 
@@ -47,8 +47,13 @@ objects they may contain.
 objects are not supported.
 
 The input may be a single object or a
-[list](https://rdrr.io/r/base/list.html) of objects. A list of data
-objects is combined into a single sequence, whereas a list of
+[list](https://rdrr.io/r/base/list.html) of objects. All objects in a
+list must be of the same class, either
+[Luminescence::RLum.Analysis](https://r-lum.github.io/Luminescence/reference/RLum.Analysis-class.html)
+or
+[Luminescence::RLum.Data](https://r-lum.github.io/Luminescence/reference/RLum.Data-class.html).
+A list of data objects is combined into a single sequence, whereas a
+list of
 [Luminescence::RLum.Analysis](https://r-lum.github.io/Luminescence/reference/RLum.Analysis-class.html)
 objects produces one `<sequence/>` per element.
 

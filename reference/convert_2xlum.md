@@ -8,15 +8,15 @@ They are implemented as shallow wrappers around an appropriate
 ## Usage
 
 ``` r
-convert_Daybreak2xlum(file, out_file = NULL)
-
 convert_binx2xlum(file, out_file = NULL, ...)
 
-convert_bin2xlum(file, out_file = NULL)
-
-convert_psl2xlum(file, out_file = NULL)
+convert_bin2xlum(file, out_file = NULL, ...)
 
 convert_xsyg2xlum(file, out_file = NULL)
+
+convert_Daybreak2xlum(file, out_file = NULL)
+
+convert_psl2xlum(file, out_file = NULL)
 ```
 
 ## Arguments
@@ -30,7 +30,9 @@ convert_xsyg2xlum(file, out_file = NULL)
 
   [character](https://rdrr.io/r/base/character.html) (*optional*): path
   to an output file where the XLUM file should be written to. If `NULL`
-  (default), no file is written.
+  (default), no file is written, but an
+  [xml2::xml_document](http://xml2.r-lib.org/reference/oldclass.md)
+  object is returned.
 
 - ...:
 
@@ -47,27 +49,27 @@ with the path provided.
 
 ## Functions
 
-- `convert_Daybreak2xlum()`: Convert Daybreak TXT and DAT files to XLUM
-  format. This is a shallow wrapper around
-  [Luminescence::read_Daybreak2R](https://r-lum.github.io/Luminescence/reference/read_Daybreak2R.html)
-  and
-  [convert_rlum2xlum](https://r-lum.github.io/xlum/reference/convert_rlum2xlum.md).
-
 - `convert_binx2xlum()`: Convert Risø BIN/BINX files to XLUM format.
   This is a shallow wrapper around
   [Luminescence::read_BIN2R](https://r-lum.github.io/Luminescence/reference/read_BIN2R.html)
   and
   [convert_rlum2xlum](https://r-lum.github.io/xlum/reference/convert_rlum2xlum.md).
 
-- `convert_psl2xlum()`: Convert SUERC PSL files to XLUM format. This is
-  a shallow wrapper around
-  [Luminescence::read_PSL2R](https://r-lum.github.io/Luminescence/reference/read_PSL2R.html)
-  and
-  [convert_rlum2xlum](https://r-lum.github.io/xlum/reference/convert_rlum2xlum.md).
-
 - `convert_xsyg2xlum()`: Convert Freiberg Instruments XSYG files to
   `xlum` format. This is a shallow wrapper around
   [Luminescence::read_XSYG2R](https://r-lum.github.io/Luminescence/reference/read_XSYG2R.html)
+  and
+  [convert_rlum2xlum](https://r-lum.github.io/xlum/reference/convert_rlum2xlum.md).
+
+- `convert_Daybreak2xlum()`: Convert Daybreak TXT and DAT files to XLUM
+  format. This is a shallow wrapper around
+  [Luminescence::read_Daybreak2R](https://r-lum.github.io/Luminescence/reference/read_Daybreak2R.html)
+  and
+  [convert_rlum2xlum](https://r-lum.github.io/xlum/reference/convert_rlum2xlum.md).
+
+- `convert_psl2xlum()`: Convert SUERC PSL files to XLUM format. This is
+  a shallow wrapper around
+  [Luminescence::read_PSL2R](https://r-lum.github.io/Luminescence/reference/read_PSL2R.html)
   and
   [convert_rlum2xlum](https://r-lum.github.io/xlum/reference/convert_rlum2xlum.md).
 
@@ -91,13 +93,6 @@ LIAG - Institute for Applied Geophysics (Germany)
 ## Examples
 
 ``` r
-## load Daybreak example data
-file <- system.file("extdata/Daybreak_TestFile.txt", package = "Luminescence")
-convert_Daybreak2xlum(file)
-#> {xml_document}
-#> <xlum lang="en" formatVersion="1.0" flavour="string" author="string" license="CC BY 4.0" doi="" xmlns:xlum="http://xlum.r-luminescence.org">
-#> [1] <sample name="NA" mineral="NA" latitude="52.416944" longitude="4.066389"  ...
-
 ## load BINX example data
 file <- system.file("extdata/BINfile_V8.binx", package = "Luminescence")
 convert_binx2xlum(file)
@@ -107,20 +102,23 @@ convert_binx2xlum(file)
 #> <xlum lang="en" formatVersion="1.0" flavour="string" author="string" license="CC BY 4.0" doi="" xmlns:xlum="http://xlum.r-luminescence.org">
 #> [1] <sample name="BT 607" mineral="NA" latitude="52.416944" longitude="4.0663 ...
 
-## load PSL example data
-file <- system.file("extdata", "DorNie_0016.psl", package = "Luminescence")
-convert_psl2xlum(file)
-#> 
-#> [read_PSL2R()] Importing ...
-#>  path:  /home/runner/work/_temp/Library/Luminescence/extdata
-#>  file:  DorNie_0016.psl
+## load XSYG example data
+file <- system.file("extdata/XSYG_file.xsyg", package = "Luminescence")
+convert_xsyg2xlum(file)
 #> {xml_document}
 #> <xlum lang="en" formatVersion="1.0" flavour="string" author="string" license="CC BY 4.0" doi="" xmlns:xlum="http://xlum.r-luminescence.org">
 #> [1] <sample name="NA" mineral="NA" latitude="52.416944" longitude="4.066389"  ...
 
-## load XSYG example data
-file <- system.file("extdata/XSYG_file.xsyg", package = "Luminescence")
-convert_xsyg2xlum(file)
+## load Daybreak example data
+file <- system.file("extdata/Daybreak_TestFile.txt", package = "Luminescence")
+convert_Daybreak2xlum(file)
+#> {xml_document}
+#> <xlum lang="en" formatVersion="1.0" flavour="string" author="string" license="CC BY 4.0" doi="" xmlns:xlum="http://xlum.r-luminescence.org">
+#> [1] <sample name="NA" mineral="NA" latitude="52.416944" longitude="4.066389"  ...
+
+## load PSL example data
+file <- system.file("extdata", "DorNie_0016.psl", package = "Luminescence")
+convert_psl2xlum(file)
 #> {xml_document}
 #> <xlum lang="en" formatVersion="1.0" flavour="string" author="string" license="CC BY 4.0" doi="" xmlns:xlum="http://xlum.r-luminescence.org">
 #> [1] <sample name="NA" mineral="NA" latitude="52.416944" longitude="4.066389"  ...

@@ -32,21 +32,31 @@ innovation programme under the Marie Skłodowska-Curie grant agreement No
 844457 (CREDit), and the work was carried out at the Geography & Earth
 Sciences, Aberystwyth University (United Kingdom).
 
+## References
+
+Kreutzer, S., Grehl, S., Höhne, M., Simmank, O., Dornich, K., Adamiec,
+G., Burow, C., Roberts, H. M., Duller, G. A. T., 2023. XLUM: an open
+data format for exchange and long-term preservation of luminescence
+data. Geochronology, 5, 271-284,
+[doi:10.5194/gchron-5-271-2023](https://doi.org/10.5194/gchron-5-271-2023)
+
 ## See also
 
 Useful links:
 
 - <https://r-lum.github.io/xlum/>
 
+- Report bugs at <https://github.com/R-Lum/xlum/issues>
+
 ## Author
 
 **Maintainer**: Sebastian Kreutzer
-<sebastian.kreutzer@uni-heidelberg.de>
+<maintainer_luminescence@r-luminescence.org>
 ([ORCID](https://orcid.org/0000-0002-0734-2199))
 
 Authors:
 
-- Sebastian Kreutzer <sebastian.kreutzer@uni-heidelberg.de>
+- Sebastian Kreutzer <maintainer_luminescence@r-luminescence.org>
   ([ORCID](https://orcid.org/0000-0002-0734-2199))
 
 - Marco Colombo ([ORCID](https://orcid.org/0000-0001-6672-0623))

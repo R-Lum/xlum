@@ -2,7 +2,7 @@
 RSCRIPT = "$(R_HOME)/bin/Rscript"
 
 ## set to 1 when on a development version, or to 0 when preparing a release
-DEVEL := 0
+DEVEL := 1
 
 ## modules to exclude: it should not be necessary to touch these, they are
 ## controlled by the DEVEL variable set before
@@ -15,8 +15,6 @@ EXCLUDE_MODULES := \
 ifeq ($(DEVEL), 1)
   AS_CRAN := FALSE
   EXCLUDE_MODULES += ,\
-	'module_add_RLumTeam', \
-	'module_add_HowToCite', \
 	'module_write_BibTeX', \
 	'module_write_codemetar', \
 	'module_write_FunctionList', \

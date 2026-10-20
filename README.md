@@ -51,7 +51,6 @@ pak::pak("R-Lum/xlum")
 **The package comes without any guarantee!**
 
 <!-- Please further note that this version is a development version and may change day by day. For stable branches please visit -->
-
 <!-- the package on [CRAN xlum](https://CRAN.R-project.org/package=xlum). -->
 
 ## License

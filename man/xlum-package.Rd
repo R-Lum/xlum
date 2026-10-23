@@ -35,12 +35,18 @@ to store luminescence (dating) data.
 Sebastian Kreutzer, F2.1 Geophysical Parametrisation/Regionalisation, LIAG - Institute for Applied Geophysics (Germany)\cr
 
 \strong{Funding}
-
-01/2020--04/2022, Sebastian Kreutzer as maintainer of the package has
+\itemize{
+\item The initial \href{https://github.com/R-Lum/xlum_specification}{development of xlum}
 received funding from the European Union's Horizon 2020 research and
-innovation programme under the Marie Skłodowska-Curie grant agreement
-No 844457 (CREDit), and the work was carried out at the Geography & Earth
-Sciences, Aberystwyth University (United Kingdom).
+innovation programme under the Marie Skłodowska-Curie grant agreement No 844457
+(project: \href{https://cordis.europa.eu/project/id/844457}{CREDit})
+\item Since 03/2023: Sebastian Kreutzer as maintainer of the package receives
+funding from the DFG Heisenberg programme
+\href{https://gepris.dfg.de/project/505822867}{No 505822867}
+\item The contribution by Marco Colombo was enabled through the DFG programme
+"REPLAY: REProducible Luminescence Data AnalYses"
+\href{https://gepris.dfg.de/project/528704761}{No 528704761}
+}
 }
 \references{
 Kreutzer, S., Grehl, S., Höhne, M., Simmank, O., Dornich, K., Adamiec, G.,

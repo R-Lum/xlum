@@ -1,6 +1,6 @@
 # Changelog
 
-## Changes in version 0.2.0 (2026-10-19)
+## Changes in version 0.2.0 (2026-10-20)
 
 ### `as.list.xlum_list()`
 

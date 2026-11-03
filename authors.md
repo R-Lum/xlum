@@ -13,7 +13,7 @@
 ## Citation
 
 Source:
-[`DESCRIPTION`](https://github.com/R-Lum/xlum/blob/main/DESCRIPTION)
+[`DESCRIPTION`](https://github.com/R-Lum/xlum/blob/v0.2.0/DESCRIPTION)
 
 Kreutzer S, Colombo M (2026). *xlum: Read, Write, and Convert XLUM
 Data*. R package version 0.2.0, <https://r-lum.github.io/xlum/>.

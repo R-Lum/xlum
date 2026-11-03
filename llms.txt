@@ -3,14 +3,18 @@
 The R package `xlum` interfaces with the `XLUM` data format for exchange
 and long-term preservation of luminescence data.
 
-[![Project Status: Active – The project has reached a stable, usable
-state and is being actively
-developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#Active)
+[![CRAN](https://www.r-pkg.org/badges/version/xlum)](https://CRAN.r-project.org/package=xlum)
+
+[![CRAN
+DOI](https://img.shields.io/badge/DOI-10.32614/CRAN.package.xlum?style=flat&link=https://doi.org/10.32614/CRAN.package.xlum)](https://doi.org/10.32614/CRAN.package.xlum)
 [![DOI](https://zenodo.org/badge/477672855.svg)](https://zenodo.org/badge/latestdoi/477672855)
 
 [![Coverage
 Status](https://img.shields.io/codecov/c/github/R-Lum/xlum.svg)](https://app.codecov.io/github/R-Lum/xlum?branch=main)
 [![R-CMD-check](https://github.com/R-Lum/xlum/workflows/R%20CMD%20check/badge.svg)](https://github.com/R-Lum/xlum/actions)
+
+[![Downloads](https://cranlogs.r-pkg.org/badges/grand-total/xlum)](https://www.r-pkg.org/pkg/xlum)
+[![Downloads](https://cranlogs.r-pkg.org/badges/xlum)](https://www.r-pkg.org/pkg/xlum)
 
 ## Installation
 
@@ -64,15 +68,15 @@ for more details.
   xlum](https://github.com/R-Lum/xlum_specification) received funding
   from the European Union’s Horizon 2020 research and innovation
   programme under the Marie Skłodowska-Curie grant agreement No 844457
-  (project: [CREDit](https://cordis.europa.eu/project/id/844457)),
+  (project: [CREDit](https://cordis.europa.eu/project/id/844457)).
 
-- since 03/2023: Sebastian Kreutzer as maintainer of the package
+- Since 03/2023: Sebastian Kreutzer as maintainer of the package
   receives funding from the DFG Heisenberg programme [No
   505822867](https://gepris.dfg.de/project/505822867).
 
-- the contribution by Marco Colombo was enabled through the DFG
+- The contribution by Marco Colombo was enabled through the DFG
   programme “REPLAY: REProducible Luminescence Data AnalYses” [No
-  528704761](https://gepris.dfg.de/project/528704761)
+  528704761](https://gepris.dfg.de/project/528704761).
 
 ## References
 

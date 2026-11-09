@@ -11,9 +11,8 @@ The R package `xlum` interfaces with the `XLUM` data format for exchange
 and long-term preservation of luminescence data.
 
 [![CRAN](https://www.r-pkg.org/badges/version/xlum)](https://CRAN.r-project.org/package=xlum)
-
 [![CRAN
-DOI](https://img.shields.io/badge/DOI-10.32614/CRAN.package.xlum?style=flat&link=https://doi.org/10.32614/CRAN.package.xlum)](https://doi.org/10.32614/CRAN.package.xlum)
+DOI](https://img.shields.io/badge/DOI-10.32614/CRAN.package.xlum-087aba?style=flat&link=https://doi.org/10.32614/CRAN.package.xlum)](https://doi.org/10.32614/CRAN.package.xlum)
 [![DOI](https://zenodo.org/badge/477672855.svg)](https://zenodo.org/badge/latestdoi/477672855)
 
 [![Coverage
@@ -55,7 +54,6 @@ pak::pak("R-Lum/xlum")
 **The package comes without any guarantee!**
 
 <!-- Please further note that this version is a development version and may change day by day. For stable branches please visit -->
-
 <!-- the package on [CRAN xlum](https://CRAN.R-project.org/package=xlum). -->
 
 ## License

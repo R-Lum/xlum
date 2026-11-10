@@ -8,6 +8,17 @@ header-includes:
 
 # Changes in version `r RLumBuild::.get_pkg_version()` (`r Sys.Date()`)
 
+## `convert_rlum2xlum()`
+
+* The function no longer crashes on objects belonging to multiple classes
+(#21).
+
+---
+
+# Changes in version 0.2.0 (2026-10-20)
+
+The package is now available on CRAN.
+
 ## `as.list.xlum_list()`
 
 * The function no longer crashes when it encounters a curve with no value
@@ -40,6 +51,8 @@ correctly (#17).
 ## Other changes
 
 * The documentation was revamped.
+
+---
 
 # Changes in version 0.1.0 (2022-11-25)
 

@@ -70,10 +70,9 @@ if(!inherits(rlum, "list")) {
 }
 
   ## check whether the input is valid
-  class.valid <- c("RLum.Analysis", "RLum.Data.Curve", "RLum.Data.Image",
-                   "RLum.Data.Spectrum")
-  class.found <- vapply(rlum, class, character(1))
-  valid <- class.found %in% class.valid
+  class.found <- vapply(rlum, function(x) class(x)[1], character(1))
+  valid <- vapply(rlum, inherits, c("RLum.Analysis", "RLum.Data"),
+                  FUN.VALUE = logical(1))
   if (!all(valid)) {
     stop("[convert_rlum2xlum()] Class '", class.found[which(!valid)[1]],
          "' not supported as input", call. = FALSE)

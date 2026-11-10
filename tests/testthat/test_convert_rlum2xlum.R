@@ -11,6 +11,8 @@ test_that("input validation", {
                fixed = TRUE)
   expect_error(convert_rlum2xlum(list(IRSAR.RF.Data, iris, "error")),
                "Class 'data.frame' not supported as input")
+  expect_error(convert_rlum2xlum(structure(1, class = c("foo", "bar"))),
+               "Class 'foo' not supported as input")
   expect_error(convert_rlum2xlum(list(IRSAR.RF.Data, IRSAR.RF.Data@records[[1]])),
                "All input objects must be of the same class, either")
 })

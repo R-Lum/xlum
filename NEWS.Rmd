@@ -8,6 +8,12 @@ header-includes:
 
 # Changes in version `r RLumBuild::.get_pkg_version()` (`r Sys.Date()`)
 
+## New functions
+
+* `write_RLum2XLUM()` is a method that implements the corresponding generic
+from `Luminescence` as a simple wrapper around `convert_rlum2xlum()` and
+`write_xlum()` (#23).
+
 ## `convert_rlum2xlum()`
 
 * The function no longer crashes on objects belonging to multiple classes

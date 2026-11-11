@@ -55,5 +55,7 @@
 #'
 #' @keywords package
 #'
+#' @import Luminescence
+#' @import methods
 #' @import utils
 "_PACKAGE"

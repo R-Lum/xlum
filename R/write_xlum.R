@@ -45,6 +45,8 @@ write_xlum <- function(
   if (!inherits(x, c("xlum_list", "list", "xml_document")))
     stop("[write_xlum()] Object of class '", class(x)[1], "' not supported as input",
          call. = FALSE)
+  if (missing(file) || !inherits(file, "character"))
+    stop("[write_xlum()] 'file' must be of class 'character'", call. = FALSE)
 
 # Sanitize file -----------------------------------------------------------
   ## check for ending

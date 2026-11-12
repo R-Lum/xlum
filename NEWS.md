@@ -18,6 +18,10 @@
 - The function no longer crashes on objects belonging to multiple
   classes (#21).
 
+- An `RLum.Data.Image` object with `recordType = "Image"` is converted
+  to have `recordType = "camera"` when saved in XLUM format, so that the
+  resulting file validates against the XLUM specification (#27).
+
 ## `read_xlum()`
 
 - Parsing a curve containing only one numeric value triggered the parser

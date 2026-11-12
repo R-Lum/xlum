@@ -74,11 +74,13 @@ test_that("snapshot tests", {
   ## RLum.Data.Image
   image_1_frame <- ExampleData.RLum.Data.Image
   image_1_frame@data <- image_1_frame@data[1:100, 1:10, , drop = FALSE]
-  expect_snapshot_xlum(convert_rlum2xlum(image_1_frame))
+  expect_snapshot_xlum(xlum <- convert_rlum2xlum(image_1_frame))
+  expect_true(validate_xlum(xlum))
 
   image_2_frames <- image_1_frame
   dim(image_2_frames@data) <- c(50, 10, 2)
-  expect_snapshot_xlum(convert_rlum2xlum(image_2_frames))
+  expect_snapshot_xlum(xlum <- convert_rlum2xlum(image_2_frames))
+  expect_true(validate_xlum(xlum))
 
   ## RLum.Data.Spectrum
   spectrum <- TL.Spectrum

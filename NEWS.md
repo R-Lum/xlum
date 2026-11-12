@@ -22,8 +22,8 @@
 
 - Parsing a curve containing only one numeric value triggered the parser
   to interpret the string as base64-encoded text, and thus wrongly
-  generate a `NA` value and a warning. The check has been strengthened
-  to avoid most of these cases (#25).
+  generate a `NA` value and a warning. The check for base64 encoding has
+  been strengthened to avoid most of these cases (#25).
 
 ------------------------------------------------------------------------
 

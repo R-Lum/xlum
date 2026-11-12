@@ -78,8 +78,9 @@
   ## check for base64 encoding and convert if needed
   if (isTRUE(check_base64)) {
     l <- lapply(l, function(x){
-      ## if it contains white space it is not base64
-      if(any(grepl(" ", x, fixed = TRUE)) || is.na(x)) return(x)
+      ## base64 text has length multiple of 4 and contains no spaces
+      if (is.na(x) || nchar(x) %% 4 || any(grepl(" ", x, fixed = TRUE)))
+        return(x)
 
       ## decode to raw convert to char
       rawToChar(x = base64enc::base64decode(x), multiple = FALSE)

@@ -65,11 +65,14 @@ test_that("snapshot tests", {
   testthat::skip_on_cran()
 
   ## RLum.Data.Analysis
-  expect_snapshot_xlum(convert_rlum2xlum(IRSAR.RF.Data))
+  expect_snapshot_xlum(xlum <- convert_rlum2xlum(IRSAR.RF.Data))
+  expect_true(validate_xlum(xlum))
 
   ## RLum.Data.Curve
-  expect_snapshot_xlum(convert_rlum2xlum(RLum.Data.Curve[[1]]))
-  expect_snapshot_xlum(convert_rlum2xlum(RLum.Data.Curve))
+  expect_snapshot_xlum(xlum <- convert_rlum2xlum(RLum.Data.Curve[[1]]))
+  expect_true(validate_xlum(xlum))
+  expect_snapshot_xlum(xlum <- convert_rlum2xlum(RLum.Data.Curve))
+  expect_true(validate_xlum(xlum))
 
   ## RLum.Data.Image
   image_1_frame <- ExampleData.RLum.Data.Image
@@ -85,7 +88,9 @@ test_that("snapshot tests", {
   ## RLum.Data.Spectrum
   spectrum <- TL.Spectrum
   spectrum@data <- spectrum@data[1:100, 1:10]
-  expect_snapshot_xlum(convert_rlum2xlum(spectrum))
+  expect_snapshot_xlum(xlum <- convert_rlum2xlum(spectrum))
+  ## TODO: https://github.com/R-Lum/xlum_specification/issues/10
+  ## expect_true(validate_xlum(xlum))
 })
 
 test_that("regression tests", {

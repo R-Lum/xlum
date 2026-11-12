@@ -249,8 +249,12 @@ if(!inherits(rlum, "list")) {
       parentID <- x@info[["parentID"]] %||% x@.uid
       if (is.na(parentID))
         parentID <- "none"
-      c(strsplit(x@recordType," ", TRUE)[[1]][1], parentID)
+      recordType <- strsplit(x@recordType, " ", fixed = TRUE)[[1]][1]
+      c(recordType, parentID)
      }, character(2))
+
+    ## correct recordTypes that don't match the allowed values
+    id_curves[1, id_curves[1, ] == "Image"] <- "camera"
 
     ## get unique records
     id_records <- unique(id_curves[2,])
@@ -262,7 +266,7 @@ if(!inherits(rlum, "list")) {
 
         ##modify attributes where possible and needed
         xml2::xml_attr(node_record, "recordType") <-
-          id_curves[1, id_curves[2,] == id_records[r]][1]
+          id_curves[1, match(id_records[r], id_curves[2, ])]
         xml2::xml_attr(node_record, "sequenceStepNumber") <- r
 
       ## add <curve/>

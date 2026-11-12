@@ -19,6 +19,13 @@ from `Luminescence` as a simple wrapper around `convert_rlum2xlum()` and
 * The function no longer crashes on objects belonging to multiple classes
 (#21).
 
+## `read_xlum()`
+
+* Parsing a curve containing only one numeric value triggered the parser to
+interpret the string as base64-encoded text, and thus wrongly generate a `NA`
+value and a warning. The check has been strengthened to avoid most of these
+cases (#25).
+
 ---
 
 # Changes in version 0.2.0 (2026-10-20)

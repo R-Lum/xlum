@@ -41,6 +41,13 @@ test_that(".convert2numeric", {
     ## regression tests
   expect_type(out[[1]], "double")
   expect_type(out[[2]], "double")
+
+  ## issue 25
+  expect_equal(.convert2numeric("100", check_base64 = TRUE),
+               list(100))
+  expect_warning(expect_equal(.convert2numeric("1000", check_base64 = TRUE),
+                              list(NA_real_)),
+                 "input string 1 is invalid in this locale")
 })
 
 # +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#

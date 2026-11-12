@@ -45,3 +45,10 @@ test_that("snapshot tests", {
   expect_snapshot_output(read_xlum(file, output = "list"))
   expect_snapshot_xlum(read_xlum(file, output = "xml_document"))
 })
+
+test_that("regression tests", {
+  testthat::skip_on_cran()
+
+  ## issue 25
+  expect_no_warning(read_xlum(test_path("_data/issue-025-onevalue.xlum")))
+})

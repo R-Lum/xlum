@@ -253,9 +253,6 @@ if(!inherits(rlum, "list")) {
       c(recordType, parentID)
      }, character(2))
 
-    ## correct recordTypes that don't match the allowed values
-    id_curves[1, id_curves[1, ] == "Image"] <- "camera"
-
     ## get unique records
     id_records <- unique(id_curves[2,])
 

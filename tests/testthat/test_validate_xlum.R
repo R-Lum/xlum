@@ -7,10 +7,12 @@ test_that("input validation", {
   testthat::skip_on_cran()
 
   expect_error(expect_true(validate_xlum(proto, xsd_version = 9.999)),
-               "[validate_xlum()] XSD version unknown, known versions: 1",
+               "[validate_xlum()] XSD version '9.999' unknown, known versions: '1.0.0'",
                fixed = TRUE)
+  expect_error(validate_xlum(file, xsd_version = "1"),
+               "XSD version '1' unknown, known versions: '1.0.0'")
   expect_error(validate_xlum(proto, xsd_version = NA),
-               "XSD version unknown")
+               "XSD version 'NA' unknown")
   expect_error(validate_xlum("not_existing.xlum"),
                "does not exist")
 
@@ -29,8 +31,7 @@ test_that("check functionality", {
 
   expect_true(validate_xlum(proto))
   expect_true(validate_xlum(base64))
-  expect_true(validate_xlum(file, xsd_version = 1))
-  expect_true(validate_xlum(file, xsd_version = "1"))
+  expect_true(validate_xlum(file, xsd_version = "1.0.0"))
   expect_true(validate_xlum(read_xlum(file, output = "xml_document")))
 
   expect_false(suppressWarnings(validate_xlum(invalid)))

@@ -4,7 +4,7 @@
       cat(as.character(xlum))
     Output
       <?xml version="1.0" encoding="UTF-8"?>
-      <xlum xmlns:xlum="http://xlum.r-luminescence.org" lang="en" formatVersion="1.0" flavour="string" author="string" license="CC BY 4.0" doi="">
+      <xlum xmlns:xlum="http://xlum.r-luminescence.org" lang="en" formatVersion="1.0" flavour="string" author="string" license="CC BY" doi="">
         <sample name="NA" mineral="NA" latitude="52.416944" longitude="4.066389" altitude="70" doi="" comment="NA" state="NA" parentID="NA">
           <sequence position="0" name="NA" fileName="NA" software="NA" readerName="NA" readerSN="NA" readerFW="NA" comment="NA" state="NA" parentID="NA">
             <record recordType="RF" sequenceStepNumber="1" sampleCondition="NA" state="NA" parentID="NA" comment="NA">
@@ -23,7 +23,7 @@
       cat(as.character(xlum))
     Output
       <?xml version="1.0" encoding="UTF-8"?>
-      <xlum xmlns:xlum="http://xlum.r-luminescence.org" lang="en" formatVersion="1.0" flavour="string" author="string" license="CC BY 4.0" doi="">
+      <xlum xmlns:xlum="http://xlum.r-luminescence.org" lang="en" formatVersion="1.0" flavour="string" author="string" license="CC BY" doi="">
         <sample name="NA" mineral="NA" latitude="52.416944" longitude="4.066389" altitude="70" doi="" comment="NA" state="NA" parentID="NA">
           <sequence position="0" name="NA" fileName="NA" software="NA" readerName="NA" readerSN="NA" readerFW="NA" comment="NA" state="NA" parentID="NA">
             <record recordType="RF" sequenceStepNumber="1" sampleCondition="NA" state="NA" parentID="NA" comment="NA">
@@ -39,7 +39,7 @@
       cat(as.character(xlum))
     Output
       <?xml version="1.0" encoding="UTF-8"?>
-      <xlum xmlns:xlum="http://xlum.r-luminescence.org" lang="en" formatVersion="1.0" flavour="string" author="string" license="CC BY 4.0" doi="">
+      <xlum xmlns:xlum="http://xlum.r-luminescence.org" lang="en" formatVersion="1.0" flavour="string" author="string" license="CC BY" doi="">
         <sample name="NA" mineral="NA" latitude="52.416944" longitude="4.066389" altitude="70" doi="" comment="NA" state="NA" parentID="NA">
           <sequence position="0" name="NA" fileName="NA" software="NA" readerName="NA" readerSN="NA" readerFW="NA" comment="NA" state="NA" parentID="NA">
             <record recordType="RF" sequenceStepNumber="1" sampleCondition="NA" state="NA" parentID="NA" comment="NA">
@@ -58,7 +58,7 @@
       cat(as.character(xlum))
     Output
       <?xml version="1.0" encoding="UTF-8"?>
-      <xlum xmlns:xlum="http://xlum.r-luminescence.org" lang="en" formatVersion="1.0" flavour="string" author="string" license="CC BY 4.0" doi="">
+      <xlum xmlns:xlum="http://xlum.r-luminescence.org" lang="en" formatVersion="1.0" flavour="string" author="string" license="CC BY" doi="">
         <sample name="NA" mineral="NA" latitude="52.416944" longitude="4.066389" altitude="70" doi="" comment="NA" state="NA" parentID="NA">
           <sequence position="0" name="NA" fileName="NA" software="NA" readerName="NA" readerSN="NA" readerFW="NA" comment="NA" state="NA" parentID="NA">
             <record recordType="RF" sequenceStepNumber="1" sampleCondition="NA" state="NA" parentID="NA" comment="NA">
@@ -74,7 +74,7 @@
       cat(as.character(xlum))
     Output
       <?xml version="1.0" encoding="UTF-8"?>
-      <xlum xmlns:xlum="http://xlum.r-luminescence.org" lang="en" formatVersion="1.0" flavour="string" author="string" license="CC BY 4.0" doi="">
+      <xlum xmlns:xlum="http://xlum.r-luminescence.org" lang="en" formatVersion="1.0" flavour="string" author="string" license="CC BY" doi="">
         <sample name="NA" mineral="NA" latitude="52.416944" longitude="4.066389" altitude="70" doi="" comment="NA" state="NA" parentID="NA">
           <sequence position="0" name="NA" fileName="NA" software="NA" readerName="NA" readerSN="NA" readerFW="NA" comment="NA" state="NA" parentID="NA">
             <record recordType="RF" sequenceStepNumber="1" sampleCondition="NA" state="NA" parentID="NA" comment="NA">
@@ -90,7 +90,7 @@
       cat(as.character(xlum))
     Output
       <?xml version="1.0" encoding="UTF-8"?>
-      <xlum xmlns:xlum="http://xlum.r-luminescence.org" lang="en" formatVersion="1.0" flavour="string" author="string" license="CC BY 4.0" doi="">
+      <xlum xmlns:xlum="http://xlum.r-luminescence.org" lang="en" formatVersion="1.0" flavour="string" author="string" license="CC BY" doi="">
         <sample name="NA" mineral="NA" latitude="52.416944" longitude="4.066389" altitude="70" doi="" comment="NA" state="NA" parentID="NA">
           <sequence position="0" name="NA" fileName="NA" software="NA" readerName="NA" readerSN="NA" readerFW="NA" comment="NA" state="NA" parentID="NA">
             <record recordType="TL" sequenceStepNumber="1" sampleCondition="NA" state="NA" parentID="NA" comment="NA">
@@ -106,7 +106,7 @@
       cat(as.character(xlum))
     Output
       <?xml version="1.0" encoding="UTF-8"?>
-      <xlum xmlns:xlum="http://xlum.r-luminescence.org" lang="en" formatVersion="1.0" flavour="string" author="string" license="CC BY 4.0" doi="">
+      <xlum xmlns:xlum="http://xlum.r-luminescence.org" lang="en" formatVersion="1.0" flavour="string" author="string" license="CC BY" doi="">
         <sample name="NA" mineral="NA" latitude="52.416944" longitude="4.066389" altitude="70" doi="" comment="NA" state="NA" parentID="NA">
           <sequence position="0" name="NA" fileName="NA" software="NA" readerName="NA" readerSN="NA" readerFW="NA" comment="NA" state="NA" parentID="NA">
             <record recordType="custom" sequenceStepNumber="1" sampleCondition="NA" state="NA" parentID="NA" comment="NA">

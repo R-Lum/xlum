@@ -14,10 +14,11 @@
 #' @return
 #' A [logical] value, with the validation errors in its attributes.
 #'
-#' @section Function version: 0.1.0
+#' @section Function version: 0.1.1
 #'
 #' @author
 #' Sebastian Kreutzer, F2.1 Geophysical Parametrisation/Regionalisation, LIAG - Institute for Applied Geophysics (Germany)\cr
+#' Marco Colombo, Institute of Geography, Heidelberg University (Germany)\cr
 #'
 #' @seealso [xml2::xml_validate], [read_xlum], [write_xlum]
 #'
@@ -47,12 +48,13 @@ validate_xlum <- function(
     ## use different schema
   if (!is.null(xsd_version)) {
     xsd_version <- xsd_version[1]
-    if (!any(xsd_version %in% versions))
+    num_xsd_version <- as.numeric(xsd_version)
+    num_versions <- as.numeric(versions)
+    if (!any(num_xsd_version %in% num_versions))
       stop("[validate_xlum()] XSD version '", xsd_version,
            "' unknown, known versions: ",
            paste(sQuote(versions, q = FALSE), collapse = ", "), call. = FALSE)
-
-    f_schema <- f_schema[versions %in% xsd_version]
+    f_schema <- f_schema[num_versions %in% num_xsd_version]
   }
 
   ## validate schema

@@ -22,7 +22,7 @@ A convenience wrapper around \link[xml2:xml_validate]{xml2::xml_validate} to che
 against the reference format description shipped with \link{xlum-package}.
 }
 \section{Function version}{
- 0.1.0
+ 0.1.1
 }
 
 \examples{
@@ -35,4 +35,5 @@ validate_xlum(file)
 }
 \author{
 Sebastian Kreutzer, F2.1 Geophysical Parametrisation/Regionalisation, LIAG - Institute for Applied Geophysics (Germany)\cr
+Marco Colombo, Institute of Geography, Heidelberg University (Germany)\cr
 }

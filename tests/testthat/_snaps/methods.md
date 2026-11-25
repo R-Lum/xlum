@@ -221,7 +221,7 @@
     attr(,"author")
     [1] "Marie Skłodowska-Curie; Max Karl Ernst Ludwig Planck"
     attr(,"license")
-    [1] "CC BY 4.0"
+    [1] "CC BY"
     attr(,"doi")
     [1] "NA"
     attr(,"xmlns:xlum")
@@ -453,7 +453,7 @@
     attr(,"author")
     [1] "Marie Skłodowska-Curie; Max Karl Ernst Ludwig Planck"
     attr(,"license")
-    [1] "CC BY 4.0"
+    [1] "CC BY"
     attr(,"doi")
     [1] "NA"
     attr(,"xmlns:xlum")

@@ -48,8 +48,9 @@ validate_xlum <- function(
   if (!is.null(xsd_version)) {
     xsd_version <- xsd_version[1]
     if (!any(xsd_version %in% versions))
-      stop("[validate_xlum()] XSD version unknown, known versions: ",
-           paste(versions, collapse = ", "), call. = FALSE)
+      stop("[validate_xlum()] XSD version '", xsd_version,
+           "' unknown, known versions: ",
+           paste(sQuote(versions, q = FALSE), collapse = ", "), call. = FALSE)
 
     f_schema <- f_schema[versions %in% xsd_version]
   }

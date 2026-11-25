@@ -221,7 +221,7 @@
     attr(,"author")
     [1] "Marie Skłodowska-Curie; Max Karl Ernst Ludwig Planck"
     attr(,"license")
-    [1] "CC BY 4.0"
+    [1] "CC BY"
     attr(,"doi")
     [1] "NA"
     attr(,"xmlns:xlum")
@@ -453,7 +453,7 @@
     attr(,"author")
     [1] "Marie Skłodowska-Curie; Max Karl Ernst Ludwig Planck"
     attr(,"license")
-    [1] "CC BY 4.0"
+    [1] "CC BY"
     attr(,"doi")
     [1] "NA"
     attr(,"xmlns:xlum")
@@ -466,7 +466,7 @@
       cat(as.character(xlum))
     Output
       <?xml version="1.0" encoding="UTF-8"?>
-      <xlum xmlns:xlum="http://xlum.r-luminescence.org" lang="en" formatVersion="1.0" flavour="generic" author="Marie Skłodowska-Curie; Max Karl Ernst Ludwig Planck" license="CC BY 4.0" doi="NA">
+      <xlum xmlns:xlum="http://xlum.r-luminescence.org" lang="en" formatVersion="1.0" flavour="generic" author="Marie Skłodowska-Curie; Max Karl Ernst Ludwig Planck" license="CC BY" doi="NA">
         <sample name="LUM-21321" mineral="quartz" latitude="52.4091392" longitude="-4.0702446" altitude="50" doi="valid DOI" comment="NA" state="NA" parentID="NA">
           <sequence position="1" name="Example" fileName="Testsequence.seq" software="DeviceEditor 2.0" readerName="NA" readerSN="NA" readerFW="NA" comment="NA" state="NA" parentID="NA">
             <record recordType="TL" comment="NA" sequenceStepNumber="1" sampleCondition="NA" state="NA" parentID="NA">
